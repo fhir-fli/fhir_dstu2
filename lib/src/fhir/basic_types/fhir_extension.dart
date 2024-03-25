@@ -19,7 +19,7 @@ part 'fhir_extension.g.dart';
 class FhirExtension with _$FhirExtension {
   const FhirExtension._();
   const factory FhirExtension({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     required FhirUri url,
     @JsonKey(name: '_url') Element? urlElement,

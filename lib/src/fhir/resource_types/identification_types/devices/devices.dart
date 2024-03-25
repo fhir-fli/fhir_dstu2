@@ -232,7 +232,7 @@ class DeviceComponentProductionSpecification
     with _$DeviceComponentProductionSpecification {
   const DeviceComponentProductionSpecification._();
   const factory DeviceComponentProductionSpecification({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     CodeableConcept? specType,
@@ -332,7 +332,7 @@ class DeviceMetric with Resource, _$DeviceMetric {
 class DeviceMetricCalibration with _$DeviceMetricCalibration {
   const DeviceMetricCalibration._();
   const factory DeviceMetricCalibration({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(unknownEnumValue: CalibrationType.unknown) CalibrationType? type,

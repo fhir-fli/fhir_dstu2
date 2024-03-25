@@ -167,7 +167,7 @@ class Claim with Resource, _$Claim {
 class ClaimPayee with _$ClaimPayee {
   const ClaimPayee._();
   const factory ClaimPayee({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     Coding? type,
@@ -215,7 +215,7 @@ class ClaimPayee with _$ClaimPayee {
 class ClaimDiagnosis with _$ClaimDiagnosis {
   const ClaimDiagnosis._();
   const factory ClaimDiagnosis({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirPositiveInt sequence,
@@ -262,7 +262,7 @@ class ClaimDiagnosis with _$ClaimDiagnosis {
 class ClaimCoverage with _$ClaimCoverage {
   const ClaimCoverage._();
   const factory ClaimCoverage({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirPositiveInt sequence,
@@ -314,7 +314,7 @@ class ClaimCoverage with _$ClaimCoverage {
 class ClaimItem with _$ClaimItem {
   const ClaimItem._();
   const factory ClaimItem({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirPositiveInt sequence,
@@ -378,7 +378,7 @@ class ClaimItem with _$ClaimItem {
 class ClaimItemDetail with _$ClaimItemDetail {
   const ClaimItemDetail._();
   const factory ClaimItemDetail({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirPositiveInt sequence,
@@ -434,7 +434,7 @@ class ClaimItemDetail with _$ClaimItemDetail {
 class ClaimDetailSubDetail with _$ClaimDetailSubDetail {
   const ClaimDetailSubDetail._();
   const factory ClaimDetailSubDetail({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirPositiveInt sequence,
@@ -489,7 +489,7 @@ class ClaimDetailSubDetail with _$ClaimDetailSubDetail {
 class ClaimItemProsthesis with _$ClaimItemProsthesis {
   const ClaimItemProsthesis._();
   const factory ClaimItemProsthesis({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     FhirBoolean? initial,
@@ -536,7 +536,7 @@ class ClaimItemProsthesis with _$ClaimItemProsthesis {
 class ClaimMissingTeeth with _$ClaimMissingTeeth {
   const ClaimMissingTeeth._();
   const factory ClaimMissingTeeth({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Coding tooth,
@@ -666,7 +666,7 @@ class ClaimResponse with Resource, _$ClaimResponse {
 class ClaimResponseItem with _$ClaimResponseItem {
   const ClaimResponseItem._();
   const factory ClaimResponseItem({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -716,7 +716,7 @@ class ClaimResponseItem with _$ClaimResponseItem {
 class ClaimResponseItemAdjudication with _$ClaimResponseItemAdjudication {
   const ClaimResponseItemAdjudication._();
   const factory ClaimResponseItemAdjudication({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Coding code,
@@ -764,7 +764,7 @@ class ClaimResponseItemAdjudication with _$ClaimResponseItemAdjudication {
 class ClaimResponseItemDetail with _$ClaimResponseItemDetail {
   const ClaimResponseItemDetail._();
   const factory ClaimResponseItemDetail({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirPositiveInt sequenceLinkId,
@@ -811,7 +811,7 @@ class ClaimResponseItemDetail with _$ClaimResponseItemDetail {
 class ClaimResponseDetailSubDetail with _$ClaimResponseDetailSubDetail {
   const ClaimResponseDetailSubDetail._();
   const factory ClaimResponseDetailSubDetail({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirPositiveInt sequenceLinkId,
@@ -857,7 +857,7 @@ class ClaimResponseDetailSubDetail with _$ClaimResponseDetailSubDetail {
 class ClaimResponseAddItem with _$ClaimResponseAddItem {
   const ClaimResponseAddItem._();
   const factory ClaimResponseAddItem({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     List<FhirPositiveInt>? sequenceLinkId,
@@ -907,7 +907,7 @@ class ClaimResponseAddItem with _$ClaimResponseAddItem {
 class ClaimResponseAddItemDetail with _$ClaimResponseAddItemDetail {
   const ClaimResponseAddItemDetail._();
   const factory ClaimResponseAddItemDetail({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Coding service,
@@ -954,7 +954,7 @@ class ClaimResponseAddItemDetail with _$ClaimResponseAddItemDetail {
 class ClaimResponseError with _$ClaimResponseError {
   const ClaimResponseError._();
   const factory ClaimResponseError({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     FhirPositiveInt? sequenceLinkId,
@@ -1002,7 +1002,7 @@ class ClaimResponseError with _$ClaimResponseError {
 class ClaimResponseNote with _$ClaimResponseNote {
   const ClaimResponseNote._();
   const factory ClaimResponseNote({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     FhirPositiveInt? number,
@@ -1052,7 +1052,7 @@ class ClaimResponseNote with _$ClaimResponseNote {
 class ClaimResponseCoverage with _$ClaimResponseCoverage {
   const ClaimResponseCoverage._();
   const factory ClaimResponseCoverage({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirPositiveInt sequence,

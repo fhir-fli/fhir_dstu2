@@ -163,7 +163,7 @@ class Questionnaire with Resource, _$Questionnaire {
 class QuestionnaireGroup with _$QuestionnaireGroup {
   const QuestionnaireGroup._();
   const factory QuestionnaireGroup({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -218,7 +218,7 @@ class QuestionnaireGroup with _$QuestionnaireGroup {
 class QuestionnaireGroupQuestion with _$QuestionnaireGroupQuestion {
   const QuestionnaireGroupQuestion._();
   const factory QuestionnaireGroupQuestion({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -339,7 +339,7 @@ class QuestionnaireResponse with Resource, _$QuestionnaireResponse {
 class QuestionnaireResponseGroup with _$QuestionnaireResponseGroup {
   const QuestionnaireResponseGroup._();
   const factory QuestionnaireResponseGroup({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -393,7 +393,7 @@ class QuestionnaireResponseGroupQuestion
     with _$QuestionnaireResponseGroupQuestion {
   const QuestionnaireResponseGroupQuestion._();
   const factory QuestionnaireResponseGroupQuestion({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -428,7 +428,7 @@ class QuestionnaireResponseQuestionAnswer
     with _$QuestionnaireResponseQuestionAnswer {
   const QuestionnaireResponseQuestionAnswer._();
   const factory QuestionnaireResponseQuestionAnswer({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -545,7 +545,7 @@ class Provenance with Resource, _$Provenance {
 class ProvenanceAgent with _$ProvenanceAgent {
   const ProvenanceAgent._();
   const factory ProvenanceAgent({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -594,7 +594,7 @@ class ProvenanceAgent with _$ProvenanceAgent {
 class ProvenanceEntity with _$ProvenanceEntity {
   const ProvenanceEntity._();
   const factory ProvenanceEntity({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -646,7 +646,7 @@ class ProvenanceEntity with _$ProvenanceEntity {
 class ProvenanceAgentRelatedAgent with _$ProvenanceAgentRelatedAgent {
   const ProvenanceAgentRelatedAgent._();
   const factory ProvenanceAgentRelatedAgent({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required CodeableConcept type,
@@ -748,7 +748,7 @@ class AuditEvent with Resource, _$AuditEvent {
 class AuditEventEvent with _$AuditEventEvent {
   const AuditEventEvent._();
   const factory AuditEventEvent({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Coding type,
@@ -799,7 +799,7 @@ class AuditEventEvent with _$AuditEventEvent {
 class AuditEventParticipant with _$AuditEventParticipant {
   const AuditEventParticipant._();
   const factory AuditEventParticipant({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     List<CodeableConcept>? role,
@@ -855,7 +855,7 @@ class AuditEventParticipant with _$AuditEventParticipant {
 class AuditEventSource with _$AuditEventSource {
   const AuditEventSource._();
   const factory AuditEventSource({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? site,
@@ -903,7 +903,7 @@ class AuditEventSource with _$AuditEventSource {
 class AuditEventObject with _$AuditEventObject {
   const AuditEventObject._();
   const factory AuditEventObject({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     Identifier? identifier,
@@ -958,7 +958,7 @@ class AuditEventObject with _$AuditEventObject {
 class AuditEventParticipantNetwork with _$AuditEventParticipantNetwork {
   const AuditEventParticipantNetwork._();
   const factory AuditEventParticipantNetwork({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? address,
@@ -1006,7 +1006,7 @@ class AuditEventParticipantNetwork with _$AuditEventParticipantNetwork {
 class AuditEventObjectDetail with _$AuditEventObjectDetail {
   const AuditEventObjectDetail._();
   const factory AuditEventObjectDetail({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required String type,

@@ -154,7 +154,7 @@ class PaymentReconciliation with Resource, _$PaymentReconciliation {
 class PaymentReconciliationDetail with _$PaymentReconciliationDetail {
   const PaymentReconciliationDetail._();
   const factory PaymentReconciliationDetail({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Coding type,
@@ -206,7 +206,7 @@ class PaymentReconciliationDetail with _$PaymentReconciliationDetail {
 class PaymentReconciliationNote with _$PaymentReconciliationNote {
   const PaymentReconciliationNote._();
   const factory PaymentReconciliationNote({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     Coding? type,

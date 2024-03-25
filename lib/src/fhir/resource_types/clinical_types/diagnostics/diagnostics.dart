@@ -110,7 +110,7 @@ class Observation with Resource, _$Observation {
 class ObservationReferenceRange with _$ObservationReferenceRange {
   const ObservationReferenceRange._();
   const factory ObservationReferenceRange({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -161,7 +161,7 @@ class ObservationReferenceRange with _$ObservationReferenceRange {
 class ObservationRelated with _$ObservationRelated {
   const ObservationRelated._();
   const factory ObservationRelated({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -208,7 +208,7 @@ class ObservationRelated with _$ObservationRelated {
 class ObservationComponent with _$ObservationComponent {
   const ObservationComponent._();
   const factory ObservationComponent({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -344,7 +344,7 @@ class DiagnosticReport with Resource, _$DiagnosticReport {
 class DiagnosticReportImage with _$DiagnosticReportImage {
   const DiagnosticReportImage._();
   const factory DiagnosticReportImage({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? comment,
@@ -457,7 +457,7 @@ class DiagnosticOrder with Resource, _$DiagnosticOrder {
 class DiagnosticOrderEvent with _$DiagnosticOrderEvent {
   const DiagnosticOrderEvent._();
   const factory DiagnosticOrderEvent({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(unknownEnumValue: EventStatus.unknown) required EventStatus status,
@@ -505,7 +505,7 @@ class DiagnosticOrderEvent with _$DiagnosticOrderEvent {
 class DiagnosticOrderItem with _$DiagnosticOrderItem {
   const DiagnosticOrderItem._();
   const factory DiagnosticOrderItem({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required CodeableConcept code,
@@ -618,7 +618,7 @@ class Specimen with Resource, _$Specimen {
 class SpecimenCollection with _$SpecimenCollection {
   const SpecimenCollection._();
   const factory SpecimenCollection({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     List<FhirExtension>? modifierExtension,
@@ -671,7 +671,7 @@ class SpecimenCollection with _$SpecimenCollection {
 class SpecimenTreatment with _$SpecimenTreatment {
   const SpecimenTreatment._();
   const factory SpecimenTreatment({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? description,
@@ -718,7 +718,7 @@ class SpecimenTreatment with _$SpecimenTreatment {
 class SpecimenContainer with _$SpecimenContainer {
   const SpecimenContainer._();
   const factory SpecimenContainer({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     List<Identifier>? identifier,
@@ -901,7 +901,7 @@ class ImagingStudy with Resource, _$ImagingStudy {
 class ImagingStudySeries with _$ImagingStudySeries {
   const ImagingStudySeries._();
   const factory ImagingStudySeries({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     FhirUnsignedInt? number,
@@ -962,7 +962,7 @@ class ImagingStudySeries with _$ImagingStudySeries {
 class ImagingStudySeriesInstance with _$ImagingStudySeriesInstance {
   const ImagingStudySeriesInstance._();
   const factory ImagingStudySeriesInstance({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     FhirUnsignedInt? number,
@@ -1074,7 +1074,7 @@ class ImagingObjectSelection with Resource, _$ImagingObjectSelection {
 class ImagingObjectSelectionStudy with _$ImagingObjectSelectionStudy {
   const ImagingObjectSelectionStudy._();
   const factory ImagingObjectSelectionStudy({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirOid uid,
@@ -1124,7 +1124,7 @@ class ImagingObjectSelectionStudySeries
     with _$ImagingObjectSelectionStudySeries {
   const ImagingObjectSelectionStudySeries._();
   const factory ImagingObjectSelectionStudySeries({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     FhirOid? uid,
@@ -1158,7 +1158,7 @@ class ImagingObjectSelectionSeriesInstance
     with _$ImagingObjectSelectionSeriesInstance {
   const ImagingObjectSelectionSeriesInstance._();
   const factory ImagingObjectSelectionSeriesInstance({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirOid sopClass,
@@ -1192,7 +1192,7 @@ class ImagingObjectSelectionInstanceFrames
     with _$ImagingObjectSelectionInstanceFrames {
   const ImagingObjectSelectionInstanceFrames._();
   const factory ImagingObjectSelectionInstanceFrames({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     FhirExtension? modifierExte,
     required List<FhirUnsignedInt> frameNumbers,

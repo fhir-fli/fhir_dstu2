@@ -83,7 +83,7 @@ class MessageHeader with Resource, _$MessageHeader {
 class MessageHeaderResponse with _$MessageHeaderResponse {
   const MessageHeaderResponse._();
   const factory MessageHeaderResponse({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirId identifier,
@@ -132,7 +132,7 @@ class MessageHeaderResponse with _$MessageHeaderResponse {
 class MessageHeaderSource with _$MessageHeaderSource {
   const MessageHeaderSource._();
   const factory MessageHeaderSource({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? name,
@@ -220,7 +220,7 @@ class MessageHeaderSource with _$MessageHeaderSource {
 class MessageHeaderDestination with _$MessageHeaderDestination {
   const MessageHeaderDestination._();
   const factory MessageHeaderDestination({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? name,
@@ -326,7 +326,7 @@ class OperationOutcome with Resource, _$OperationOutcome {
 class OperationOutcomeIssue with _$OperationOutcomeIssue {
   const OperationOutcomeIssue._();
   const factory OperationOutcomeIssue({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(unknownEnumValue: IssueSeverity.unknown)
@@ -429,7 +429,7 @@ class Parameters with Resource, _$Parameters {
 class ParametersParameter with _$ParametersParameter {
   const ParametersParameter._();
   const factory ParametersParameter({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required String name,
@@ -652,7 +652,7 @@ class Subscription with Resource, _$Subscription {
 class SubscriptionChannel with _$SubscriptionChannel {
   const SubscriptionChannel._();
   const factory SubscriptionChannel({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(unknownEnumValue: ChannelType.unknown) required ChannelType type,

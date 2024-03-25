@@ -204,7 +204,7 @@ class Location with Resource, _$Location {
 class LocationPosition with _$LocationPosition {
   const LocationPosition._();
   const factory LocationPosition({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirDecimal longitude,
@@ -313,7 +313,7 @@ class Substance with Resource, _$Substance {
 class SubstanceInstance with _$SubstanceInstance {
   const SubstanceInstance._();
   const factory SubstanceInstance({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     Identifier? identifier,
@@ -361,7 +361,7 @@ class SubstanceInstance with _$SubstanceInstance {
 class SubstanceIngredient with _$SubstanceIngredient {
   const SubstanceIngredient._();
   const factory SubstanceIngredient({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     Ratio? quantity,
@@ -787,7 +787,7 @@ class Person with Resource, _$Person {
 class PersonLink with _$PersonLink {
   const PersonLink._();
   const factory PersonLink({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Reference target,
@@ -906,7 +906,7 @@ class Contract with Resource, _$Contract {
 class ContractActor with _$ContractActor {
   const ContractActor._();
   const factory ContractActor({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Reference entity,
@@ -952,7 +952,7 @@ class ContractActor with _$ContractActor {
 class ContractValuedItem with _$ContractValuedItem {
   const ContractValuedItem._();
   const factory ContractValuedItem({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     CodeableConcept? entityCodeableConcept,
@@ -1009,7 +1009,7 @@ class ContractValuedItem with _$ContractValuedItem {
 class ContractSigner with _$ContractSigner {
   const ContractSigner._();
   const factory ContractSigner({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Coding type,
@@ -1056,7 +1056,7 @@ class ContractSigner with _$ContractSigner {
 class ContractTerm with _$ContractTerm {
   const ContractTerm._();
   const factory ContractTerm({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     Identifier? identifier,
@@ -1114,7 +1114,7 @@ class ContractTerm with _$ContractTerm {
 class ContractTermActor with _$ContractTermActor {
   const ContractTermActor._();
   const factory ContractTermActor({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Reference entity,
@@ -1160,7 +1160,7 @@ class ContractTermActor with _$ContractTermActor {
 class ContractFriendly with _$ContractFriendly {
   const ContractFriendly._();
   const factory ContractFriendly({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     Attachment? contentAttachment,
@@ -1206,7 +1206,7 @@ class ContractFriendly with _$ContractFriendly {
 class ContractLegal with _$ContractLegal {
   const ContractLegal._();
   const factory ContractLegal({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     Attachment? contentAttachment,
@@ -1252,7 +1252,7 @@ class ContractLegal with _$ContractLegal {
 class ContractRule with _$ContractRule {
   const ContractRule._();
   const factory ContractRule({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     Attachment? contentAttachment,

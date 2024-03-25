@@ -79,7 +79,7 @@ class Order with Resource, _$Order {
 class OrderWhen with _$OrderWhen {
   const OrderWhen._();
   const factory OrderWhen({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -257,7 +257,7 @@ class CommunicationRequest with Resource, _$CommunicationRequest {
 class CommunicationRequestPayload with _$CommunicationRequestPayload {
   const CommunicationRequestPayload._();
   const factory CommunicationRequestPayload({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? contentString,

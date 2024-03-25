@@ -19,7 +19,7 @@ part 'element.g.dart';
 class Element with _$Element {
   const Element._();
   const factory Element({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     int? line,

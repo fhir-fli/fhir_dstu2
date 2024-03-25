@@ -356,7 +356,7 @@ const _$PaymentReconciliationOutcomeEnumMap = {
 _$PaymentReconciliationDetailImpl _$$PaymentReconciliationDetailImplFromJson(
         Map<String, dynamic> json) =>
     _$PaymentReconciliationDetailImpl(
-      fhirId: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      id: json['id'] == null ? null : FhirId.fromJson(json['id']),
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -397,7 +397,7 @@ Map<String, dynamic> _$$PaymentReconciliationDetailImplToJson(
     }
   }
 
-  writeNotNull('id', instance.fhirId?.toJson());
+  writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
@@ -416,7 +416,7 @@ Map<String, dynamic> _$$PaymentReconciliationDetailImplToJson(
 _$PaymentReconciliationNoteImpl _$$PaymentReconciliationNoteImplFromJson(
         Map<String, dynamic> json) =>
     _$PaymentReconciliationNoteImpl(
-      fhirId: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      id: json['id'] == null ? null : FhirId.fromJson(json['id']),
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -445,7 +445,7 @@ Map<String, dynamic> _$$PaymentReconciliationNoteImplToJson(
     }
   }
 
-  writeNotNull('id', instance.fhirId?.toJson());
+  writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',

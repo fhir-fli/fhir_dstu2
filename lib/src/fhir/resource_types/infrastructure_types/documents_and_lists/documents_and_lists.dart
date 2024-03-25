@@ -93,7 +93,7 @@ class Composition with Resource, _$Composition {
 class CompositionAttester with _$CompositionAttester {
   const CompositionAttester._();
   const factory CompositionAttester({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required List<AttesterMode> mode,
@@ -142,7 +142,7 @@ class CompositionAttester with _$CompositionAttester {
 class CompositionEvent with _$CompositionEvent {
   const CompositionEvent._();
   const factory CompositionEvent({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     List<CodeableConcept>? code,
@@ -189,7 +189,7 @@ class CompositionEvent with _$CompositionEvent {
 class CompositionSection with _$CompositionSection {
   const CompositionSection._();
   const factory CompositionSection({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -313,7 +313,7 @@ class DocumentManifest with Resource, _$DocumentManifest {
 class DocumentManifestContent with _$DocumentManifestContent {
   const DocumentManifestContent._();
   const factory DocumentManifestContent({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     Attachment? pAttachment,
@@ -359,7 +359,7 @@ class DocumentManifestContent with _$DocumentManifestContent {
 class DocumentManifestRelated with _$DocumentManifestRelated {
   const DocumentManifestRelated._();
   const factory DocumentManifestRelated({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     Identifier? identifier,
@@ -478,7 +478,7 @@ class DocumentReference with Resource, _$DocumentReference {
 class DocumentReferenceRelatesTo with _$DocumentReferenceRelatesTo {
   const DocumentReferenceRelatesTo._();
   const factory DocumentReferenceRelatesTo({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(unknownEnumValue: RelatesToCode.unknown)
@@ -526,7 +526,7 @@ class DocumentReferenceRelatesTo with _$DocumentReferenceRelatesTo {
 class DocumentReferenceContent with _$DocumentReferenceContent {
   const DocumentReferenceContent._();
   const factory DocumentReferenceContent({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Attachment attachment,
@@ -572,7 +572,7 @@ class DocumentReferenceContent with _$DocumentReferenceContent {
 class DocumentReferenceContext with _$DocumentReferenceContext {
   const DocumentReferenceContext._();
   const factory DocumentReferenceContext({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     Reference? encounter,
@@ -623,7 +623,7 @@ class DocumentReferenceContext with _$DocumentReferenceContext {
 class DocumentReferenceContextRelated with _$DocumentReferenceContextRelated {
   const DocumentReferenceContextRelated._();
   const factory DocumentReferenceContextRelated({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     Identifier? identifier,
@@ -739,7 +739,7 @@ class FhirList with Resource, _$FhirList {
 class FhirListEntry with _$FhirListEntry {
   const FhirListEntry._();
   const factory FhirListEntry({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,

@@ -303,7 +303,7 @@ class Organization with Resource, _$Organization {
 class OrganizationContact with _$OrganizationContact {
   const OrganizationContact._();
   const factory OrganizationContact({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -657,7 +657,7 @@ class HealthcareService with Resource, _$HealthcareService {
 class HealthcareServiceServiceType with _$HealthcareServiceServiceType {
   const HealthcareServiceServiceType._();
   const factory HealthcareServiceServiceType({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required CodeableConcept type,
@@ -703,7 +703,7 @@ class HealthcareServiceServiceType with _$HealthcareServiceServiceType {
 class HealthcareServiceAvailableTime with _$HealthcareServiceAvailableTime {
   const HealthcareServiceAvailableTime._();
   const factory HealthcareServiceAvailableTime({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     List<AvailableTimeDaysOfWeek>? daysOfWeek,
@@ -756,7 +756,7 @@ class HealthcareServiceAvailableTime with _$HealthcareServiceAvailableTime {
 class HealthcareServiceNotAvailable with _$HealthcareServiceNotAvailable {
   const HealthcareServiceNotAvailable._();
   const factory HealthcareServiceNotAvailable({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required String description,
@@ -867,7 +867,7 @@ class FhirGroup with Resource, _$FhirGroup {
 class GroupCharacteristic with _$GroupCharacteristic {
   const GroupCharacteristic._();
   const factory GroupCharacteristic({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required CodeableConcept code,
@@ -919,7 +919,7 @@ class GroupCharacteristic with _$GroupCharacteristic {
 class GroupMember with _$GroupMember {
   const GroupMember._();
   const factory GroupMember({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Reference entity,

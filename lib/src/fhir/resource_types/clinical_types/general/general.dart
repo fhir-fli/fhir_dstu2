@@ -96,7 +96,7 @@ class AllergyIntolerance with Resource, _$AllergyIntolerance {
 class AllergyIntoleranceReaction with _$AllergyIntoleranceReaction {
   const AllergyIntoleranceReaction._();
   const factory AllergyIntoleranceReaction({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -240,7 +240,7 @@ class Condition with Resource, _$Condition {
 class ConditionStage with _$ConditionStage {
   const ConditionStage._();
   const factory ConditionStage({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     List<FhirExtension>? modifierExtension,
@@ -287,7 +287,7 @@ class ConditionStage with _$ConditionStage {
 class ConditionEvidence with _$ConditionEvidence {
   const ConditionEvidence._();
   const factory ConditionEvidence({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -412,7 +412,7 @@ class Procedure with Resource, _$Procedure {
 class ProcedurePerformer with _$ProcedurePerformer {
   const ProcedurePerformer._();
   const factory ProcedurePerformer({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -459,7 +459,7 @@ class ProcedurePerformer with _$ProcedurePerformer {
 class ProcedureFocalDevice with _$ProcedureFocalDevice {
   const ProcedureFocalDevice._();
   const factory ProcedureFocalDevice({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     CodeableConcept? action,
@@ -581,7 +581,7 @@ class ClinicalImpression with Resource, _$ClinicalImpression {
 class ClinicalImpressionInvestigations with _$ClinicalImpressionInvestigations {
   const ClinicalImpressionInvestigations._();
   const factory ClinicalImpressionInvestigations({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required CodeableConcept code,
@@ -612,7 +612,7 @@ class ClinicalImpressionInvestigations with _$ClinicalImpressionInvestigations {
 class ClinicalImpressionFinding with _$ClinicalImpressionFinding {
   const ClinicalImpressionFinding._();
   const factory ClinicalImpressionFinding({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required CodeableConcept item,
@@ -658,7 +658,7 @@ class ClinicalImpressionFinding with _$ClinicalImpressionFinding {
 class ClinicalImpressionRuledOut with _$ClinicalImpressionRuledOut {
   const ClinicalImpressionRuledOut._();
   const factory ClinicalImpressionRuledOut({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required CodeableConcept item,
@@ -788,7 +788,7 @@ class FamilyMemberHistory with Resource, _$FamilyMemberHistory {
 class FamilyMemberHistoryCondition with _$FamilyMemberHistoryCondition {
   const FamilyMemberHistoryCondition._();
   const factory FamilyMemberHistoryCondition({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required CodeableConcept code,
@@ -903,7 +903,7 @@ class RiskAssessment with Resource, _$RiskAssessment {
 class RiskAssessmentPrediction with _$RiskAssessmentPrediction {
   const RiskAssessmentPrediction._();
   const factory RiskAssessmentPrediction({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required CodeableConcept outcome,
@@ -1024,7 +1024,7 @@ class DetectedIssue with Resource, _$DetectedIssue {
 class DetectedIssueMitigation with _$DetectedIssueMitigation {
   const DetectedIssueMitigation._();
   const factory DetectedIssueMitigation({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required CodeableConcept action,

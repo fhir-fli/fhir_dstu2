@@ -95,7 +95,7 @@ class Encounter with Resource, _$Encounter {
 class EncounterStatusHistory with _$EncounterStatusHistory {
   const EncounterStatusHistory._();
   const factory EncounterStatusHistory({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(unknownEnumValue: EncounterHistoryStatus.unknown)
@@ -143,7 +143,7 @@ class EncounterStatusHistory with _$EncounterStatusHistory {
 class EncounterParticipant with _$EncounterParticipant {
   const EncounterParticipant._();
   const factory EncounterParticipant({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     List<CodeableConcept>? type,
@@ -190,7 +190,7 @@ class EncounterParticipant with _$EncounterParticipant {
 class EncounterHospitalization with _$EncounterHospitalization {
   const EncounterHospitalization._();
   const factory EncounterHospitalization({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     List<FhirExtension>? modifierExtension,
@@ -246,7 +246,7 @@ class EncounterHospitalization with _$EncounterHospitalization {
 class EncounterLocation with _$EncounterLocation {
   const EncounterLocation._();
   const factory EncounterLocation({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Reference location,
@@ -360,7 +360,7 @@ class EpisodeOfCare with Resource, _$EpisodeOfCare {
 class EpisodeOfCareStatusHistory with _$EpisodeOfCareStatusHistory {
   const EpisodeOfCareStatusHistory._();
   const factory EpisodeOfCareStatusHistory({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(
@@ -409,7 +409,7 @@ class EpisodeOfCareStatusHistory with _$EpisodeOfCareStatusHistory {
 class EpisodeOfCareCareTeam with _$EpisodeOfCareCareTeam {
   const EpisodeOfCareCareTeam._();
   const factory EpisodeOfCareCareTeam({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     List<CodeableConcept>? role,
@@ -525,7 +525,7 @@ class Communication with Resource, _$Communication {
 class CommunicationPayload with _$CommunicationPayload {
   const CommunicationPayload._();
   const factory CommunicationPayload({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? contentString,

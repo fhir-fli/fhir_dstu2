@@ -422,7 +422,7 @@ class Patient with Resource, _$Patient {
 class PatientContact with _$PatientContact {
   const PatientContact._();
   const factory PatientContact({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     List<CodeableConcept>? relationship,
@@ -619,7 +619,7 @@ class PatientContact with _$PatientContact {
 class PatientAnimal with _$PatientAnimal {
   const PatientAnimal._();
   const factory PatientAnimal({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required CodeableConcept species,
@@ -666,7 +666,7 @@ class PatientAnimal with _$PatientAnimal {
 class PatientCommunication with _$PatientCommunication {
   const PatientCommunication._();
   const factory PatientCommunication({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required CodeableConcept language,
@@ -713,7 +713,7 @@ class PatientCommunication with _$PatientCommunication {
 class PatientLink with _$PatientLink {
   const PatientLink._();
   const factory PatientLink({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Reference other,
@@ -1075,7 +1075,7 @@ class Practitioner with Resource, _$Practitioner {
 class PractitionerPractitionerRole with _$PractitionerPractitionerRole {
   const PractitionerPractitionerRole._();
   const factory PractitionerPractitionerRole({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     List<FhirExtension>? modifierExtension,
@@ -1126,7 +1126,7 @@ class PractitionerPractitionerRole with _$PractitionerPractitionerRole {
 class PractitionerQualification with _$PractitionerQualification {
   const PractitionerQualification._();
   const factory PractitionerQualification({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     List<Identifier>? identifier,

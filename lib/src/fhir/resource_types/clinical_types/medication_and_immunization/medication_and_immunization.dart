@@ -77,7 +77,7 @@ class Medication with Resource, _$Medication {
 class MedicationProduct with _$MedicationProduct {
   const MedicationProduct._();
   const factory MedicationProduct({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -125,7 +125,7 @@ class MedicationProduct with _$MedicationProduct {
 class MedicationProductIngredient with _$MedicationProductIngredient {
   const MedicationProductIngredient._();
   const factory MedicationProductIngredient({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Reference item,
@@ -171,7 +171,7 @@ class MedicationProductIngredient with _$MedicationProductIngredient {
 class MedicationProductBatch with _$MedicationProductBatch {
   const MedicationProductBatch._();
   const factory MedicationProductBatch({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? lotNumber,
@@ -219,7 +219,7 @@ class MedicationProductBatch with _$MedicationProductBatch {
 class MedicationPackage with _$MedicationPackage {
   const MedicationPackage._();
   const factory MedicationPackage({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -266,7 +266,7 @@ class MedicationPackage with _$MedicationPackage {
 class MedicationPackageContent with _$MedicationPackageContent {
   const MedicationPackageContent._();
   const factory MedicationPackageContent({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Reference item,
@@ -383,7 +383,7 @@ class MedicationOrder with Resource, _$MedicationOrder {
 class MedicationOrderDosageInstruction with _$MedicationOrderDosageInstruction {
   const MedicationOrderDosageInstruction._();
   const factory MedicationOrderDosageInstruction({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? text,
@@ -426,7 +426,7 @@ class MedicationOrderDosageInstruction with _$MedicationOrderDosageInstruction {
 class MedicationOrderDispenseRequest with _$MedicationOrderDispenseRequest {
   const MedicationOrderDispenseRequest._();
   const factory MedicationOrderDispenseRequest({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     CodeableConcept? medicationCodeableConcept,
@@ -477,7 +477,7 @@ class MedicationOrderDispenseRequest with _$MedicationOrderDispenseRequest {
 class MedicationOrderSubstitution with _$MedicationOrderSubstitution {
   const MedicationOrderSubstitution._();
   const factory MedicationOrderSubstitution({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required CodeableConcept type,
@@ -596,7 +596,7 @@ class MedicationAdministration with Resource, _$MedicationAdministration {
 class MedicationAdministrationDosage with _$MedicationAdministrationDosage {
   const MedicationAdministrationDosage._();
   const factory MedicationAdministrationDosage({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? text,
@@ -724,7 +724,7 @@ class MedicationDispenseDosageInstruction
     with _$MedicationDispenseDosageInstruction {
   const MedicationDispenseDosageInstruction._();
   const factory MedicationDispenseDosageInstruction({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? text,
@@ -767,7 +767,7 @@ class MedicationDispenseDosageInstruction
 class MedicationDispenseSubstitution with _$MedicationDispenseSubstitution {
   const MedicationDispenseSubstitution._();
   const factory MedicationDispenseSubstitution({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required CodeableConcept type,
@@ -888,7 +888,7 @@ class MedicationStatement with Resource, _$MedicationStatement {
 class MedicationStatementDosage with _$MedicationStatementDosage {
   const MedicationStatementDosage._();
   const factory MedicationStatementDosage({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? text,
@@ -1022,7 +1022,7 @@ class Immunization with Resource, _$Immunization {
 class ImmunizationExplanation with _$ImmunizationExplanation {
   const ImmunizationExplanation._();
   const factory ImmunizationExplanation({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     List<CodeableConcept>? reason,
@@ -1068,7 +1068,7 @@ class ImmunizationExplanation with _$ImmunizationExplanation {
 class ImmunizationReaction with _$ImmunizationReaction {
   const ImmunizationReaction._();
   const factory ImmunizationReaction({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     FhirDateTime? date,
@@ -1117,7 +1117,7 @@ class ImmunizationReaction with _$ImmunizationReaction {
 class ImmunizationVaccinationProtocol with _$ImmunizationVaccinationProtocol {
   const ImmunizationVaccinationProtocol._();
   const factory ImmunizationVaccinationProtocol({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirPositiveInt doseSequence,
@@ -1228,7 +1228,7 @@ class ImmunizationRecommendationRecommendation
     with _$ImmunizationRecommendationRecommendation {
   const ImmunizationRecommendationRecommendation._();
   const factory ImmunizationRecommendationRecommendation({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirDateTime date,
@@ -1266,7 +1266,7 @@ class ImmunizationRecommendationRecommendationDateCriterion
     with _$ImmunizationRecommendationRecommendationDateCriterion {
   const ImmunizationRecommendationRecommendationDateCriterion._();
   const factory ImmunizationRecommendationRecommendationDateCriterion({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     FhirExtension? extensio,
     FhirExtension? modifier,
     required CodeableConcept code,
@@ -1300,7 +1300,7 @@ class ImmunizationRecommendationRecommendationProtocol
     with _$ImmunizationRecommendationRecommendationProtocol {
   const ImmunizationRecommendationRecommendationProtocol._();
   const factory ImmunizationRecommendationRecommendationProtocol({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     FhirExtension? modifierExten,
     FhirInteger? doseSequence,

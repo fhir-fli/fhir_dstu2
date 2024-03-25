@@ -114,7 +114,7 @@ class StructureDefinition with Resource, _$StructureDefinition {
 class StructureDefinitionContact with _$StructureDefinitionContact {
   const StructureDefinitionContact._();
   const factory StructureDefinitionContact({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? name,
@@ -240,7 +240,7 @@ class StructureDefinitionContact with _$StructureDefinitionContact {
 class StructureDefinitionMapping with _$StructureDefinitionMapping {
   const StructureDefinitionMapping._();
   const factory StructureDefinitionMapping({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -293,7 +293,7 @@ class StructureDefinitionMapping with _$StructureDefinitionMapping {
 class StructureDefinitionSnapshot with _$StructureDefinitionSnapshot {
   const StructureDefinitionSnapshot._();
   const factory StructureDefinitionSnapshot({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required List<ElementDefinition> element,
@@ -338,7 +338,7 @@ class StructureDefinitionSnapshot with _$StructureDefinitionSnapshot {
 class StructureDefinitionDifferential with _$StructureDefinitionDifferential {
   const StructureDefinitionDifferential._();
   const factory StructureDefinitionDifferential({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required List<ElementDefinition> element,
@@ -452,7 +452,7 @@ class DataElement with Resource, _$DataElement {
 class DataElementContact with _$DataElementContact {
   const DataElementContact._();
   const factory DataElementContact({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? name,
@@ -576,7 +576,7 @@ class DataElementContact with _$DataElementContact {
 class DataElementMapping with _$DataElementMapping {
   const DataElementMapping._();
   const factory DataElementMapping({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,

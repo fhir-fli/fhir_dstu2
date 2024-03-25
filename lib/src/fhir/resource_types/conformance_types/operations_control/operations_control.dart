@@ -178,7 +178,7 @@ class CapabilityStatement with Resource, _$CapabilityStatement {
 class ConformanceContact with _$ConformanceContact {
   const ConformanceContact._();
   const factory ConformanceContact({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? name,
@@ -302,7 +302,7 @@ class ConformanceContact with _$ConformanceContact {
 class ConformanceSoftware with _$ConformanceSoftware {
   const ConformanceSoftware._();
   const factory ConformanceSoftware({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required String name,
@@ -349,7 +349,7 @@ class ConformanceSoftware with _$ConformanceSoftware {
 class ConformanceImplementation with _$ConformanceImplementation {
   const ConformanceImplementation._();
   const factory ConformanceImplementation({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required String description,
@@ -395,7 +395,7 @@ class ConformanceImplementation with _$ConformanceImplementation {
 class ConformanceRest with _$ConformanceRest {
   const ConformanceRest._();
   const factory ConformanceRest({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -451,7 +451,7 @@ class ConformanceRest with _$ConformanceRest {
 class ConformanceMessaging with _$ConformanceMessaging {
   const ConformanceMessaging._();
   const factory ConformanceMessaging({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -500,7 +500,7 @@ class ConformanceMessaging with _$ConformanceMessaging {
 class ConformanceDocument with _$ConformanceDocument {
   const ConformanceDocument._();
   const factory ConformanceDocument({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -548,7 +548,7 @@ class ConformanceDocument with _$ConformanceDocument {
 class ConformanceRestSecurity with _$ConformanceRestSecurity {
   const ConformanceRestSecurity._();
   const factory ConformanceRestSecurity({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     FhirBoolean? cors,
@@ -597,7 +597,7 @@ class ConformanceRestSecurity with _$ConformanceRestSecurity {
 class ConformanceRestResource with _$ConformanceRestResource {
   const ConformanceRestResource._();
   const factory ConformanceRestResource({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -661,7 +661,7 @@ class ConformanceRestResource with _$ConformanceRestResource {
 class ConformanceResourceInteraction with _$ConformanceResourceInteraction {
   const ConformanceResourceInteraction._();
   const factory ConformanceResourceInteraction({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(unknownEnumValue: ResourceInteractionCode.unknown)
@@ -709,7 +709,7 @@ class ConformanceResourceInteraction with _$ConformanceResourceInteraction {
 class ConformanceRestOperation with _$ConformanceRestOperation {
   const ConformanceRestOperation._();
   const factory ConformanceRestOperation({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -756,7 +756,7 @@ class ConformanceRestOperation with _$ConformanceRestOperation {
 class ConformanceMessagingEndpoint with _$ConformanceMessagingEndpoint {
   const ConformanceMessagingEndpoint._();
   const factory ConformanceMessagingEndpoint({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Coding protocol,
@@ -803,7 +803,7 @@ class ConformanceMessagingEndpoint with _$ConformanceMessagingEndpoint {
 class ConformanceMessagingEvent with _$ConformanceMessagingEvent {
   const ConformanceMessagingEvent._();
   const factory ConformanceMessagingEvent({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Coding code,
@@ -855,7 +855,7 @@ class ConformanceMessagingEvent with _$ConformanceMessagingEvent {
 class ConformanceSecurityCertificate with _$ConformanceSecurityCertificate {
   const ConformanceSecurityCertificate._();
   const factory ConformanceSecurityCertificate({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     FhirCode? type,
@@ -903,7 +903,7 @@ class ConformanceSecurityCertificate with _$ConformanceSecurityCertificate {
 class ConformanceRestInteraction with _$ConformanceRestInteraction {
   const ConformanceRestInteraction._();
   const factory ConformanceRestInteraction({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(unknownEnumValue: RestInteractionCode.unknown)
@@ -950,7 +950,7 @@ class ConformanceRestInteraction with _$ConformanceRestInteraction {
 class ConformanceResourceSearchParam with _$ConformanceResourceSearchParam {
   const ConformanceResourceSearchParam._();
   const factory ConformanceResourceSearchParam({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -1078,7 +1078,7 @@ class OperationDefinition with Resource, _$OperationDefinition {
 class OperationDefinitionContact with _$OperationDefinitionContact {
   const OperationDefinitionContact._();
   const factory OperationDefinitionContact({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? name,
@@ -1204,7 +1204,7 @@ class OperationDefinitionContact with _$OperationDefinitionContact {
 class OperationDefinitionParameter with _$OperationDefinitionParameter {
   const OperationDefinitionParameter._();
   const factory OperationDefinitionParameter({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -1259,7 +1259,7 @@ class OperationDefinitionParameterBinding
     with _$OperationDefinitionParameterBinding {
   const OperationDefinitionParameterBinding._();
   const factory OperationDefinitionParameterBinding({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(
@@ -1366,7 +1366,7 @@ class SearchParameter with Resource, _$SearchParameter {
 class SearchParameterContact with _$SearchParameterContact {
   const SearchParameterContact._();
   const factory SearchParameterContact({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? name,

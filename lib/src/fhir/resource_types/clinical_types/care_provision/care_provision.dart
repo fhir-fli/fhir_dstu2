@@ -91,7 +91,7 @@ class CarePlan with Resource, _$CarePlan {
 class CarePlanRelatedPlan with _$CarePlanRelatedPlan {
   const CarePlanRelatedPlan._();
   const factory CarePlanRelatedPlan({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(unknownEnumValue: RelatedPlanCode.unknown) RelatedPlanCode? code,
@@ -137,7 +137,7 @@ class CarePlanRelatedPlan with _$CarePlanRelatedPlan {
 class CarePlanParticipant with _$CarePlanParticipant {
   const CarePlanParticipant._();
   const factory CarePlanParticipant({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     CodeableConcept? role,
@@ -183,7 +183,7 @@ class CarePlanParticipant with _$CarePlanParticipant {
 class CarePlanActivity with _$CarePlanActivity {
   const CarePlanActivity._();
   const factory CarePlanActivity({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -232,7 +232,7 @@ class CarePlanActivity with _$CarePlanActivity {
 class CarePlanActivityDetail with _$CarePlanActivityDetail {
   const CarePlanActivityDetail._();
   const factory CarePlanActivityDetail({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -367,7 +367,7 @@ class Goal with Resource, _$Goal {
 class GoalOutcome with _$GoalOutcome {
   const GoalOutcome._();
   const factory GoalOutcome({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     CodeableConcept? resultCodeableConcept,
@@ -621,7 +621,7 @@ class NutritionOrder with Resource, _$NutritionOrder {
 class NutritionOrderOralDiet with _$NutritionOrderOralDiet {
   const NutritionOrderOralDiet._();
   const factory NutritionOrderOralDiet({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -673,7 +673,7 @@ class NutritionOrderOralDiet with _$NutritionOrderOralDiet {
 class NutritionOrderSupplement with _$NutritionOrderSupplement {
   const NutritionOrderSupplement._();
   const factory NutritionOrderSupplement({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -725,7 +725,7 @@ class NutritionOrderSupplement with _$NutritionOrderSupplement {
 class NutritionOrderEnteralFormula with _$NutritionOrderEnteralFormula {
   const NutritionOrderEnteralFormula._();
   const factory NutritionOrderEnteralFormula({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -784,7 +784,7 @@ class NutritionOrderEnteralFormula with _$NutritionOrderEnteralFormula {
 class NutritionOrderOralDietNutrient with _$NutritionOrderOralDietNutrient {
   const NutritionOrderOralDietNutrient._();
   const factory NutritionOrderOralDietNutrient({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -832,7 +832,7 @@ class NutritionOrderOralDietNutrient with _$NutritionOrderOralDietNutrient {
 class NutritionOrderOralDietTexture with _$NutritionOrderOralDietTexture {
   const NutritionOrderOralDietTexture._();
   const factory NutritionOrderOralDietTexture({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -880,7 +880,7 @@ class NutritionOrderEnteralFormulaAdministration
     with _$NutritionOrderEnteralFormulaAdministration {
   const NutritionOrderEnteralFormulaAdministration._();
   const factory NutritionOrderEnteralFormulaAdministration({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     Timing? schedule,
@@ -913,7 +913,7 @@ class NutritionOrderEnteralFormulaAdministration
 class VisionPrescriptionDispense with _$VisionPrescriptionDispense {
   const VisionPrescriptionDispense._();
   const factory VisionPrescriptionDispense({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required Coding product,

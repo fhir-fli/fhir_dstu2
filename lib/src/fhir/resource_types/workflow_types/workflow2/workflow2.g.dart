@@ -238,7 +238,7 @@ const _$ProcessRequestActionEnumMap = {
 _$ProcessRequestItemImpl _$$ProcessRequestItemImplFromJson(
         Map<String, dynamic> json) =>
     _$ProcessRequestItemImpl(
-      fhirId: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      id: json['id'] == null ? null : FhirId.fromJson(json['id']),
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -258,7 +258,7 @@ Map<String, dynamic> _$$ProcessRequestItemImplToJson(
     }
   }
 
-  writeNotNull('id', instance.fhirId?.toJson());
+  writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
@@ -386,7 +386,7 @@ Map<String, dynamic> _$$ProcessResponseImplToJson(
 _$ProcessResponseNotesImpl _$$ProcessResponseNotesImplFromJson(
         Map<String, dynamic> json) =>
     _$ProcessResponseNotesImpl(
-      fhirId: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      id: json['id'] == null ? null : FhirId.fromJson(json['id']),
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -409,7 +409,7 @@ Map<String, dynamic> _$$ProcessResponseNotesImplToJson(
     }
   }
 
-  writeNotNull('id', instance.fhirId?.toJson());
+  writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
@@ -541,7 +541,7 @@ const _$SupplyRequestStatusEnumMap = {
 _$SupplyRequestWhenImpl _$$SupplyRequestWhenImplFromJson(
         Map<String, dynamic> json) =>
     _$SupplyRequestWhenImpl(
-      fhirId: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      id: json['id'] == null ? null : FhirId.fromJson(json['id']),
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -566,7 +566,7 @@ Map<String, dynamic> _$$SupplyRequestWhenImplToJson(
     }
   }
 
-  writeNotNull('id', instance.fhirId?.toJson());
+  writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',

@@ -104,7 +104,7 @@ class ValueSet with Resource, _$ValueSet {
 class ValueSetContact with _$ValueSetContact {
   const ValueSetContact._();
   const factory ValueSetContact({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -228,7 +228,7 @@ class ValueSetContact with _$ValueSetContact {
 class ValueSetCodeSystem with _$ValueSetCodeSystem {
   const ValueSetCodeSystem._();
   const factory ValueSetCodeSystem({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -280,7 +280,7 @@ class ValueSetCodeSystem with _$ValueSetCodeSystem {
 class ValueSetCodeSystemConcept with _$ValueSetCodeSystemConcept {
   const ValueSetCodeSystemConcept._();
   const factory ValueSetCodeSystemConcept({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -333,7 +333,7 @@ class ValueSetCodeSystemConcept with _$ValueSetCodeSystemConcept {
 class ValueSetConceptDesignation with _$ValueSetConceptDesignation {
   const ValueSetConceptDesignation._();
   const factory ValueSetConceptDesignation({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     FhirCode? language,
@@ -382,7 +382,7 @@ class ValueSetConceptDesignation with _$ValueSetConceptDesignation {
 class ValueSetCompose with _$ValueSetCompose {
   const ValueSetCompose._();
   const factory ValueSetCompose({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -430,7 +430,7 @@ class ValueSetCompose with _$ValueSetCompose {
 class ValueSetComposeInclude with _$ValueSetComposeInclude {
   const ValueSetComposeInclude._();
   const factory ValueSetComposeInclude({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -481,7 +481,7 @@ class ValueSetComposeInclude with _$ValueSetComposeInclude {
 class ValueSetIncludeConcept with _$ValueSetIncludeConcept {
   const ValueSetIncludeConcept._();
   const factory ValueSetIncludeConcept({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -531,7 +531,7 @@ class ValueSetIncludeConcept with _$ValueSetIncludeConcept {
 class ValueSetIncludeFilter with _$ValueSetIncludeFilter {
   const ValueSetIncludeFilter._();
   const factory ValueSetIncludeFilter({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -582,7 +582,7 @@ class ValueSetIncludeFilter with _$ValueSetIncludeFilter {
 class ValueSetExpansion with _$ValueSetExpansion {
   const ValueSetExpansion._();
   const factory ValueSetExpansion({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -637,7 +637,7 @@ class ValueSetExpansion with _$ValueSetExpansion {
 class ValueSetExpansionParameter with _$ValueSetExpansionParameter {
   const ValueSetExpansionParameter._();
   const factory ValueSetExpansionParameter({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -696,7 +696,7 @@ class ValueSetExpansionParameter with _$ValueSetExpansionParameter {
 class ValueSetExpansionContains with _$ValueSetExpansionContains {
   const ValueSetExpansionContains._();
   const factory ValueSetExpansionContains({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -834,7 +834,7 @@ class ConceptMap with Resource, _$ConceptMap {
 class ConceptMapContact with _$ConceptMapContact {
   const ConceptMapContact._();
   const factory ConceptMapContact({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? name,
@@ -958,7 +958,7 @@ class ConceptMapContact with _$ConceptMapContact {
 class ConceptMapElement with _$ConceptMapElement {
   const ConceptMapElement._();
   const factory ConceptMapElement({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     FhirUri? codeSystem,
@@ -1006,7 +1006,7 @@ class ConceptMapElement with _$ConceptMapElement {
 class ConceptMapElementTarget with _$ConceptMapElementTarget {
   const ConceptMapElementTarget._();
   const factory ConceptMapElementTarget({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     FhirUri? codeSystem,
@@ -1060,7 +1060,7 @@ class ConceptMapElementTarget with _$ConceptMapElementTarget {
 class ConceptMapTargetDependsOn with _$ConceptMapTargetDependsOn {
   const ConceptMapTargetDependsOn._();
   const factory ConceptMapTargetDependsOn({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirUri element,
@@ -1182,7 +1182,7 @@ class NamingSystem with Resource, _$NamingSystem {
 class NamingSystemContact with _$NamingSystemContact {
   const NamingSystemContact._();
   const factory NamingSystemContact({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     String? name,
@@ -1306,7 +1306,7 @@ class NamingSystemContact with _$NamingSystemContact {
 class NamingSystemUniqueId with _$NamingSystemUniqueId {
   const NamingSystemUniqueId._();
   const factory NamingSystemUniqueId({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(unknownEnumValue: UniqueIdType.unknown) required UniqueIdType type,

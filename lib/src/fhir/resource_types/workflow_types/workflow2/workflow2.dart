@@ -89,7 +89,7 @@ class ProcessRequest with Resource, _$ProcessRequest {
 class ProcessRequestItem with _$ProcessRequestItem {
   const ProcessRequestItem._();
   const factory ProcessRequestItem({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     required FhirInteger sequenceLinkId,
@@ -199,7 +199,7 @@ class ProcessResponse with Resource, _$ProcessResponse {
 class ProcessResponseNotes with _$ProcessResponseNotes {
   const ProcessResponseNotes._();
   const factory ProcessResponseNotes({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     Coding? type,
@@ -310,7 +310,7 @@ class SupplyRequest with Resource, _$SupplyRequest {
 class SupplyRequestWhen with _$SupplyRequestWhen {
   const SupplyRequestWhen._();
   const factory SupplyRequestWhen({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     CodeableConcept? code,

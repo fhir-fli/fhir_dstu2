@@ -412,7 +412,7 @@ const _$BundleTypeEnumMap = {
 
 _$BundleLinkImpl _$$BundleLinkImplFromJson(Map<String, dynamic> json) =>
     _$BundleLinkImpl(
-      fhirId: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      id: json['id'] == null ? null : FhirId.fromJson(json['id']),
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -441,7 +441,7 @@ Map<String, dynamic> _$$BundleLinkImplToJson(_$BundleLinkImpl instance) {
     }
   }
 
-  writeNotNull('id', instance.fhirId?.toJson());
+  writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
@@ -456,7 +456,7 @@ Map<String, dynamic> _$$BundleLinkImplToJson(_$BundleLinkImpl instance) {
 
 _$BundleEntryImpl _$$BundleEntryImplFromJson(Map<String, dynamic> json) =>
     _$BundleEntryImpl(
-      fhirId: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      id: json['id'] == null ? null : FhirId.fromJson(json['id']),
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -499,7 +499,7 @@ Map<String, dynamic> _$$BundleEntryImplToJson(_$BundleEntryImpl instance) {
     }
   }
 
-  writeNotNull('id', instance.fhirId?.toJson());
+  writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
@@ -518,7 +518,7 @@ Map<String, dynamic> _$$BundleEntryImplToJson(_$BundleEntryImpl instance) {
 _$BundleEntrySearchImpl _$$BundleEntrySearchImplFromJson(
         Map<String, dynamic> json) =>
     _$BundleEntrySearchImpl(
-      fhirId: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      id: json['id'] == null ? null : FhirId.fromJson(json['id']),
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -549,7 +549,7 @@ Map<String, dynamic> _$$BundleEntrySearchImplToJson(
     }
   }
 
-  writeNotNull('id', instance.fhirId?.toJson());
+  writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
@@ -572,7 +572,7 @@ const _$SearchModeEnumMap = {
 _$BundleEntryRequestImpl _$$BundleEntryRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$BundleEntryRequestImpl(
-      fhirId: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      id: json['id'] == null ? null : FhirId.fromJson(json['id']),
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -621,7 +621,7 @@ Map<String, dynamic> _$$BundleEntryRequestImplToJson(
     }
   }
 
-  writeNotNull('id', instance.fhirId?.toJson());
+  writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
@@ -653,7 +653,7 @@ const _$RequestMethodEnumMap = {
 _$BundleEntryResponseImpl _$$BundleEntryResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$BundleEntryResponseImpl(
-      fhirId: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      id: json['id'] == null ? null : FhirId.fromJson(json['id']),
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -694,7 +694,7 @@ Map<String, dynamic> _$$BundleEntryResponseImplToJson(
     }
   }
 
-  writeNotNull('id', instance.fhirId?.toJson());
+  writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',

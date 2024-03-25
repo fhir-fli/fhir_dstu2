@@ -92,7 +92,7 @@ class Appointment with Resource, _$Appointment {
 class AppointmentParticipant with _$AppointmentParticipant {
   const AppointmentParticipant._();
   const factory AppointmentParticipant({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     List<CodeableConcept>? type,

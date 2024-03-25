@@ -199,7 +199,7 @@ class Bundle with Resource, _$Bundle {
 class BundleLink with _$BundleLink {
   const BundleLink._();
   const factory BundleLink({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -248,7 +248,7 @@ class BundleLink with _$BundleLink {
 class BundleEntry with _$BundleEntry {
   const BundleEntry._();
   const factory BundleEntry({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -343,7 +343,7 @@ class BundleEntry with _$BundleEntry {
 class BundleEntrySearch with _$BundleEntrySearch {
   const BundleEntrySearch._();
   const factory BundleEntrySearch({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -392,7 +392,7 @@ class BundleEntrySearch with _$BundleEntrySearch {
 class BundleEntryRequest with _$BundleEntryRequest {
   const BundleEntryRequest._();
   const factory BundleEntryRequest({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
@@ -450,7 +450,7 @@ class BundleEntryRequest with _$BundleEntryRequest {
 class BundleEntryResponse with _$BundleEntryResponse {
   const BundleEntryResponse._();
   const factory BundleEntryResponse({
-    @JsonKey(name: 'id') FhirId? fhirId,
+    FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
     @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
