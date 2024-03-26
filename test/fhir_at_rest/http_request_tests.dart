@@ -1,8 +1,8 @@
 // ignore_for_file: avoid_print
 
 // Package imports:
-import 'package:fhir_primitives/fhir_primitives.dart';
 import 'package:fhir_dstu2/fhir_dstu2.dart';
+import 'package:fhir_primitives/fhir_primitives.dart';
 import 'package:test/test.dart';
 
 void httpRequestTests() {
