@@ -4,12 +4,11 @@
 import 'dart:convert';
 
 // Package imports:
-import 'package:fhir_primitives/fhir_primitives.dart';
 import 'package:petitparser/petitparser.dart';
 import 'package:ucum/ucum.dart';
 
 // Project imports:
-import '../dstu2.dart';
+import '../../../fhir_dstu2.dart';
 
 /******************************************************************************
  *  Most of these Lexers specify basic literals as defined in the FHIRPath

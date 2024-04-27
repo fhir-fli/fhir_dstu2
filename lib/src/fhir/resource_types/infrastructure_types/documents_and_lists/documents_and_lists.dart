@@ -6,13 +6,11 @@
 import 'dart:convert';
 
 // Package imports:
-import 'package:fhir_primitives/fhir_primitives.dart';
-import 'package:fhir_yaml/fhir_yaml.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:yaml/yaml.dart';
 
 // Project imports:
-import '../../../dstu2.dart';
+import '../../../../../fhir_dstu2.dart';
 
 part 'documents_and_lists.enums.dart';
 part 'documents_and_lists.freezed.dart';

@@ -79,9 +79,7 @@ class FhirDb {
         /// get that list of types
         final List<String> types = typesBox.get('types') ?? <String>[];
 
-        _types
-            .map((Dstu2ResourceType e) => resourceTypeToStringMap[e]!)
-            .toList();
+        _types.map((Dstu2ResourceType e) => e.toString()).toList();
 
         /// Create a new temporary box to store resources while we are updating the boxes
         /// with a new password
@@ -493,7 +491,8 @@ class FhirDb {
     }
     if (resourceTypeStrings != null) {
       for (final String type in resourceTypeStrings) {
-        final Dstu2ResourceType? resourceType = resourceTypeFromStringMap[type];
+        final Dstu2ResourceType? resourceType =
+            Dstu2ResourceType.fromString(type);
         if (resourceType != null) {
           typeList.add(resourceType);
         }

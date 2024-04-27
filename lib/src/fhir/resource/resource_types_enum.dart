@@ -284,11 +284,10 @@ enum Dstu2ResourceType {
   ValueSet,
 
   @JsonValue('VisionPrescription')
-  VisionPrescription,
-}
+  VisionPrescription;
 
-extension Dstu2ResourceTypeExtension on Dstu2ResourceType {
-  String get asString {
+  @override
+  String toString() {
     switch (this) {
       case Dstu2ResourceType.Account:
         return 'Account';
@@ -576,4 +575,308 @@ extension Dstu2ResourceTypeExtension on Dstu2ResourceType {
         return 'VisionPrescription';
     }
   }
+
+  String toJson() => toString();
+
+  static Dstu2ResourceType? fromString(String string) {
+    switch (string) {
+      case 'Account':
+        return Dstu2ResourceType.Account;
+      case 'AllergyIntolerance':
+        return Dstu2ResourceType.AllergyIntolerance;
+      case 'Appointment':
+        return Dstu2ResourceType.Appointment;
+      case 'AppointmentResponse':
+        return Dstu2ResourceType.AppointmentResponse;
+      case 'AuditEvent':
+        return Dstu2ResourceType.AuditEvent;
+      case 'Basic':
+        return Dstu2ResourceType.Basic;
+      case 'Binary':
+        return Dstu2ResourceType.Binary;
+      case 'BodySite':
+        return Dstu2ResourceType.BodySite;
+      case 'Bundle':
+        return Dstu2ResourceType.Bundle;
+      case 'CapabilityStatement':
+        return Dstu2ResourceType.CapabilityStatement;
+      case 'CarePlan':
+        return Dstu2ResourceType.CarePlan;
+      case 'Claim':
+        return Dstu2ResourceType.Claim;
+      case 'ClaimResponse':
+        return Dstu2ResourceType.ClaimResponse;
+      case 'ClinicalImpression':
+        return Dstu2ResourceType.ClinicalImpression;
+      case 'Communication':
+        return Dstu2ResourceType.Communication;
+      case 'CommunicationRequest':
+        return Dstu2ResourceType.CommunicationRequest;
+      case 'Composition':
+        return Dstu2ResourceType.Composition;
+      case 'ConceptMap':
+        return Dstu2ResourceType.ConceptMap;
+      case 'Condition':
+        return Dstu2ResourceType.Condition;
+      case 'Conformance':
+        return Dstu2ResourceType.Conformance;
+      case 'Contract':
+        return Dstu2ResourceType.Contract;
+      case 'Coverage':
+        return Dstu2ResourceType.Coverage;
+      case 'DataElement':
+        return Dstu2ResourceType.DataElement;
+      case 'DetectedIssue':
+        return Dstu2ResourceType.DetectedIssue;
+      case 'Device':
+        return Dstu2ResourceType.Device;
+      case 'DeviceComponent':
+        return Dstu2ResourceType.DeviceComponent;
+      case 'DeviceMetric':
+        return Dstu2ResourceType.DeviceMetric;
+      case 'DeviceUseRequest':
+        return Dstu2ResourceType.DeviceUseRequest;
+      case 'DeviceUseStatement':
+        return Dstu2ResourceType.DeviceUseStatement;
+      case 'DiagnosticOrder':
+        return Dstu2ResourceType.DiagnosticOrder;
+      case 'DiagnosticReport':
+        return Dstu2ResourceType.DiagnosticReport;
+      case 'DocumentManifest':
+        return Dstu2ResourceType.DocumentManifest;
+      case 'DocumentReference':
+        return Dstu2ResourceType.DocumentReference;
+      case 'EligibilityRequest':
+        return Dstu2ResourceType.EligibilityRequest;
+      case 'EligibilityResponse':
+        return Dstu2ResourceType.EligibilityResponse;
+      case 'Encounter':
+        return Dstu2ResourceType.Encounter;
+      case 'EnrollmentRequest':
+        return Dstu2ResourceType.EnrollmentRequest;
+      case 'EnrollmentResponse':
+        return Dstu2ResourceType.EnrollmentResponse;
+      case 'EpisodeOfCare':
+        return Dstu2ResourceType.EpisodeOfCare;
+      case 'ExplanationOfBenefit':
+        return Dstu2ResourceType.ExplanationOfBenefit;
+      case 'FamilyMemberHistory':
+        return Dstu2ResourceType.FamilyMemberHistory;
+      case 'Flag':
+        return Dstu2ResourceType.Flag;
+      case 'Goal':
+        return Dstu2ResourceType.Goal;
+      case 'Group':
+        return Dstu2ResourceType.Group;
+      case 'HealthcareService':
+        return Dstu2ResourceType.HealthcareService;
+      case 'ImagingObjectSelection':
+        return Dstu2ResourceType.ImagingObjectSelection;
+      case 'ImagingStudy':
+        return Dstu2ResourceType.ImagingStudy;
+      case 'Immunization':
+        return Dstu2ResourceType.Immunization;
+      case 'ImmunizationRecommendation':
+        return Dstu2ResourceType.ImmunizationRecommendation;
+      case 'ImplementationGuide':
+        return Dstu2ResourceType.ImplementationGuide;
+      case 'List':
+        return Dstu2ResourceType.FhirList;
+      case 'Location':
+        return Dstu2ResourceType.Location;
+      case 'Media':
+        return Dstu2ResourceType.Media;
+      case 'Medication':
+        return Dstu2ResourceType.Medication;
+      case 'MedicationAdministration':
+        return Dstu2ResourceType.MedicationAdministration;
+      case 'MedicationDispense':
+        return Dstu2ResourceType.MedicationDispense;
+      case 'MedicationOrder':
+        return Dstu2ResourceType.MedicationOrder;
+      case 'MedicationStatement':
+        return Dstu2ResourceType.MedicationStatement;
+      case 'MessageHeader':
+        return Dstu2ResourceType.MessageHeader;
+      case 'NamingSystem':
+        return Dstu2ResourceType.NamingSystem;
+      case 'NutritionOrder':
+        return Dstu2ResourceType.NutritionOrder;
+      case 'Observation':
+        return Dstu2ResourceType.Observation;
+      case 'OperationDefinition':
+        return Dstu2ResourceType.OperationDefinition;
+      case 'OperationOutcome':
+        return Dstu2ResourceType.OperationOutcome;
+      case 'Order':
+        return Dstu2ResourceType.Order;
+      case 'OrderResponse':
+        return Dstu2ResourceType.OrderResponse;
+      case 'Organization':
+        return Dstu2ResourceType.Organization;
+      case 'Parameters':
+        return Dstu2ResourceType.Parameters;
+      case 'Patient':
+        return Dstu2ResourceType.Patient;
+      case 'PaymentNotice':
+        return Dstu2ResourceType.PaymentNotice;
+      case 'PaymentReconciliation':
+        return Dstu2ResourceType.PaymentReconciliation;
+      case 'Person':
+        return Dstu2ResourceType.Person;
+      case 'Practitioner':
+        return Dstu2ResourceType.Practitioner;
+      case 'Procedure':
+        return Dstu2ResourceType.Procedure;
+      case 'ProcedureRequest':
+        return Dstu2ResourceType.ProcedureRequest;
+      case 'ProcessRequest':
+        return Dstu2ResourceType.ProcessRequest;
+      case 'ProcessResponse':
+        return Dstu2ResourceType.ProcessResponse;
+      case 'Provenance':
+        return Dstu2ResourceType.Provenance;
+      case 'Questionnaire':
+        return Dstu2ResourceType.Questionnaire;
+      case 'QuestionnaireResponse':
+        return Dstu2ResourceType.QuestionnaireResponse;
+      case 'ReferralRequest':
+        return Dstu2ResourceType.ReferralRequest;
+      case 'RelatedPerson':
+        return Dstu2ResourceType.RelatedPerson;
+      case 'RiskAssessment':
+        return Dstu2ResourceType.RiskAssessment;
+      case 'Schedule':
+        return Dstu2ResourceType.Schedule;
+      case 'SearchParameter':
+        return Dstu2ResourceType.SearchParameter;
+      case 'Slot':
+        return Dstu2ResourceType.Slot;
+      case 'Specimen':
+        return Dstu2ResourceType.Specimen;
+      case 'StructureDefinition':
+        return Dstu2ResourceType.StructureDefinition;
+      case 'Subscription':
+        return Dstu2ResourceType.Subscription;
+      case 'Substance':
+        return Dstu2ResourceType.Substance;
+      case 'SupplyDelivery':
+        return Dstu2ResourceType.SupplyDelivery;
+      case 'SupplyRequest':
+        return Dstu2ResourceType.SupplyRequest;
+      case 'TestScript':
+        return Dstu2ResourceType.TestScript;
+      case 'ValueSet':
+        return Dstu2ResourceType.ValueSet;
+      case 'VisionPrescription':
+        return Dstu2ResourceType.VisionPrescription;
+      default:
+        return null;
+    }
+  }
+
+  static Dstu2ResourceType? fromJson(dynamic json) {
+    if (json is String) {
+      return fromString(json);
+    }
+    return null;
+  }
+
+  static List<String> get typesAsStrings => <String>[
+        'Account',
+        'AllergyIntolerance',
+        'Appointment',
+        'AppointmentResponse',
+        'AuditEvent',
+        'Basic',
+        'Binary',
+        'BodySite',
+        'Bundle',
+        'CapabilityStatement',
+        'CarePlan',
+        'Claim',
+        'ClaimResponse',
+        'ClinicalImpression',
+        'Communication',
+        'CommunicationRequest',
+        'Composition',
+        'ConceptMap',
+        'Condition',
+        'Conformance',
+        'Contract',
+        'Coverage',
+        'DataElement',
+        'DetectedIssue',
+        'Device',
+        'DeviceComponent',
+        'DeviceMetric',
+        'DeviceUseRequest',
+        'DeviceUseStatement',
+        'DiagnosticOrder',
+        'DiagnosticReport',
+        'DocumentManifest',
+        'DocumentReference',
+        'EligibilityRequest',
+        'EligibilityResponse',
+        'Encounter',
+        'EnrollmentRequest',
+        'EnrollmentResponse',
+        'EpisodeOfCare',
+        'ExplanationOfBenefit',
+        'FamilyMemberHistory',
+        'Flag',
+        'Goal',
+        'Group',
+        'HealthcareService',
+        'ImagingObjectSelection',
+        'ImagingStudy',
+        'Immunization',
+        'ImmunizationRecommendation',
+        'ImplementationGuide',
+        'List',
+        'Location',
+        'Media',
+        'Medication',
+        'MedicationAdministration',
+        'MedicationDispense',
+        'MedicationOrder',
+        'MedicationStatement',
+        'MessageHeader',
+        'NamingSystem',
+        'NutritionOrder',
+        'Observation',
+        'OperationDefinition',
+        'OperationOutcome',
+        'Order',
+        'OrderResponse',
+        'Organization',
+        'Parameters',
+        'Patient',
+        'PaymentNotice',
+        'PaymentReconciliation',
+        'Person',
+        'Practitioner',
+        'Procedure',
+        'ProcedureRequest',
+        'ProcessRequest',
+        'ProcessResponse',
+        'Provenance',
+        'Questionnaire',
+        'QuestionnaireResponse',
+        'ReferralRequest',
+        'RelatedPerson',
+        'RiskAssessment',
+        'Schedule',
+        'SearchParameter',
+        'Slot',
+        'Specimen',
+        'StructureDefinition',
+        'Subscription',
+        'Substance',
+        'SupplyDelivery',
+        'SupplyRequest',
+        'TestScript',
+        'ValueSet',
+        'VisionPrescription',
+      ];
 }

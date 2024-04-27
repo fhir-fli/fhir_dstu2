@@ -1,8 +1,3 @@
-// Package imports:
-
-// Project imports:
-import 'package:fhir_primitives/fhir_primitives.dart';
-
 import '../../fhir_dstu2.dart';
 
 /// There are usually 3 types of responses from a RESTful request made to a FHIR

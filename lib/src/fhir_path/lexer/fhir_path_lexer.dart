@@ -5,7 +5,7 @@ import 'package:collection/collection.dart';
 import 'package:petitparser/petitparser.dart';
 
 // Project imports:
-import '../dstu2.dart';
+import '../../../fhir_dstu2.dart';
 
 /// Primary lexing function for this library
 Parser<FhirPathParser> lexer() {

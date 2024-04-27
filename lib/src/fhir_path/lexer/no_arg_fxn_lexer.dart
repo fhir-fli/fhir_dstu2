@@ -2,7 +2,7 @@
 import 'package:petitparser/petitparser.dart';
 
 // Project imports:
-import '../dstu2.dart';
+import '../../../fhir_dstu2.dart';
 
 ///*************************************************************************
 ///Functions that take no arguments

@@ -1,11 +1,10 @@
 // ignore_for_file: annotate_overrides, overridden_fields, avoid_dynamic_calls
 
 // Package imports:
-import 'package:fhir_primitives/fhir_primitives.dart';
 import 'package:ucum/ucum.dart';
 
 // Project imports:
-import '../../dstu2.dart';
+import '../../../../fhir_dstu2.dart';
 
 class UnaryNegateParser extends OperatorParser {
   UnaryNegateParser();
@@ -191,7 +190,9 @@ class DivSignParser extends OperatorParser {
           : <dynamic>[];
     } else if (executedBefore.first is ValidatedQuantity &&
         executedAfter.first is ValidatedQuantity) {
-      return ((executedAfter.first as ValidatedQuantity) != 0)
+      return ((executedAfter.first as ValidatedQuantity)
+              .value
+              .equals(UcumDecimal.fromInt(0)))
           ? <dynamic>[
               (executedBefore.first as ValidatedQuantity) /
                   (executedAfter.first as ValidatedQuantity)
@@ -378,22 +379,22 @@ class PlusParser extends OperatorParser {
           operation: '+',
           collection: results);
     } else {
-      switch (executedBefore.first.runtimeType) {
-        case int:
+      switch (executedBefore.first) {
+        case int _:
           {
             if (executedAfter.first is num) {
               return <dynamic>[executedBefore.first + executedAfter.first];
             }
             break;
           }
-        case double:
+        case double _:
           {
             if (executedAfter.first is num) {
               return <dynamic>[executedBefore.first + executedAfter.first];
             }
             break;
           }
-        case ValidatedQuantity:
+        case ValidatedQuantity _:
           {
             if (executedAfter.first is ValidatedQuantity) {
               return <dynamic>[
@@ -411,7 +412,7 @@ class PlusParser extends OperatorParser {
             }
             break;
           }
-        case FhirDateTime:
+        case FhirDateTime _:
           {
             if (executedAfter.first is ValidatedQuantity &&
                 (executedAfter.first as ValidatedQuantity).isDuration) {
@@ -424,7 +425,7 @@ class PlusParser extends OperatorParser {
             }
             break;
           }
-        case FhirDate:
+        case FhirDate _:
           {
             if (executedAfter.first is ValidatedQuantity &&
                 (executedAfter.first as ValidatedQuantity).isDuration) {
@@ -437,7 +438,7 @@ class PlusParser extends OperatorParser {
             }
             break;
           }
-        case FhirTime:
+        case FhirTime _:
           {
             if (executedAfter.first is ValidatedQuantity &&
                 (executedAfter.first as ValidatedQuantity).isDuration) {
@@ -449,7 +450,7 @@ class PlusParser extends OperatorParser {
             }
             break;
           }
-        case String:
+        case String _:
           {
             if (executedAfter.first is String) {
               return <dynamic>[executedBefore.first + executedAfter.first];
@@ -531,8 +532,8 @@ class MinusParser extends OperatorParser {
           operation: '-',
           collection: results);
     } else {
-      switch (executedBefore.first.runtimeType) {
-        case int:
+      switch (executedBefore.first) {
+        case int _:
           {
             if (executedAfter.first is num) {
               return <dynamic>[
@@ -541,7 +542,7 @@ class MinusParser extends OperatorParser {
             }
             break;
           }
-        case double:
+        case double _:
           {
             if (executedAfter.first is num) {
               return <dynamic>[
@@ -550,7 +551,7 @@ class MinusParser extends OperatorParser {
             }
             break;
           }
-        case ValidatedQuantity:
+        case ValidatedQuantity _:
           {
             if (executedAfter.first is ValidatedQuantity) {
               return <dynamic>[
@@ -560,7 +561,7 @@ class MinusParser extends OperatorParser {
             }
             break;
           }
-        case FhirDateTime:
+        case FhirDateTime _:
           {
             if (executedAfter.first is ValidatedQuantity &&
                 (executedAfter.first as ValidatedQuantity).isDuration) {
@@ -573,7 +574,7 @@ class MinusParser extends OperatorParser {
             }
             break;
           }
-        case FhirDate:
+        case FhirDate _:
           {
             if (executedAfter.first is ValidatedQuantity &&
                 (executedAfter.first as ValidatedQuantity).isDuration) {
@@ -586,7 +587,7 @@ class MinusParser extends OperatorParser {
             }
             break;
           }
-        case FhirTime:
+        case FhirTime _:
           {
             if (executedAfter.first is ValidatedQuantity &&
                 (executedAfter.first as ValidatedQuantity).isDuration) {
@@ -598,7 +599,7 @@ class MinusParser extends OperatorParser {
             }
             break;
           }
-        case String:
+        case String _:
           {
             if (executedAfter.first is ValidatedQuantity &&
                 (executedAfter.first as ValidatedQuantity).isDuration) {
