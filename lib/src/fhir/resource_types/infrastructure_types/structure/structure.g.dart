@@ -88,7 +88,7 @@ _$MediaImpl _$$MediaImplFromJson(Map<String, dynamic> json) => _$MediaImpl(
 
 Map<String, dynamic> _$$MediaImplToJson(_$MediaImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -281,7 +281,7 @@ _$BinaryImpl _$$BinaryImplFromJson(Map<String, dynamic> json) => _$BinaryImpl(
 
 Map<String, dynamic> _$$BinaryImplToJson(_$BinaryImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -365,7 +365,7 @@ _$BundleImpl _$$BundleImplFromJson(Map<String, dynamic> json) => _$BundleImpl(
 
 Map<String, dynamic> _$$BundleImplToJson(_$BundleImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -763,7 +763,7 @@ _$BasicImpl _$$BasicImplFromJson(Map<String, dynamic> json) => _$BasicImpl(
 
 Map<String, dynamic> _$$BasicImplToJson(_$BasicImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {

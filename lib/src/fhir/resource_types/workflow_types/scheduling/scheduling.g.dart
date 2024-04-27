@@ -96,7 +96,7 @@ _$AppointmentImpl _$$AppointmentImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$AppointmentImplToJson(_$AppointmentImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -396,7 +396,7 @@ _$AppointmentResponseImpl _$$AppointmentResponseImplFromJson(
 Map<String, dynamic> _$$AppointmentResponseImplToJson(
     _$AppointmentResponseImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -498,7 +498,7 @@ _$ScheduleImpl _$$ScheduleImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ScheduleImplToJson(_$ScheduleImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -593,7 +593,7 @@ _$SlotImpl _$$SlotImplFromJson(Map<String, dynamic> json) => _$SlotImpl(
 
 Map<String, dynamic> _$$SlotImplToJson(_$SlotImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {

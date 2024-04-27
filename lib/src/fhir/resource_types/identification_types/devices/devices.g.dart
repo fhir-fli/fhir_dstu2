@@ -93,7 +93,7 @@ _$DeviceImpl _$$DeviceImplFromJson(Map<String, dynamic> json) => _$DeviceImpl(
 
 Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -316,7 +316,7 @@ _$DeviceComponentImpl _$$DeviceComponentImplFromJson(
 Map<String, dynamic> _$$DeviceComponentImplToJson(
     _$DeviceComponentImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -487,7 +487,7 @@ _$DeviceMetricImpl _$$DeviceMetricImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$DeviceMetricImplToJson(_$DeviceMetricImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {

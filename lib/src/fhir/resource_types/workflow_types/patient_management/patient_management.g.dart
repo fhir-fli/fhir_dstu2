@@ -106,7 +106,7 @@ _$EncounterImpl _$$EncounterImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$EncounterImplToJson(_$EncounterImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -579,7 +579,7 @@ _$EpisodeOfCareImpl _$$EpisodeOfCareImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$EpisodeOfCareImplToJson(_$EpisodeOfCareImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -810,7 +810,7 @@ _$CommunicationImpl _$$CommunicationImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$CommunicationImplToJson(_$CommunicationImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -966,7 +966,7 @@ _$FlagImpl _$$FlagImplFromJson(Map<String, dynamic> json) => _$FlagImpl(
 
 Map<String, dynamic> _$$FlagImplToJson(_$FlagImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {

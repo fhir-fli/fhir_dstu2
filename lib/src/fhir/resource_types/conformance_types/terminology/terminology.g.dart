@@ -123,7 +123,7 @@ _$ValueSetImpl _$$ValueSetImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ValueSetImplToJson(_$ValueSetImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -1047,7 +1047,7 @@ _$ConceptMapImpl _$$ConceptMapImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ConceptMapImplToJson(_$ConceptMapImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -1389,7 +1389,7 @@ _$NamingSystemImpl _$$NamingSystemImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$NamingSystemImplToJson(_$NamingSystemImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {

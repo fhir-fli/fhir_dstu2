@@ -70,7 +70,7 @@ _$OrganizationImpl _$$OrganizationImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$OrganizationImplToJson(_$OrganizationImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -364,7 +364,7 @@ _$HealthcareServiceImpl _$$HealthcareServiceImplFromJson(
 Map<String, dynamic> _$$HealthcareServiceImplToJson(
     _$HealthcareServiceImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -650,7 +650,7 @@ _$FhirGroupImpl _$$FhirGroupImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$FhirGroupImplToJson(_$FhirGroupImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {

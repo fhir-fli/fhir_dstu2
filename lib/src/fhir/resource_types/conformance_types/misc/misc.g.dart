@@ -120,7 +120,7 @@ _$ImplementationGuideImpl _$$ImplementationGuideImplFromJson(
 Map<String, dynamic> _$$ImplementationGuideImplToJson(
     _$ImplementationGuideImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -682,7 +682,7 @@ _$TestScriptImpl _$$TestScriptImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$TestScriptImplToJson(_$TestScriptImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {

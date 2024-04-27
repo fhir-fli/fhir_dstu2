@@ -145,7 +145,7 @@ _$StructureDefinitionImpl _$$StructureDefinitionImplFromJson(
 Map<String, dynamic> _$$StructureDefinitionImplToJson(
     _$StructureDefinitionImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -561,7 +561,7 @@ _$DataElementImpl _$$DataElementImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$DataElementImplToJson(_$DataElementImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {

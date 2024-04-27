@@ -80,7 +80,7 @@ _$AccountImpl _$$AccountImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$AccountImplToJson(_$AccountImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -348,7 +348,7 @@ _$ClaimImpl _$$ClaimImplFromJson(Map<String, dynamic> json) => _$ClaimImpl(
 
 Map<String, dynamic> _$$ClaimImplToJson(_$ClaimImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -1011,7 +1011,7 @@ _$ClaimResponseImpl _$$ClaimResponseImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ClaimResponseImplToJson(_$ClaimResponseImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Dstu2ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
