@@ -13,6 +13,9 @@ _$AppointmentImpl _$$AppointmentImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.Appointment) ??
           Dstu2ResourceType.Appointment,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -106,6 +109,7 @@ Map<String, dynamic> _$$AppointmentImplToJson(_$AppointmentImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -260,6 +264,9 @@ _$AppointmentParticipantImpl _$$AppointmentParticipantImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       type: (json['type'] as List<dynamic>?)
           ?.map((e) => CodeableConcept.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -294,6 +301,7 @@ Map<String, dynamic> _$$AppointmentParticipantImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('type', instance.type?.map((e) => e.toJson()).toList());
   writeNotNull('actor', instance.actor?.toJson());
   writeNotNull('required', _$ParticipantRequiredEnumMap[instance.required_]);
@@ -330,6 +338,9 @@ _$AppointmentResponseImpl _$$AppointmentResponseImplFromJson(
             unknownValue: Dstu2ResourceType.AppointmentResponse) ??
         Dstu2ResourceType.AppointmentResponse,
     id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+    fhirComments: (json['fhir_comments'] as List<dynamic>?)
+        ?.map((e) => e as String)
+        .toList(),
     meta: json['meta'] == null
         ? null
         : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -406,6 +417,7 @@ Map<String, dynamic> _$$AppointmentResponseImplToJson(
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -454,6 +466,9 @@ _$ScheduleImpl _$$ScheduleImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.Schedule) ??
           Dstu2ResourceType.Schedule,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -508,6 +523,7 @@ Map<String, dynamic> _$$ScheduleImplToJson(_$ScheduleImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -536,6 +552,9 @@ _$SlotImpl _$$SlotImplFromJson(Map<String, dynamic> json) => _$SlotImpl(
               unknownValue: Dstu2ResourceType.Slot) ??
           Dstu2ResourceType.Slot,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -603,6 +622,7 @@ Map<String, dynamic> _$$SlotImplToJson(_$SlotImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());

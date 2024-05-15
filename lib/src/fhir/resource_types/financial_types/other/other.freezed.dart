@@ -23,6 +23,8 @@ mixin _$ExplanationOfBenefit {
   @JsonKey(unknownEnumValue: Dstu2ResourceType.ExplanationOfBenefit)
   Dstu2ResourceType get resourceType => throw _privateConstructorUsedError;
   FhirId? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   FhirMeta? get meta => throw _privateConstructorUsedError;
   FhirUri? get implicitRules => throw _privateConstructorUsedError;
   @JsonKey(name: '_implicitRules')
@@ -71,6 +73,7 @@ abstract class $ExplanationOfBenefitCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.ExplanationOfBenefit)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -96,15 +99,10 @@ abstract class $ExplanationOfBenefitCopyWith<$Res> {
       Reference? requestOrganization});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
   $ReferenceCopyWith<$Res>? get request;
-  $ElementCopyWith<$Res>? get outcomeElement;
-  $ElementCopyWith<$Res>? get dispositionElement;
   $CodingCopyWith<$Res>? get ruleset;
   $CodingCopyWith<$Res>? get originalRuleset;
-  $ElementCopyWith<$Res>? get createdElement;
   $ReferenceCopyWith<$Res>? get organization;
   $ReferenceCopyWith<$Res>? get requestProvider;
   $ReferenceCopyWith<$Res>? get requestOrganization;
@@ -126,6 +124,7 @@ class _$ExplanationOfBenefitCopyWithImpl<$Res,
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -158,6 +157,10 @@ class _$ExplanationOfBenefitCopyWithImpl<$Res,
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -263,30 +266,6 @@ class _$ExplanationOfBenefitCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -311,30 +290,6 @@ class _$ExplanationOfBenefitCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get outcomeElement {
-    if (_value.outcomeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.outcomeElement!, (value) {
-      return _then(_value.copyWith(outcomeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get dispositionElement {
-    if (_value.dispositionElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.dispositionElement!, (value) {
-      return _then(_value.copyWith(dispositionElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $CodingCopyWith<$Res>? get ruleset {
     if (_value.ruleset == null) {
       return null;
@@ -354,18 +309,6 @@ class _$ExplanationOfBenefitCopyWithImpl<$Res,
 
     return $CodingCopyWith<$Res>(_value.originalRuleset!, (value) {
       return _then(_value.copyWith(originalRuleset: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get createdElement {
-    if (_value.createdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.createdElement!, (value) {
-      return _then(_value.copyWith(createdElement: value) as $Val);
     });
   }
 
@@ -418,6 +361,7 @@ abstract class _$$ExplanationOfBenefitImplCopyWith<$Res>
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.ExplanationOfBenefit)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -445,23 +389,13 @@ abstract class _$$ExplanationOfBenefitImplCopyWith<$Res>
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
   @override
   $ReferenceCopyWith<$Res>? get request;
   @override
-  $ElementCopyWith<$Res>? get outcomeElement;
-  @override
-  $ElementCopyWith<$Res>? get dispositionElement;
-  @override
   $CodingCopyWith<$Res>? get ruleset;
   @override
   $CodingCopyWith<$Res>? get originalRuleset;
-  @override
-  $ElementCopyWith<$Res>? get createdElement;
   @override
   $ReferenceCopyWith<$Res>? get organization;
   @override
@@ -483,6 +417,7 @@ class __$$ExplanationOfBenefitImplCopyWithImpl<$Res>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -515,6 +450,10 @@ class __$$ExplanationOfBenefitImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -614,6 +553,7 @@ class _$ExplanationOfBenefitImpl extends _ExplanationOfBenefit {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.ExplanationOfBenefit)
       this.resourceType = Dstu2ResourceType.ExplanationOfBenefit,
       this.id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.meta,
       this.implicitRules,
       @JsonKey(name: '_implicitRules') this.implicitRulesElement,
@@ -637,7 +577,8 @@ class _$ExplanationOfBenefitImpl extends _ExplanationOfBenefit {
       this.organization,
       this.requestProvider,
       this.requestOrganization})
-      : _contained = contained,
+      : _fhirComments = fhirComments,
+        _contained = contained,
         _extension_ = extension_,
         _modifierExtension = modifierExtension,
         _identifier = identifier,
@@ -651,6 +592,17 @@ class _$ExplanationOfBenefitImpl extends _ExplanationOfBenefit {
   final Dstu2ResourceType resourceType;
   @override
   final FhirId? id;
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final FhirMeta? meta;
   @override
@@ -738,7 +690,7 @@ class _$ExplanationOfBenefitImpl extends _ExplanationOfBenefit {
 
   @override
   String toString() {
-    return 'ExplanationOfBenefit(resourceType: $resourceType, id: $id, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, request: $request, outcome: $outcome, outcomeElement: $outcomeElement, disposition: $disposition, dispositionElement: $dispositionElement, ruleset: $ruleset, originalRuleset: $originalRuleset, created: $created, createdElement: $createdElement, organization: $organization, requestProvider: $requestProvider, requestOrganization: $requestOrganization)';
+    return 'ExplanationOfBenefit(resourceType: $resourceType, id: $id, fhirComments: $fhirComments, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, request: $request, outcome: $outcome, outcomeElement: $outcomeElement, disposition: $disposition, dispositionElement: $dispositionElement, ruleset: $ruleset, originalRuleset: $originalRuleset, created: $created, createdElement: $createdElement, organization: $organization, requestProvider: $requestProvider, requestOrganization: $requestOrganization)';
   }
 
   @override
@@ -749,6 +701,8 @@ class _$ExplanationOfBenefitImpl extends _ExplanationOfBenefit {
             (identical(other.resourceType, resourceType) ||
                 other.resourceType == resourceType) &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.meta, meta) || other.meta == meta) &&
             (identical(other.implicitRules, implicitRules) ||
                 other.implicitRules == implicitRules) &&
@@ -795,6 +749,7 @@ class _$ExplanationOfBenefitImpl extends _ExplanationOfBenefit {
         runtimeType,
         resourceType,
         id,
+        const DeepCollectionEquality().hash(_fhirComments),
         meta,
         implicitRules,
         implicitRulesElement,
@@ -840,6 +795,7 @@ abstract class _ExplanationOfBenefit extends ExplanationOfBenefit {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.ExplanationOfBenefit)
       final Dstu2ResourceType resourceType,
       final FhirId? id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final FhirMeta? meta,
       final FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') final Element? implicitRulesElement,
@@ -873,6 +829,9 @@ abstract class _ExplanationOfBenefit extends ExplanationOfBenefit {
   Dstu2ResourceType get resourceType;
   @override
   FhirId? get id;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   FhirMeta? get meta;
   @override

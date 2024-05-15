@@ -24,6 +24,7 @@ class Composition with Resource, _$Composition {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.Composition)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -53,6 +54,9 @@ class Composition with Resource, _$Composition {
     Reference? encounter,
     List<CompositionSection>? section,
   }) = _Composition;
+
+  @override
+  String get fhirType => 'Composition';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory Composition.fromYaml(dynamic yaml) => yaml is String
@@ -88,12 +92,13 @@ class Composition with Resource, _$Composition {
 }
 
 @freezed
-class CompositionAttester with _$CompositionAttester {
+class CompositionAttester with BackboneType, _$CompositionAttester {
   const CompositionAttester._();
   const factory CompositionAttester({
     FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     required List<AttesterMode> mode,
     @JsonKey(name: '_mode') Element? modeElement,
     FhirDateTime? time,
@@ -101,8 +106,8 @@ class CompositionAttester with _$CompositionAttester {
     Reference? party,
   }) = _CompositionAttester;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'CompositionAttester';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory CompositionAttester.fromYaml(dynamic yaml) => yaml is String
@@ -130,26 +135,23 @@ class CompositionAttester with _$CompositionAttester {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class CompositionEvent with _$CompositionEvent {
+class CompositionEvent with BackboneType, _$CompositionEvent {
   const CompositionEvent._();
   const factory CompositionEvent({
     FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     List<CodeableConcept>? code,
     Period? period,
     List<Reference>? detail,
   }) = _CompositionEvent;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'CompositionEvent';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory CompositionEvent.fromYaml(dynamic yaml) => yaml is String
@@ -177,14 +179,10 @@ class CompositionEvent with _$CompositionEvent {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class CompositionSection with _$CompositionSection {
+class CompositionSection with BackboneType, _$CompositionSection {
   const CompositionSection._();
   const factory CompositionSection({
     FhirId? id,
@@ -203,8 +201,8 @@ class CompositionSection with _$CompositionSection {
     List<CompositionSection>? section,
   }) = _CompositionSection;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'CompositionSection';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory CompositionSection.fromYaml(dynamic yaml) => yaml is String
@@ -232,10 +230,6 @@ class CompositionSection with _$CompositionSection {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -246,6 +240,7 @@ class DocumentManifest with Resource, _$DocumentManifest {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.DocumentManifest)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -273,6 +268,9 @@ class DocumentManifest with Resource, _$DocumentManifest {
     required List<DocumentManifestContent> content,
     List<DocumentManifestRelated>? related,
   }) = _DocumentManifest;
+
+  @override
+  String get fhirType => 'DocumentManifest';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DocumentManifest.fromYaml(dynamic yaml) => yaml is String
@@ -308,18 +306,19 @@ class DocumentManifest with Resource, _$DocumentManifest {
 }
 
 @freezed
-class DocumentManifestContent with _$DocumentManifestContent {
+class DocumentManifestContent with BackboneType, _$DocumentManifestContent {
   const DocumentManifestContent._();
   const factory DocumentManifestContent({
     FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     Attachment? pAttachment,
     Reference? pReference,
   }) = _DocumentManifestContent;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'DocumentManifestContent';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DocumentManifestContent.fromYaml(dynamic yaml) => yaml is String
@@ -347,25 +346,22 @@ class DocumentManifestContent with _$DocumentManifestContent {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class DocumentManifestRelated with _$DocumentManifestRelated {
+class DocumentManifestRelated with BackboneType, _$DocumentManifestRelated {
   const DocumentManifestRelated._();
   const factory DocumentManifestRelated({
     FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     Identifier? identifier,
     Reference? ref,
   }) = _DocumentManifestRelated;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'DocumentManifestRelated';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DocumentManifestRelated.fromYaml(dynamic yaml) => yaml is String
@@ -393,10 +389,6 @@ class DocumentManifestRelated with _$DocumentManifestRelated {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -407,6 +399,7 @@ class DocumentReference with Resource, _$DocumentReference {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.DocumentReference)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -438,6 +431,9 @@ class DocumentReference with Resource, _$DocumentReference {
     required List<DocumentReferenceContent> content,
     DocumentReferenceContext? context,
   }) = _DocumentReference;
+
+  @override
+  String get fhirType => 'DocumentReference';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DocumentReference.fromYaml(dynamic yaml) => yaml is String
@@ -473,20 +469,22 @@ class DocumentReference with Resource, _$DocumentReference {
 }
 
 @freezed
-class DocumentReferenceRelatesTo with _$DocumentReferenceRelatesTo {
+class DocumentReferenceRelatesTo
+    with BackboneType, _$DocumentReferenceRelatesTo {
   const DocumentReferenceRelatesTo._();
   const factory DocumentReferenceRelatesTo({
     FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     @JsonKey(unknownEnumValue: RelatesToCode.unknown)
     required RelatesToCode code,
     @JsonKey(name: '_code') Element? codeElement,
     required Reference target,
   }) = _DocumentReferenceRelatesTo;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'DocumentReferenceRelatesTo';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DocumentReferenceRelatesTo.fromYaml(dynamic yaml) => yaml is String
@@ -514,25 +512,22 @@ class DocumentReferenceRelatesTo with _$DocumentReferenceRelatesTo {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class DocumentReferenceContent with _$DocumentReferenceContent {
+class DocumentReferenceContent with BackboneType, _$DocumentReferenceContent {
   const DocumentReferenceContent._();
   const factory DocumentReferenceContent({
     FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     required Attachment attachment,
     List<Coding>? format,
   }) = _DocumentReferenceContent;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'DocumentReferenceContent';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DocumentReferenceContent.fromYaml(dynamic yaml) => yaml is String
@@ -560,19 +555,16 @@ class DocumentReferenceContent with _$DocumentReferenceContent {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class DocumentReferenceContext with _$DocumentReferenceContext {
+class DocumentReferenceContext with BackboneType, _$DocumentReferenceContext {
   const DocumentReferenceContext._();
   const factory DocumentReferenceContext({
     FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     Reference? encounter,
     List<CodeableConcept>? event,
     Period? period,
@@ -582,8 +574,8 @@ class DocumentReferenceContext with _$DocumentReferenceContext {
     List<DocumentReferenceContextRelated>? related,
   }) = _DocumentReferenceContext;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'DocumentReferenceContext';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DocumentReferenceContext.fromYaml(dynamic yaml) => yaml is String
@@ -611,25 +603,23 @@ class DocumentReferenceContext with _$DocumentReferenceContext {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class DocumentReferenceContextRelated with _$DocumentReferenceContextRelated {
+class DocumentReferenceContextRelated
+    with BackboneType, _$DocumentReferenceContextRelated {
   const DocumentReferenceContextRelated._();
   const factory DocumentReferenceContextRelated({
     FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     Identifier? identifier,
     Reference? ref,
   }) = _DocumentReferenceContextRelated;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'DocumentReferenceContextRelated';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DocumentReferenceContextRelated.fromYaml(dynamic yaml) => yaml
@@ -658,10 +648,6 @@ class DocumentReferenceContextRelated with _$DocumentReferenceContextRelated {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -672,6 +658,7 @@ class FhirList with Resource, _$FhirList {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.FhirList)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -699,6 +686,9 @@ class FhirList with Resource, _$FhirList {
     List<FhirListEntry>? entry,
     CodeableConcept? emptyReason,
   }) = _FhirList;
+
+  @override
+  String get fhirType => 'FhirList';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory FhirList.fromYaml(dynamic yaml) => yaml is String
@@ -734,7 +724,7 @@ class FhirList with Resource, _$FhirList {
 }
 
 @freezed
-class FhirListEntry with _$FhirListEntry {
+class FhirListEntry with BackboneType, _$FhirListEntry {
   const FhirListEntry._();
   const factory FhirListEntry({
     FhirId? id,
@@ -749,8 +739,8 @@ class FhirListEntry with _$FhirListEntry {
     required Reference item,
   }) = _FhirListEntry;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'FhirListEntry';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory FhirListEntry.fromYaml(dynamic yaml) => yaml is String
@@ -778,8 +768,4 @@ class FhirListEntry with _$FhirListEntry {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }

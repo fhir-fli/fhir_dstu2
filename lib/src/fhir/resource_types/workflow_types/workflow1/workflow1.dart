@@ -22,6 +22,7 @@ class Order with Resource, _$Order {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.Order)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -41,6 +42,9 @@ class Order with Resource, _$Order {
     OrderWhen? when,
     required List<Reference> detail,
   }) = _Order;
+
+  @override
+  String get fhirType => 'Order';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory Order.fromYaml(dynamic yaml) => yaml is String
@@ -74,7 +78,7 @@ class Order with Resource, _$Order {
 }
 
 @freezed
-class OrderWhen with _$OrderWhen {
+class OrderWhen with BackboneType, _$OrderWhen {
   const OrderWhen._();
   const factory OrderWhen({
     FhirId? id,
@@ -85,8 +89,8 @@ class OrderWhen with _$OrderWhen {
     Timing? schedule,
   }) = _OrderWhen;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'OrderWhen';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory OrderWhen.fromYaml(dynamic yaml) => yaml is String
@@ -114,10 +118,6 @@ class OrderWhen with _$OrderWhen {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -128,6 +128,7 @@ class OrderResponse with Resource, _$OrderResponse {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.OrderResponse)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -147,6 +148,9 @@ class OrderResponse with Resource, _$OrderResponse {
     String? description,
     List<Reference>? fulfillment,
   }) = _OrderResponse;
+
+  @override
+  String get fhirType => 'OrderResponse';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory OrderResponse.fromYaml(dynamic yaml) => yaml is String
@@ -189,6 +193,7 @@ class CommunicationRequest with Resource, _$CommunicationRequest {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.CommunicationRequest)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -217,6 +222,9 @@ class CommunicationRequest with Resource, _$CommunicationRequest {
     CodeableConcept? priority,
     @JsonKey(name: '_priority') Element? priorityElement,
   }) = _CommunicationRequest;
+
+  @override
+  String get fhirType => 'CommunicationRequest';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory CommunicationRequest.fromYaml(dynamic yaml) => yaml is String
@@ -252,20 +260,22 @@ class CommunicationRequest with Resource, _$CommunicationRequest {
 }
 
 @freezed
-class CommunicationRequestPayload with _$CommunicationRequestPayload {
+class CommunicationRequestPayload
+    with BackboneType, _$CommunicationRequestPayload {
   const CommunicationRequestPayload._();
   const factory CommunicationRequestPayload({
     FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     String? contentString,
     @JsonKey(name: '_contentString') Element? contentStringElement,
     Attachment? contentAttachment,
     Reference? contentReference,
   }) = _CommunicationRequestPayload;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'CommunicationRequestPayload';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory CommunicationRequestPayload.fromYaml(dynamic yaml) => yaml is String
@@ -293,10 +303,6 @@ class CommunicationRequestPayload with _$CommunicationRequestPayload {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -307,6 +313,7 @@ class DeviceUseRequest with Resource, _$DeviceUseRequest {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.DeviceUseRequest)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -337,6 +344,9 @@ class DeviceUseRequest with Resource, _$DeviceUseRequest {
     DeviceUseRequestPriority? priority,
     @JsonKey(name: '_priority') Element? priorityElement,
   }) = _DeviceUseRequest;
+
+  @override
+  String get fhirType => 'DeviceUseRequest';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DeviceUseRequest.fromYaml(dynamic yaml) => yaml is String
@@ -379,6 +389,7 @@ class DeviceUseStatement with Resource, _$DeviceUseStatement {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.DeviceUseStatement)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -403,6 +414,9 @@ class DeviceUseStatement with Resource, _$DeviceUseStatement {
     FhirDateTime? timingDateTime,
     @JsonKey(name: '_timingDateTime') Element? timingDateTimeElement,
   }) = _DeviceUseStatement;
+
+  @override
+  String get fhirType => 'DeviceUseStatement';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DeviceUseStatement.fromYaml(dynamic yaml) => yaml is String

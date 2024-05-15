@@ -13,6 +13,9 @@ _$MessageHeaderImpl _$$MessageHeaderImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.MessageHeader) ??
           Dstu2ResourceType.MessageHeader,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -83,6 +86,7 @@ Map<String, dynamic> _$$MessageHeaderImplToJson(_$MessageHeaderImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -218,6 +222,9 @@ _$MessageHeaderResponseImpl _$$MessageHeaderResponseImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       identifier: FhirId.fromJson(json['identifier']),
       identifierElement: json['_identifier'] == null
           ? null
@@ -247,6 +254,7 @@ Map<String, dynamic> _$$MessageHeaderResponseImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['identifier'] = instance.identifier.toJson();
   writeNotNull('_identifier', instance.identifierElement?.toJson());
   val['code'] = _$ResponseCodeEnumMap[instance.code]!;
@@ -271,6 +279,9 @@ _$MessageHeaderSourceImpl _$$MessageHeaderSourceImplFromJson(
           .toList(),
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
       name: json['name'] as String?,
       nameElement: json['_name'] == null
@@ -308,6 +319,7 @@ Map<String, dynamic> _$$MessageHeaderSourceImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('name', instance.name);
   writeNotNull('_name', instance.nameElement?.toJson());
   writeNotNull('software', instance.software);
@@ -329,6 +341,9 @@ _$MessageHeaderDestinationImpl _$$MessageHeaderDestinationImplFromJson(
           .toList(),
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
       name: json['name'] as String?,
       nameElement: json['_name'] == null
@@ -358,6 +373,7 @@ Map<String, dynamic> _$$MessageHeaderDestinationImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('name', instance.name);
   writeNotNull('_name', instance.nameElement?.toJson());
   writeNotNull('target', instance.target?.toJson());
@@ -374,6 +390,9 @@ _$OperationOutcomeImpl _$$OperationOutcomeImplFromJson(
               unknownValue: Dstu2ResourceType.OperationOutcome) ??
           Dstu2ResourceType.OperationOutcome,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       idElement: json['_id'] == null
           ? null
           : Element.fromJson(json['_id'] as Map<String, dynamic>),
@@ -421,6 +440,7 @@ Map<String, dynamic> _$$OperationOutcomeImplToJson(
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('_id', instance.idElement?.toJson());
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
@@ -447,6 +467,9 @@ _$OperationOutcomeIssueImpl _$$OperationOutcomeIssueImplFromJson(
           .toList(),
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
       severity: $enumDecode(_$IssueSeverityEnumMap, json['severity'],
           unknownValue: IssueSeverity.unknown),
@@ -475,6 +498,7 @@ Map<String, dynamic> _$$OperationOutcomeIssueImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['severity'] = _$IssueSeverityEnumMap[instance.severity]!;
   val['code'] = instance.code.toJson();
   writeNotNull('details', instance.details?.toJson());
@@ -498,6 +522,9 @@ _$ParametersImpl _$$ParametersImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.Parameters) ??
           Dstu2ResourceType.Parameters,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -541,6 +568,7 @@ Map<String, dynamic> _$$ParametersImplToJson(_$ParametersImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -567,6 +595,9 @@ _$ParametersParameterImpl _$$ParametersParameterImplFromJson(
           .toList(),
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
       name: json['name'] as String,
       nameElement: json['_name'] == null
@@ -696,6 +727,7 @@ Map<String, dynamic> _$$ParametersParameterImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['name'] = instance.name;
   writeNotNull('_name', instance.nameElement?.toJson());
   writeNotNull('valueInteger', instance.valueInteger?.toJson());
@@ -744,6 +776,9 @@ _$SubscriptionImpl _$$SubscriptionImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.Subscription) ??
           Dstu2ResourceType.Subscription,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -815,6 +850,7 @@ Map<String, dynamic> _$$SubscriptionImplToJson(_$SubscriptionImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -861,6 +897,9 @@ _$SubscriptionChannelImpl _$$SubscriptionChannelImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       type: $enumDecode(_$ChannelTypeEnumMap, json['type'],
           unknownValue: ChannelType.unknown),
       typeElement: json['_type'] == null
@@ -897,6 +936,7 @@ Map<String, dynamic> _$$SubscriptionChannelImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['type'] = _$ChannelTypeEnumMap[instance.type]!;
   writeNotNull('_type', instance.typeElement?.toJson());
   writeNotNull('endpoint', instance.endpoint?.toJson());

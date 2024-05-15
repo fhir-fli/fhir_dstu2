@@ -13,6 +13,9 @@ _$PaymentNoticeImpl _$$PaymentNoticeImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.PaymentNotice) ??
           Dstu2ResourceType.PaymentNotice,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -85,6 +88,7 @@ Map<String, dynamic> _$$PaymentNoticeImplToJson(_$PaymentNoticeImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -218,6 +222,9 @@ _$PaymentReconciliationImpl _$$PaymentReconciliationImplFromJson(
               unknownValue: Dstu2ResourceType.PaymentReconciliation) ??
           Dstu2ResourceType.PaymentReconciliation,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -312,6 +319,7 @@ Map<String, dynamic> _$$PaymentReconciliationImplToJson(
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -363,6 +371,9 @@ _$PaymentReconciliationDetailImpl _$$PaymentReconciliationDetailImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       type: Coding.fromJson(json['type'] as Map<String, dynamic>),
       request: json['request'] == null
           ? null
@@ -402,6 +413,7 @@ Map<String, dynamic> _$$PaymentReconciliationDetailImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['type'] = instance.type.toJson();
   writeNotNull('request', instance.request?.toJson());
   writeNotNull('responce', instance.responce?.toJson());
@@ -422,6 +434,9 @@ _$PaymentReconciliationNoteImpl _$$PaymentReconciliationNoteImplFromJson(
           .toList(),
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
       type: json['type'] == null
           ? null
@@ -450,6 +465,7 @@ Map<String, dynamic> _$$PaymentReconciliationNoteImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('type', instance.type?.toJson());
   writeNotNull('_type', instance.typeElement?.toJson());
   writeNotNull('text', instance.text);

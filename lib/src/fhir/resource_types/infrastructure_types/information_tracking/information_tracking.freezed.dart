@@ -23,6 +23,8 @@ mixin _$Questionnaire {
   @JsonKey(unknownEnumValue: Dstu2ResourceType.Questionnaire)
   Dstu2ResourceType get resourceType => throw _privateConstructorUsedError;
   FhirId? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   @JsonKey(name: '_id')
   Element? get idElement => throw _privateConstructorUsedError;
   FhirMeta? get meta => throw _privateConstructorUsedError;
@@ -74,6 +76,7 @@ abstract class $QuestionnaireCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Questionnaire)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       @JsonKey(name: '_id') Element? idElement,
       FhirMeta? meta,
       FhirUri? implicitRules,
@@ -99,15 +102,8 @@ abstract class $QuestionnaireCopyWith<$Res> {
       @JsonKey(name: '_subjectType') List<Element?>? subjectTypeElement,
       QuestionnaireGroup group});
 
-  $ElementCopyWith<$Res>? get idElement;
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
-  $ElementCopyWith<$Res>? get versionElement;
-  $ElementCopyWith<$Res>? get statusElement;
-  $ElementCopyWith<$Res>? get dateElement;
-  $ElementCopyWith<$Res>? get publisherElement;
   $QuestionnaireGroupCopyWith<$Res> get group;
 }
 
@@ -126,6 +122,7 @@ class _$QuestionnaireCopyWithImpl<$Res, $Val extends Questionnaire>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? idElement = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
@@ -159,6 +156,10 @@ class _$QuestionnaireCopyWithImpl<$Res, $Val extends Questionnaire>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       idElement: freezed == idElement
           ? _value.idElement
           : idElement // ignore: cast_nullable_to_non_nullable
@@ -256,18 +257,6 @@ class _$QuestionnaireCopyWithImpl<$Res, $Val extends Questionnaire>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get idElement {
-    if (_value.idElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.idElement!, (value) {
-      return _then(_value.copyWith(idElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $FhirMetaCopyWith<$Res>? get meta {
     if (_value.meta == null) {
       return null;
@@ -280,30 +269,6 @@ class _$QuestionnaireCopyWithImpl<$Res, $Val extends Questionnaire>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -311,54 +276,6 @@ class _$QuestionnaireCopyWithImpl<$Res, $Val extends Questionnaire>
 
     return $NarrativeCopyWith<$Res>(_value.text!, (value) {
       return _then(_value.copyWith(text: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get versionElement {
-    if (_value.versionElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.versionElement!, (value) {
-      return _then(_value.copyWith(versionElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get dateElement {
-    if (_value.dateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.dateElement!, (value) {
-      return _then(_value.copyWith(dateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get publisherElement {
-    if (_value.publisherElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.publisherElement!, (value) {
-      return _then(_value.copyWith(publisherElement: value) as $Val);
     });
   }
 
@@ -383,6 +300,7 @@ abstract class _$$QuestionnaireImplCopyWith<$Res>
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Questionnaire)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       @JsonKey(name: '_id') Element? idElement,
       FhirMeta? meta,
       FhirUri? implicitRules,
@@ -409,23 +327,9 @@ abstract class _$$QuestionnaireImplCopyWith<$Res>
       QuestionnaireGroup group});
 
   @override
-  $ElementCopyWith<$Res>? get idElement;
-  @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
-  @override
-  $ElementCopyWith<$Res>? get versionElement;
-  @override
-  $ElementCopyWith<$Res>? get statusElement;
-  @override
-  $ElementCopyWith<$Res>? get dateElement;
-  @override
-  $ElementCopyWith<$Res>? get publisherElement;
   @override
   $QuestionnaireGroupCopyWith<$Res> get group;
 }
@@ -443,6 +347,7 @@ class __$$QuestionnaireImplCopyWithImpl<$Res>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? idElement = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
@@ -476,6 +381,10 @@ class __$$QuestionnaireImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       idElement: freezed == idElement
           ? _value.idElement
           : idElement // ignore: cast_nullable_to_non_nullable
@@ -579,6 +488,7 @@ class _$QuestionnaireImpl extends _Questionnaire {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Questionnaire)
       this.resourceType = Dstu2ResourceType.Questionnaire,
       this.id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       @JsonKey(name: '_id') this.idElement,
       this.meta,
       this.implicitRules,
@@ -603,7 +513,8 @@ class _$QuestionnaireImpl extends _Questionnaire {
       final List<FhirCode>? subjectType,
       @JsonKey(name: '_subjectType') final List<Element?>? subjectTypeElement,
       required this.group})
-      : _contained = contained,
+      : _fhirComments = fhirComments,
+        _contained = contained,
         _extension_ = extension_,
         _modifierExtension = modifierExtension,
         _identifier = identifier,
@@ -620,6 +531,17 @@ class _$QuestionnaireImpl extends _Questionnaire {
   final Dstu2ResourceType resourceType;
   @override
   final FhirId? id;
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: '_id')
   final Element? idElement;
@@ -737,7 +659,7 @@ class _$QuestionnaireImpl extends _Questionnaire {
 
   @override
   String toString() {
-    return 'Questionnaire(resourceType: $resourceType, id: $id, idElement: $idElement, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, version: $version, versionElement: $versionElement, status: $status, statusElement: $statusElement, date: $date, dateElement: $dateElement, publisher: $publisher, publisherElement: $publisherElement, telecom: $telecom, subjectType: $subjectType, subjectTypeElement: $subjectTypeElement, group: $group)';
+    return 'Questionnaire(resourceType: $resourceType, id: $id, fhirComments: $fhirComments, idElement: $idElement, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, version: $version, versionElement: $versionElement, status: $status, statusElement: $statusElement, date: $date, dateElement: $dateElement, publisher: $publisher, publisherElement: $publisherElement, telecom: $telecom, subjectType: $subjectType, subjectTypeElement: $subjectTypeElement, group: $group)';
   }
 
   @override
@@ -748,6 +670,8 @@ class _$QuestionnaireImpl extends _Questionnaire {
             (identical(other.resourceType, resourceType) ||
                 other.resourceType == resourceType) &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.idElement, idElement) ||
                 other.idElement == idElement) &&
             (identical(other.meta, meta) || other.meta == meta) &&
@@ -795,6 +719,7 @@ class _$QuestionnaireImpl extends _Questionnaire {
         runtimeType,
         resourceType,
         id,
+        const DeepCollectionEquality().hash(_fhirComments),
         idElement,
         meta,
         implicitRules,
@@ -839,6 +764,7 @@ abstract class _Questionnaire extends Questionnaire {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Questionnaire)
       final Dstu2ResourceType resourceType,
       final FhirId? id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       @JsonKey(name: '_id') final Element? idElement,
       final FhirMeta? meta,
       final FhirUri? implicitRules,
@@ -873,6 +799,9 @@ abstract class _Questionnaire extends Questionnaire {
   Dstu2ResourceType get resourceType;
   @override
   FhirId? get id;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   @JsonKey(name: '_id')
   Element? get idElement;
@@ -990,9 +919,6 @@ abstract class $QuestionnaireGroupCopyWith<$Res> {
       FhirBoolean? repeats,
       List<QuestionnaireGroup>? group,
       List<QuestionnaireGroupQuestion>? question});
-
-  $ElementCopyWith<$Res>? get linkIdElement;
-  $ElementCopyWith<$Res>? get titleElement;
 }
 
 /// @nodoc
@@ -1082,30 +1008,6 @@ class _$QuestionnaireGroupCopyWithImpl<$Res, $Val extends QuestionnaireGroup>
               as List<QuestionnaireGroupQuestion>?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get linkIdElement {
-    if (_value.linkIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.linkIdElement!, (value) {
-      return _then(_value.copyWith(linkIdElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get titleElement {
-    if (_value.titleElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.titleElement!, (value) {
-      return _then(_value.copyWith(titleElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -1131,11 +1033,6 @@ abstract class _$$QuestionnaireGroupImplCopyWith<$Res>
       FhirBoolean? repeats,
       List<QuestionnaireGroup>? group,
       List<QuestionnaireGroupQuestion>? question});
-
-  @override
-  $ElementCopyWith<$Res>? get linkIdElement;
-  @override
-  $ElementCopyWith<$Res>? get titleElement;
 }
 
 /// @nodoc
@@ -1520,7 +1417,6 @@ abstract class $QuestionnaireGroupQuestionCopyWith<$Res> {
       List<Coding>? option,
       List<QuestionnaireGroup>? group});
 
-  $ElementCopyWith<$Res>? get linkIdElement;
   $ReferenceCopyWith<$Res>? get options;
 }
 
@@ -1615,18 +1511,6 @@ class _$QuestionnaireGroupQuestionCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get linkIdElement {
-    if (_value.linkIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.linkIdElement!, (value) {
-      return _then(_value.copyWith(linkIdElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get options {
     if (_value.options == null) {
       return null;
@@ -1663,8 +1547,6 @@ abstract class _$$QuestionnaireGroupQuestionImplCopyWith<$Res>
       List<Coding>? option,
       List<QuestionnaireGroup>? group});
 
-  @override
-  $ElementCopyWith<$Res>? get linkIdElement;
   @override
   $ReferenceCopyWith<$Res>? get options;
 }
@@ -2006,6 +1888,8 @@ mixin _$QuestionnaireResponse {
   @JsonKey(unknownEnumValue: Dstu2ResourceType.QuestionnaireResponse)
   Dstu2ResourceType get resourceType => throw _privateConstructorUsedError;
   FhirId? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   @JsonKey(name: '_id')
   Element? get idElement => throw _privateConstructorUsedError;
   FhirMeta? get meta => throw _privateConstructorUsedError;
@@ -2053,6 +1937,7 @@ abstract class $QuestionnaireResponseCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.QuestionnaireResponse)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       @JsonKey(name: '_id') Element? idElement,
       FhirMeta? meta,
       FhirUri? implicitRules,
@@ -2077,17 +1962,12 @@ abstract class $QuestionnaireResponseCopyWith<$Res> {
       Reference? encounter,
       QuestionnaireResponseGroup? group});
 
-  $ElementCopyWith<$Res>? get idElement;
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
   $IdentifierCopyWith<$Res>? get identifier;
   $ReferenceCopyWith<$Res>? get questionnaire;
-  $ElementCopyWith<$Res>? get statusElement;
   $ReferenceCopyWith<$Res>? get subject;
   $ReferenceCopyWith<$Res>? get author;
-  $ElementCopyWith<$Res>? get authoredElement;
   $ReferenceCopyWith<$Res>? get source;
   $ReferenceCopyWith<$Res>? get encounter;
   $QuestionnaireResponseGroupCopyWith<$Res>? get group;
@@ -2109,6 +1989,7 @@ class _$QuestionnaireResponseCopyWithImpl<$Res,
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? idElement = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
@@ -2140,6 +2021,10 @@ class _$QuestionnaireResponseCopyWithImpl<$Res,
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       idElement: freezed == idElement
           ? _value.idElement
           : idElement // ignore: cast_nullable_to_non_nullable
@@ -2229,18 +2114,6 @@ class _$QuestionnaireResponseCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get idElement {
-    if (_value.idElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.idElement!, (value) {
-      return _then(_value.copyWith(idElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $FhirMetaCopyWith<$Res>? get meta {
     if (_value.meta == null) {
       return null;
@@ -2248,30 +2121,6 @@ class _$QuestionnaireResponseCopyWithImpl<$Res,
 
     return $FhirMetaCopyWith<$Res>(_value.meta!, (value) {
       return _then(_value.copyWith(meta: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
     });
   }
 
@@ -2313,18 +2162,6 @@ class _$QuestionnaireResponseCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get subject {
     if (_value.subject == null) {
       return null;
@@ -2344,18 +2181,6 @@ class _$QuestionnaireResponseCopyWithImpl<$Res,
 
     return $ReferenceCopyWith<$Res>(_value.author!, (value) {
       return _then(_value.copyWith(author: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get authoredElement {
-    if (_value.authoredElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.authoredElement!, (value) {
-      return _then(_value.copyWith(authoredElement: value) as $Val);
     });
   }
 
@@ -2409,6 +2234,7 @@ abstract class _$$QuestionnaireResponseImplCopyWith<$Res>
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.QuestionnaireResponse)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       @JsonKey(name: '_id') Element? idElement,
       FhirMeta? meta,
       FhirUri? implicitRules,
@@ -2434,13 +2260,7 @@ abstract class _$$QuestionnaireResponseImplCopyWith<$Res>
       QuestionnaireResponseGroup? group});
 
   @override
-  $ElementCopyWith<$Res>? get idElement;
-  @override
   $FhirMetaCopyWith<$Res>? get meta;
-  @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
   @override
   $NarrativeCopyWith<$Res>? get text;
   @override
@@ -2448,13 +2268,9 @@ abstract class _$$QuestionnaireResponseImplCopyWith<$Res>
   @override
   $ReferenceCopyWith<$Res>? get questionnaire;
   @override
-  $ElementCopyWith<$Res>? get statusElement;
-  @override
   $ReferenceCopyWith<$Res>? get subject;
   @override
   $ReferenceCopyWith<$Res>? get author;
-  @override
-  $ElementCopyWith<$Res>? get authoredElement;
   @override
   $ReferenceCopyWith<$Res>? get source;
   @override
@@ -2477,6 +2293,7 @@ class __$$QuestionnaireResponseImplCopyWithImpl<$Res>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? idElement = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
@@ -2508,6 +2325,10 @@ class __$$QuestionnaireResponseImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       idElement: freezed == idElement
           ? _value.idElement
           : idElement // ignore: cast_nullable_to_non_nullable
@@ -2603,6 +2424,7 @@ class _$QuestionnaireResponseImpl extends _QuestionnaireResponse {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.QuestionnaireResponse)
       this.resourceType = Dstu2ResourceType.QuestionnaireResponse,
       this.id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       @JsonKey(name: '_id') this.idElement,
       this.meta,
       this.implicitRules,
@@ -2626,7 +2448,8 @@ class _$QuestionnaireResponseImpl extends _QuestionnaireResponse {
       this.source,
       this.encounter,
       this.group})
-      : _contained = contained,
+      : _fhirComments = fhirComments,
+        _contained = contained,
         _extension_ = extension_,
         _modifierExtension = modifierExtension,
         super._();
@@ -2639,6 +2462,17 @@ class _$QuestionnaireResponseImpl extends _QuestionnaireResponse {
   final Dstu2ResourceType resourceType;
   @override
   final FhirId? id;
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: '_id')
   final Element? idElement;
@@ -2717,7 +2551,7 @@ class _$QuestionnaireResponseImpl extends _QuestionnaireResponse {
 
   @override
   String toString() {
-    return 'QuestionnaireResponse(resourceType: $resourceType, id: $id, idElement: $idElement, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, questionnaire: $questionnaire, status: $status, statusElement: $statusElement, subject: $subject, author: $author, authored: $authored, authoredElement: $authoredElement, source: $source, encounter: $encounter, group: $group)';
+    return 'QuestionnaireResponse(resourceType: $resourceType, id: $id, fhirComments: $fhirComments, idElement: $idElement, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, questionnaire: $questionnaire, status: $status, statusElement: $statusElement, subject: $subject, author: $author, authored: $authored, authoredElement: $authoredElement, source: $source, encounter: $encounter, group: $group)';
   }
 
   @override
@@ -2728,6 +2562,8 @@ class _$QuestionnaireResponseImpl extends _QuestionnaireResponse {
             (identical(other.resourceType, resourceType) ||
                 other.resourceType == resourceType) &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.idElement, idElement) ||
                 other.idElement == idElement) &&
             (identical(other.meta, meta) || other.meta == meta) &&
@@ -2771,6 +2607,7 @@ class _$QuestionnaireResponseImpl extends _QuestionnaireResponse {
         runtimeType,
         resourceType,
         id,
+        const DeepCollectionEquality().hash(_fhirComments),
         idElement,
         meta,
         implicitRules,
@@ -2814,6 +2651,7 @@ abstract class _QuestionnaireResponse extends QuestionnaireResponse {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.QuestionnaireResponse)
       final Dstu2ResourceType resourceType,
       final FhirId? id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       @JsonKey(name: '_id') final Element? idElement,
       final FhirMeta? meta,
       final FhirUri? implicitRules,
@@ -2847,6 +2685,9 @@ abstract class _QuestionnaireResponse extends QuestionnaireResponse {
   Dstu2ResourceType get resourceType;
   @override
   FhirId? get id;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   @JsonKey(name: '_id')
   Element? get idElement;
@@ -2957,8 +2798,6 @@ abstract class $QuestionnaireResponseGroupCopyWith<$Res> {
       List<QuestionnaireResponseGroup>? group,
       List<QuestionnaireResponseGroupQuestion>? question});
 
-  $ElementCopyWith<$Res>? get linkIdElement;
-  $ElementCopyWith<$Res>? get titleElement;
   $ReferenceCopyWith<$Res>? get subject;
 }
 
@@ -3043,30 +2882,6 @@ class _$QuestionnaireResponseGroupCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get linkIdElement {
-    if (_value.linkIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.linkIdElement!, (value) {
-      return _then(_value.copyWith(linkIdElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get titleElement {
-    if (_value.titleElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.titleElement!, (value) {
-      return _then(_value.copyWith(titleElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get subject {
     if (_value.subject == null) {
       return null;
@@ -3101,10 +2916,6 @@ abstract class _$$QuestionnaireResponseGroupImplCopyWith<$Res>
       List<QuestionnaireResponseGroup>? group,
       List<QuestionnaireResponseGroupQuestion>? question});
 
-  @override
-  $ElementCopyWith<$Res>? get linkIdElement;
-  @override
-  $ElementCopyWith<$Res>? get titleElement;
   @override
   $ReferenceCopyWith<$Res>? get subject;
 }
@@ -3444,8 +3255,6 @@ abstract class $QuestionnaireResponseGroupQuestionCopyWith<$Res> {
       @JsonKey(name: '_linkId') Element? linkIdElement,
       String? text,
       List<QuestionnaireResponseQuestionAnswer>? answer});
-
-  $ElementCopyWith<$Res>? get linkIdElement;
 }
 
 /// @nodoc
@@ -3506,18 +3315,6 @@ class _$QuestionnaireResponseGroupQuestionCopyWithImpl<$Res,
               as List<QuestionnaireResponseQuestionAnswer>?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get linkIdElement {
-    if (_value.linkIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.linkIdElement!, (value) {
-      return _then(_value.copyWith(linkIdElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -3538,9 +3335,6 @@ abstract class _$$QuestionnaireResponseGroupQuestionImplCopyWith<$Res>
       @JsonKey(name: '_linkId') Element? linkIdElement,
       String? text,
       List<QuestionnaireResponseQuestionAnswer>? answer});
-
-  @override
-  $ElementCopyWith<$Res>? get linkIdElement;
 }
 
 /// @nodoc
@@ -3866,15 +3660,6 @@ abstract class $QuestionnaireResponseQuestionAnswerCopyWith<$Res> {
       Reference? valueReference,
       List<QuestionnaireResponseGroup>? group});
 
-  $ElementCopyWith<$Res>? get valueBooleanElement;
-  $ElementCopyWith<$Res>? get valueDecimalElement;
-  $ElementCopyWith<$Res>? get valueIntegerElement;
-  $ElementCopyWith<$Res>? get valueDateElement;
-  $ElementCopyWith<$Res>? get valueDateTimeElement;
-  $ElementCopyWith<$Res>? get valueInstantElement;
-  $ElementCopyWith<$Res>? get valueTimeElement;
-  $ElementCopyWith<$Res>? get valueStringElement;
-  $ElementCopyWith<$Res>? get valueUriElement;
   $AttachmentCopyWith<$Res>? get valueAttachment;
   $CodingCopyWith<$Res>? get valueCoding;
   $QuantityCopyWith<$Res>? get valueQuantity;
@@ -4037,114 +3822,6 @@ class _$QuestionnaireResponseQuestionAnswerCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueBooleanElement {
-    if (_value.valueBooleanElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueBooleanElement!, (value) {
-      return _then(_value.copyWith(valueBooleanElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueDecimalElement {
-    if (_value.valueDecimalElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueDecimalElement!, (value) {
-      return _then(_value.copyWith(valueDecimalElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueIntegerElement {
-    if (_value.valueIntegerElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueIntegerElement!, (value) {
-      return _then(_value.copyWith(valueIntegerElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueDateElement {
-    if (_value.valueDateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueDateElement!, (value) {
-      return _then(_value.copyWith(valueDateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueDateTimeElement {
-    if (_value.valueDateTimeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueDateTimeElement!, (value) {
-      return _then(_value.copyWith(valueDateTimeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueInstantElement {
-    if (_value.valueInstantElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueInstantElement!, (value) {
-      return _then(_value.copyWith(valueInstantElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueTimeElement {
-    if (_value.valueTimeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueTimeElement!, (value) {
-      return _then(_value.copyWith(valueTimeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueStringElement {
-    if (_value.valueStringElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueStringElement!, (value) {
-      return _then(_value.copyWith(valueStringElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueUriElement {
-    if (_value.valueUriElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueUriElement!, (value) {
-      return _then(_value.copyWith(valueUriElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $AttachmentCopyWith<$Res>? get valueAttachment {
     if (_value.valueAttachment == null) {
       return null;
@@ -4230,24 +3907,6 @@ abstract class _$$QuestionnaireResponseQuestionAnswerImplCopyWith<$Res>
       Reference? valueReference,
       List<QuestionnaireResponseGroup>? group});
 
-  @override
-  $ElementCopyWith<$Res>? get valueBooleanElement;
-  @override
-  $ElementCopyWith<$Res>? get valueDecimalElement;
-  @override
-  $ElementCopyWith<$Res>? get valueIntegerElement;
-  @override
-  $ElementCopyWith<$Res>? get valueDateElement;
-  @override
-  $ElementCopyWith<$Res>? get valueDateTimeElement;
-  @override
-  $ElementCopyWith<$Res>? get valueInstantElement;
-  @override
-  $ElementCopyWith<$Res>? get valueTimeElement;
-  @override
-  $ElementCopyWith<$Res>? get valueStringElement;
-  @override
-  $ElementCopyWith<$Res>? get valueUriElement;
   @override
   $AttachmentCopyWith<$Res>? get valueAttachment;
   @override
@@ -4783,6 +4442,8 @@ mixin _$Provenance {
   @JsonKey(unknownEnumValue: Dstu2ResourceType.Provenance)
   Dstu2ResourceType get resourceType => throw _privateConstructorUsedError;
   FhirId? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   FhirMeta? get meta => throw _privateConstructorUsedError;
   FhirUri? get implicitRules => throw _privateConstructorUsedError;
   @JsonKey(name: '_implicitRules')
@@ -4827,6 +4488,7 @@ abstract class $ProvenanceCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Provenance)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -4850,11 +4512,8 @@ abstract class $ProvenanceCopyWith<$Res> {
       List<Signature>? signature});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
   $PeriodCopyWith<$Res>? get period;
-  $ElementCopyWith<$Res>? get recordedElement;
   $CodeableConceptCopyWith<$Res>? get activity;
   $ReferenceCopyWith<$Res>? get location;
 }
@@ -4874,6 +4533,7 @@ class _$ProvenanceCopyWithImpl<$Res, $Val extends Provenance>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -4905,6 +4565,10 @@ class _$ProvenanceCopyWithImpl<$Res, $Val extends Provenance>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -5006,30 +4670,6 @@ class _$ProvenanceCopyWithImpl<$Res, $Val extends Provenance>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -5049,18 +4689,6 @@ class _$ProvenanceCopyWithImpl<$Res, $Val extends Provenance>
 
     return $PeriodCopyWith<$Res>(_value.period!, (value) {
       return _then(_value.copyWith(period: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get recordedElement {
-    if (_value.recordedElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.recordedElement!, (value) {
-      return _then(_value.copyWith(recordedElement: value) as $Val);
     });
   }
 
@@ -5101,6 +4729,7 @@ abstract class _$$ProvenanceImplCopyWith<$Res>
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Provenance)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -5126,15 +4755,9 @@ abstract class _$$ProvenanceImplCopyWith<$Res>
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
   @override
   $PeriodCopyWith<$Res>? get period;
-  @override
-  $ElementCopyWith<$Res>? get recordedElement;
   @override
   $CodeableConceptCopyWith<$Res>? get activity;
   @override
@@ -5154,6 +4777,7 @@ class __$$ProvenanceImplCopyWithImpl<$Res>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -5185,6 +4809,10 @@ class __$$ProvenanceImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -5280,6 +4908,7 @@ class _$ProvenanceImpl extends _Provenance {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Provenance)
       this.resourceType = Dstu2ResourceType.Provenance,
       this.id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.meta,
       this.implicitRules,
       @JsonKey(name: '_implicitRules') this.implicitRulesElement,
@@ -5301,7 +4930,8 @@ class _$ProvenanceImpl extends _Provenance {
       final List<ProvenanceAgent>? agent,
       final List<ProvenanceEntity>? entity,
       final List<Signature>? signature})
-      : _contained = contained,
+      : _fhirComments = fhirComments,
+        _contained = contained,
         _extension_ = extension_,
         _modifierExtension = modifierExtension,
         _target = target,
@@ -5321,6 +4951,17 @@ class _$ProvenanceImpl extends _Provenance {
   final Dstu2ResourceType resourceType;
   @override
   final FhirId? id;
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final FhirMeta? meta;
   @override
@@ -5449,7 +5090,7 @@ class _$ProvenanceImpl extends _Provenance {
 
   @override
   String toString() {
-    return 'Provenance(resourceType: $resourceType, id: $id, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, target: $target, period: $period, recorded: $recorded, recordedElement: $recordedElement, reason: $reason, activity: $activity, location: $location, policy: $policy, policyElement: $policyElement, agent: $agent, entity: $entity, signature: $signature)';
+    return 'Provenance(resourceType: $resourceType, id: $id, fhirComments: $fhirComments, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, target: $target, period: $period, recorded: $recorded, recordedElement: $recordedElement, reason: $reason, activity: $activity, location: $location, policy: $policy, policyElement: $policyElement, agent: $agent, entity: $entity, signature: $signature)';
   }
 
   @override
@@ -5460,6 +5101,8 @@ class _$ProvenanceImpl extends _Provenance {
             (identical(other.resourceType, resourceType) ||
                 other.resourceType == resourceType) &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.meta, meta) || other.meta == meta) &&
             (identical(other.implicitRules, implicitRules) ||
                 other.implicitRules == implicitRules) &&
@@ -5502,6 +5145,7 @@ class _$ProvenanceImpl extends _Provenance {
         runtimeType,
         resourceType,
         id,
+        const DeepCollectionEquality().hash(_fhirComments),
         meta,
         implicitRules,
         implicitRulesElement,
@@ -5544,6 +5188,7 @@ abstract class _Provenance extends Provenance {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Provenance)
       final Dstu2ResourceType resourceType,
       final FhirId? id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final FhirMeta? meta,
       final FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') final Element? implicitRulesElement,
@@ -5575,6 +5220,9 @@ abstract class _Provenance extends Provenance {
   Dstu2ResourceType get resourceType;
   @override
   FhirId? get id;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   FhirMeta? get meta;
   @override
@@ -6061,9 +5709,7 @@ abstract class $ProvenanceEntityCopyWith<$Res> {
       String? display,
       ProvenanceAgent? agent});
 
-  $ElementCopyWith<$Res>? get roleElement;
   $CodingCopyWith<$Res> get type;
-  $ElementCopyWith<$Res>? get referenceElement;
   $ProvenanceAgentCopyWith<$Res>? get agent;
 }
 
@@ -6142,33 +5788,9 @@ class _$ProvenanceEntityCopyWithImpl<$Res, $Val extends ProvenanceEntity>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get roleElement {
-    if (_value.roleElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.roleElement!, (value) {
-      return _then(_value.copyWith(roleElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $CodingCopyWith<$Res> get type {
     return $CodingCopyWith<$Res>(_value.type, (value) {
       return _then(_value.copyWith(type: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get referenceElement {
-    if (_value.referenceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.referenceElement!, (value) {
-      return _then(_value.copyWith(referenceElement: value) as $Val);
     });
   }
 
@@ -6207,11 +5829,7 @@ abstract class _$$ProvenanceEntityImplCopyWith<$Res>
       ProvenanceAgent? agent});
 
   @override
-  $ElementCopyWith<$Res>? get roleElement;
-  @override
   $CodingCopyWith<$Res> get type;
-  @override
-  $ElementCopyWith<$Res>? get referenceElement;
   @override
   $ProvenanceAgentCopyWith<$Res>? get agent;
 }
@@ -6488,6 +6106,8 @@ mixin _$ProvenanceAgentRelatedAgent {
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   CodeableConcept get type => throw _privateConstructorUsedError;
   FhirUri get target => throw _privateConstructorUsedError;
 
@@ -6509,6 +6129,7 @@ abstract class $ProvenanceAgentRelatedAgentCopyWith<$Res> {
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       CodeableConcept type,
       FhirUri target});
 
@@ -6532,6 +6153,7 @@ class _$ProvenanceAgentRelatedAgentCopyWithImpl<$Res,
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? type = null,
     Object? target = null,
   }) {
@@ -6548,6 +6170,10 @@ class _$ProvenanceAgentRelatedAgentCopyWithImpl<$Res,
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -6581,6 +6207,7 @@ abstract class _$$ProvenanceAgentRelatedAgentImplCopyWith<$Res>
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       CodeableConcept type,
       FhirUri target});
 
@@ -6604,6 +6231,7 @@ class __$$ProvenanceAgentRelatedAgentImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? type = null,
     Object? target = null,
   }) {
@@ -6620,6 +6248,10 @@ class __$$ProvenanceAgentRelatedAgentImplCopyWithImpl<$Res>
           ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -6639,10 +6271,12 @@ class _$ProvenanceAgentRelatedAgentImpl extends _ProvenanceAgentRelatedAgent {
       {this.id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       required this.type,
       required this.target})
       : _extension_ = extension_,
         _modifierExtension = modifierExtension,
+        _fhirComments = fhirComments,
         super._();
 
   factory _$ProvenanceAgentRelatedAgentImpl.fromJson(
@@ -6673,6 +6307,17 @@ class _$ProvenanceAgentRelatedAgentImpl extends _ProvenanceAgentRelatedAgent {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final CodeableConcept type;
   @override
@@ -6680,7 +6325,7 @@ class _$ProvenanceAgentRelatedAgentImpl extends _ProvenanceAgentRelatedAgent {
 
   @override
   String toString() {
-    return 'ProvenanceAgentRelatedAgent(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, target: $target)';
+    return 'ProvenanceAgentRelatedAgent(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, fhirComments: $fhirComments, type: $type, target: $target)';
   }
 
   @override
@@ -6693,6 +6338,8 @@ class _$ProvenanceAgentRelatedAgentImpl extends _ProvenanceAgentRelatedAgent {
                 .equals(other._extension_, _extension_) &&
             const DeepCollectionEquality()
                 .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.target, target) || other.target == target));
   }
@@ -6704,6 +6351,7 @@ class _$ProvenanceAgentRelatedAgentImpl extends _ProvenanceAgentRelatedAgent {
       id,
       const DeepCollectionEquality().hash(_extension_),
       const DeepCollectionEquality().hash(_modifierExtension),
+      const DeepCollectionEquality().hash(_fhirComments),
       type,
       target);
 
@@ -6728,6 +6376,7 @@ abstract class _ProvenanceAgentRelatedAgent
       {final FhirId? id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       required final CodeableConcept type,
       required final FhirUri target}) = _$ProvenanceAgentRelatedAgentImpl;
   const _ProvenanceAgentRelatedAgent._() : super._();
@@ -6742,6 +6391,9 @@ abstract class _ProvenanceAgentRelatedAgent
   List<FhirExtension>? get extension_;
   @override
   List<FhirExtension>? get modifierExtension;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   CodeableConcept get type;
   @override
@@ -6761,6 +6413,8 @@ mixin _$AuditEvent {
   @JsonKey(unknownEnumValue: Dstu2ResourceType.AuditEvent)
   Dstu2ResourceType get resourceType => throw _privateConstructorUsedError;
   FhirId? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   FhirMeta? get meta => throw _privateConstructorUsedError;
   FhirUri? get implicitRules => throw _privateConstructorUsedError;
   @JsonKey(name: '_implicitRules')
@@ -6796,6 +6450,7 @@ abstract class $AuditEventCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.AuditEvent)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -6811,8 +6466,6 @@ abstract class $AuditEventCopyWith<$Res> {
       List<AuditEventObject>? object});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
   $AuditEventEventCopyWith<$Res> get event;
   $AuditEventSourceCopyWith<$Res> get source;
@@ -6833,6 +6486,7 @@ class _$AuditEventCopyWithImpl<$Res, $Val extends AuditEvent>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -6856,6 +6510,10 @@ class _$AuditEventCopyWithImpl<$Res, $Val extends AuditEvent>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -6925,30 +6583,6 @@ class _$AuditEventCopyWithImpl<$Res, $Val extends AuditEvent>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -6988,6 +6622,7 @@ abstract class _$$AuditEventImplCopyWith<$Res>
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.AuditEvent)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -7004,10 +6639,6 @@ abstract class _$$AuditEventImplCopyWith<$Res>
 
   @override
   $FhirMetaCopyWith<$Res>? get meta;
-  @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
   @override
   $NarrativeCopyWith<$Res>? get text;
   @override
@@ -7029,6 +6660,7 @@ class __$$AuditEventImplCopyWithImpl<$Res>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -7052,6 +6684,10 @@ class __$$AuditEventImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -7115,6 +6751,7 @@ class _$AuditEventImpl extends _AuditEvent {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.AuditEvent)
       this.resourceType = Dstu2ResourceType.AuditEvent,
       this.id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.meta,
       this.implicitRules,
       @JsonKey(name: '_implicitRules') this.implicitRulesElement,
@@ -7128,7 +6765,8 @@ class _$AuditEventImpl extends _AuditEvent {
       required final List<AuditEventParticipant> participant,
       required this.source,
       final List<AuditEventObject>? object})
-      : _contained = contained,
+      : _fhirComments = fhirComments,
+        _contained = contained,
         _extension_ = extension_,
         _modifierExtension = modifierExtension,
         _participant = participant,
@@ -7143,6 +6781,17 @@ class _$AuditEventImpl extends _AuditEvent {
   final Dstu2ResourceType resourceType;
   @override
   final FhirId? id;
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final FhirMeta? meta;
   @override
@@ -7213,7 +6862,7 @@ class _$AuditEventImpl extends _AuditEvent {
 
   @override
   String toString() {
-    return 'AuditEvent(resourceType: $resourceType, id: $id, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, event: $event, participant: $participant, source: $source, object: $object)';
+    return 'AuditEvent(resourceType: $resourceType, id: $id, fhirComments: $fhirComments, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, event: $event, participant: $participant, source: $source, object: $object)';
   }
 
   @override
@@ -7224,6 +6873,8 @@ class _$AuditEventImpl extends _AuditEvent {
             (identical(other.resourceType, resourceType) ||
                 other.resourceType == resourceType) &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.meta, meta) || other.meta == meta) &&
             (identical(other.implicitRules, implicitRules) ||
                 other.implicitRules == implicitRules) &&
@@ -7253,6 +6904,7 @@ class _$AuditEventImpl extends _AuditEvent {
       runtimeType,
       resourceType,
       id,
+      const DeepCollectionEquality().hash(_fhirComments),
       meta,
       implicitRules,
       implicitRulesElement,
@@ -7286,6 +6938,7 @@ abstract class _AuditEvent extends AuditEvent {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.AuditEvent)
       final Dstu2ResourceType resourceType,
       final FhirId? id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final FhirMeta? meta,
       final FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') final Element? implicitRulesElement,
@@ -7309,6 +6962,9 @@ abstract class _AuditEvent extends AuditEvent {
   Dstu2ResourceType get resourceType;
   @override
   FhirId? get id;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   FhirMeta? get meta;
   @override
@@ -7355,6 +7011,8 @@ mixin _$AuditEventEvent {
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   Coding get type => throw _privateConstructorUsedError;
   List<Coding>? get subtype => throw _privateConstructorUsedError;
   FhirCode? get action => throw _privateConstructorUsedError;
@@ -7379,6 +7037,7 @@ abstract class $AuditEventEventCopyWith<$Res> {
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       Coding type,
       List<Coding>? subtype,
       FhirCode? action,
@@ -7406,6 +7065,7 @@ class _$AuditEventEventCopyWithImpl<$Res, $Val extends AuditEventEvent>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? type = null,
     Object? subtype = freezed,
     Object? action = freezed,
@@ -7427,6 +7087,10 @@ class _$AuditEventEventCopyWithImpl<$Res, $Val extends AuditEventEvent>
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -7479,6 +7143,7 @@ abstract class _$$AuditEventEventImplCopyWith<$Res>
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       Coding type,
       List<Coding>? subtype,
       FhirCode? action,
@@ -7505,6 +7170,7 @@ class __$$AuditEventEventImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? type = null,
     Object? subtype = freezed,
     Object? action = freezed,
@@ -7526,6 +7192,10 @@ class __$$AuditEventEventImplCopyWithImpl<$Res>
           ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -7565,6 +7235,7 @@ class _$AuditEventEventImpl extends _AuditEventEvent {
       {this.id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       required this.type,
       final List<Coding>? subtype,
       this.action,
@@ -7574,6 +7245,7 @@ class _$AuditEventEventImpl extends _AuditEventEvent {
       final List<Coding>? purposeOfEvent})
       : _extension_ = extension_,
         _modifierExtension = modifierExtension,
+        _fhirComments = fhirComments,
         _subtype = subtype,
         _purposeOfEvent = purposeOfEvent,
         super._();
@@ -7601,6 +7273,17 @@ class _$AuditEventEventImpl extends _AuditEventEvent {
     if (value == null) return null;
     if (_modifierExtension is EqualUnmodifiableListView)
       return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -7637,7 +7320,7 @@ class _$AuditEventEventImpl extends _AuditEventEvent {
 
   @override
   String toString() {
-    return 'AuditEventEvent(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, subtype: $subtype, action: $action, dateTime: $dateTime, outcome: $outcome, outcomeDesc: $outcomeDesc, purposeOfEvent: $purposeOfEvent)';
+    return 'AuditEventEvent(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, fhirComments: $fhirComments, type: $type, subtype: $subtype, action: $action, dateTime: $dateTime, outcome: $outcome, outcomeDesc: $outcomeDesc, purposeOfEvent: $purposeOfEvent)';
   }
 
   @override
@@ -7650,6 +7333,8 @@ class _$AuditEventEventImpl extends _AuditEventEvent {
                 .equals(other._extension_, _extension_) &&
             const DeepCollectionEquality()
                 .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality().equals(other._subtype, _subtype) &&
             (identical(other.action, action) || other.action == action) &&
@@ -7669,6 +7354,7 @@ class _$AuditEventEventImpl extends _AuditEventEvent {
       id,
       const DeepCollectionEquality().hash(_extension_),
       const DeepCollectionEquality().hash(_modifierExtension),
+      const DeepCollectionEquality().hash(_fhirComments),
       type,
       const DeepCollectionEquality().hash(_subtype),
       action,
@@ -7697,6 +7383,7 @@ abstract class _AuditEventEvent extends AuditEventEvent {
       {final FhirId? id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       required final Coding type,
       final List<Coding>? subtype,
       final FhirCode? action,
@@ -7716,6 +7403,9 @@ abstract class _AuditEventEvent extends AuditEventEvent {
   List<FhirExtension>? get extension_;
   @override
   List<FhirExtension>? get modifierExtension;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   Coding get type;
   @override
@@ -7748,6 +7438,8 @@ mixin _$AuditEventParticipant {
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   List<CodeableConcept>? get role => throw _privateConstructorUsedError;
   Reference? get reference => throw _privateConstructorUsedError;
   Identifier? get userId => throw _privateConstructorUsedError;
@@ -7779,6 +7471,7 @@ abstract class $AuditEventParticipantCopyWith<$Res> {
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       List<CodeableConcept>? role,
       Reference? reference,
       Identifier? userId,
@@ -7794,7 +7487,6 @@ abstract class $AuditEventParticipantCopyWith<$Res> {
 
   $ReferenceCopyWith<$Res>? get reference;
   $IdentifierCopyWith<$Res>? get userId;
-  $ElementCopyWith<$Res>? get nameElement;
   $ReferenceCopyWith<$Res>? get location;
   $CodingCopyWith<$Res>? get media;
   $AuditEventParticipantNetworkCopyWith<$Res>? get network;
@@ -7817,6 +7509,7 @@ class _$AuditEventParticipantCopyWithImpl<$Res,
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? role = freezed,
     Object? reference = freezed,
     Object? userId = freezed,
@@ -7843,6 +7536,10 @@ class _$AuditEventParticipantCopyWithImpl<$Res,
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       role: freezed == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
@@ -7920,18 +7617,6 @@ class _$AuditEventParticipantCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get nameElement {
-    if (_value.nameElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.nameElement!, (value) {
-      return _then(_value.copyWith(nameElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get location {
     if (_value.location == null) {
       return null;
@@ -7981,6 +7666,7 @@ abstract class _$$AuditEventParticipantImplCopyWith<$Res>
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       List<CodeableConcept>? role,
       Reference? reference,
       Identifier? userId,
@@ -7998,8 +7684,6 @@ abstract class _$$AuditEventParticipantImplCopyWith<$Res>
   $ReferenceCopyWith<$Res>? get reference;
   @override
   $IdentifierCopyWith<$Res>? get userId;
-  @override
-  $ElementCopyWith<$Res>? get nameElement;
   @override
   $ReferenceCopyWith<$Res>? get location;
   @override
@@ -8023,6 +7707,7 @@ class __$$AuditEventParticipantImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? role = freezed,
     Object? reference = freezed,
     Object? userId = freezed,
@@ -8049,6 +7734,10 @@ class __$$AuditEventParticipantImplCopyWithImpl<$Res>
           ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       role: freezed == role
           ? _value._role
           : role // ignore: cast_nullable_to_non_nullable
@@ -8108,6 +7797,7 @@ class _$AuditEventParticipantImpl extends _AuditEventParticipant {
       {this.id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final List<CodeableConcept>? role,
       this.reference,
       this.userId,
@@ -8122,6 +7812,7 @@ class _$AuditEventParticipantImpl extends _AuditEventParticipant {
       final List<Coding>? purposeOfUse})
       : _extension_ = extension_,
         _modifierExtension = modifierExtension,
+        _fhirComments = fhirComments,
         _role = role,
         _policy = policy,
         _purposeOfUse = purposeOfUse,
@@ -8150,6 +7841,17 @@ class _$AuditEventParticipantImpl extends _AuditEventParticipant {
     if (value == null) return null;
     if (_modifierExtension is EqualUnmodifiableListView)
       return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -8205,7 +7907,7 @@ class _$AuditEventParticipantImpl extends _AuditEventParticipant {
 
   @override
   String toString() {
-    return 'AuditEventParticipant(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, role: $role, reference: $reference, userId: $userId, altId: $altId, name: $name, nameElement: $nameElement, requestor: $requestor, location: $location, policy: $policy, media: $media, network: $network, purposeOfUse: $purposeOfUse)';
+    return 'AuditEventParticipant(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, fhirComments: $fhirComments, role: $role, reference: $reference, userId: $userId, altId: $altId, name: $name, nameElement: $nameElement, requestor: $requestor, location: $location, policy: $policy, media: $media, network: $network, purposeOfUse: $purposeOfUse)';
   }
 
   @override
@@ -8218,6 +7920,8 @@ class _$AuditEventParticipantImpl extends _AuditEventParticipant {
                 .equals(other._extension_, _extension_) &&
             const DeepCollectionEquality()
                 .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             const DeepCollectionEquality().equals(other._role, _role) &&
             (identical(other.reference, reference) ||
                 other.reference == reference) &&
@@ -8244,6 +7948,7 @@ class _$AuditEventParticipantImpl extends _AuditEventParticipant {
       id,
       const DeepCollectionEquality().hash(_extension_),
       const DeepCollectionEquality().hash(_modifierExtension),
+      const DeepCollectionEquality().hash(_fhirComments),
       const DeepCollectionEquality().hash(_role),
       reference,
       userId,
@@ -8277,6 +7982,7 @@ abstract class _AuditEventParticipant extends AuditEventParticipant {
       {final FhirId? id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final List<CodeableConcept>? role,
       final Reference? reference,
       final Identifier? userId,
@@ -8301,6 +8007,9 @@ abstract class _AuditEventParticipant extends AuditEventParticipant {
   List<FhirExtension>? get extension_;
   @override
   List<FhirExtension>? get modifierExtension;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   List<CodeableConcept>? get role;
   @override
@@ -8343,6 +8052,8 @@ mixin _$AuditEventSource {
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   String? get site => throw _privateConstructorUsedError;
   @JsonKey(name: '_site')
   Element? get siteElement => throw _privateConstructorUsedError;
@@ -8365,12 +8076,12 @@ abstract class $AuditEventSourceCopyWith<$Res> {
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       String? site,
       @JsonKey(name: '_site') Element? siteElement,
       Identifier identifier,
       List<Coding>? type});
 
-  $ElementCopyWith<$Res>? get siteElement;
   $IdentifierCopyWith<$Res> get identifier;
 }
 
@@ -8390,6 +8101,7 @@ class _$AuditEventSourceCopyWithImpl<$Res, $Val extends AuditEventSource>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? site = freezed,
     Object? siteElement = freezed,
     Object? identifier = null,
@@ -8408,6 +8120,10 @@ class _$AuditEventSourceCopyWithImpl<$Res, $Val extends AuditEventSource>
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       site: freezed == site
           ? _value.site
           : site // ignore: cast_nullable_to_non_nullable
@@ -8425,18 +8141,6 @@ class _$AuditEventSourceCopyWithImpl<$Res, $Val extends AuditEventSource>
           : type // ignore: cast_nullable_to_non_nullable
               as List<Coding>?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get siteElement {
-    if (_value.siteElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.siteElement!, (value) {
-      return _then(_value.copyWith(siteElement: value) as $Val);
-    });
   }
 
   @override
@@ -8460,13 +8164,12 @@ abstract class _$$AuditEventSourceImplCopyWith<$Res>
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       String? site,
       @JsonKey(name: '_site') Element? siteElement,
       Identifier identifier,
       List<Coding>? type});
 
-  @override
-  $ElementCopyWith<$Res>? get siteElement;
   @override
   $IdentifierCopyWith<$Res> get identifier;
 }
@@ -8485,6 +8188,7 @@ class __$$AuditEventSourceImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? site = freezed,
     Object? siteElement = freezed,
     Object? identifier = null,
@@ -8503,6 +8207,10 @@ class __$$AuditEventSourceImplCopyWithImpl<$Res>
           ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       site: freezed == site
           ? _value.site
           : site // ignore: cast_nullable_to_non_nullable
@@ -8530,12 +8238,14 @@ class _$AuditEventSourceImpl extends _AuditEventSource {
       {this.id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.site,
       @JsonKey(name: '_site') this.siteElement,
       required this.identifier,
       final List<Coding>? type})
       : _extension_ = extension_,
         _modifierExtension = modifierExtension,
+        _fhirComments = fhirComments,
         _type = type,
         super._();
 
@@ -8566,6 +8276,17 @@ class _$AuditEventSourceImpl extends _AuditEventSource {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final String? site;
   @override
@@ -8585,7 +8306,7 @@ class _$AuditEventSourceImpl extends _AuditEventSource {
 
   @override
   String toString() {
-    return 'AuditEventSource(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, site: $site, siteElement: $siteElement, identifier: $identifier, type: $type)';
+    return 'AuditEventSource(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, fhirComments: $fhirComments, site: $site, siteElement: $siteElement, identifier: $identifier, type: $type)';
   }
 
   @override
@@ -8598,6 +8319,8 @@ class _$AuditEventSourceImpl extends _AuditEventSource {
                 .equals(other._extension_, _extension_) &&
             const DeepCollectionEquality()
                 .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.site, site) || other.site == site) &&
             (identical(other.siteElement, siteElement) ||
                 other.siteElement == siteElement) &&
@@ -8613,6 +8336,7 @@ class _$AuditEventSourceImpl extends _AuditEventSource {
       id,
       const DeepCollectionEquality().hash(_extension_),
       const DeepCollectionEquality().hash(_modifierExtension),
+      const DeepCollectionEquality().hash(_fhirComments),
       site,
       siteElement,
       identifier,
@@ -8638,6 +8362,7 @@ abstract class _AuditEventSource extends AuditEventSource {
       {final FhirId? id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final String? site,
       @JsonKey(name: '_site') final Element? siteElement,
       required final Identifier identifier,
@@ -8654,6 +8379,9 @@ abstract class _AuditEventSource extends AuditEventSource {
   List<FhirExtension>? get extension_;
   @override
   List<FhirExtension>? get modifierExtension;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   String? get site;
   @override
@@ -8680,6 +8408,8 @@ mixin _$AuditEventObject {
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   Identifier? get identifier => throw _privateConstructorUsedError;
   Reference? get reference => throw _privateConstructorUsedError;
   Coding? get type => throw _privateConstructorUsedError;
@@ -8710,6 +8440,7 @@ abstract class $AuditEventObjectCopyWith<$Res> {
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       Identifier? identifier,
       Reference? reference,
       Coding? type,
@@ -8727,7 +8458,6 @@ abstract class $AuditEventObjectCopyWith<$Res> {
   $CodingCopyWith<$Res>? get type;
   $CodingCopyWith<$Res>? get role;
   $CodingCopyWith<$Res>? get lifecycle;
-  $ElementCopyWith<$Res>? get queryElement;
 }
 
 /// @nodoc
@@ -8746,6 +8476,7 @@ class _$AuditEventObjectCopyWithImpl<$Res, $Val extends AuditEventObject>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? identifier = freezed,
     Object? reference = freezed,
     Object? type = freezed,
@@ -8771,6 +8502,10 @@ class _$AuditEventObjectCopyWithImpl<$Res, $Val extends AuditEventObject>
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       identifier: freezed == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
@@ -8877,18 +8612,6 @@ class _$AuditEventObjectCopyWithImpl<$Res, $Val extends AuditEventObject>
       return _then(_value.copyWith(lifecycle: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get queryElement {
-    if (_value.queryElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.queryElement!, (value) {
-      return _then(_value.copyWith(queryElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -8903,6 +8626,7 @@ abstract class _$$AuditEventObjectImplCopyWith<$Res>
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       Identifier? identifier,
       Reference? reference,
       Coding? type,
@@ -8925,8 +8649,6 @@ abstract class _$$AuditEventObjectImplCopyWith<$Res>
   $CodingCopyWith<$Res>? get role;
   @override
   $CodingCopyWith<$Res>? get lifecycle;
-  @override
-  $ElementCopyWith<$Res>? get queryElement;
 }
 
 /// @nodoc
@@ -8943,6 +8665,7 @@ class __$$AuditEventObjectImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? identifier = freezed,
     Object? reference = freezed,
     Object? type = freezed,
@@ -8968,6 +8691,10 @@ class __$$AuditEventObjectImplCopyWithImpl<$Res>
           ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       identifier: freezed == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
@@ -9023,6 +8750,7 @@ class _$AuditEventObjectImpl extends _AuditEventObject {
       {this.id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.identifier,
       this.reference,
       this.type,
@@ -9036,6 +8764,7 @@ class _$AuditEventObjectImpl extends _AuditEventObject {
       final List<AuditEventObjectDetail>? detail})
       : _extension_ = extension_,
         _modifierExtension = modifierExtension,
+        _fhirComments = fhirComments,
         _securityLabel = securityLabel,
         _detail = detail,
         super._();
@@ -9063,6 +8792,17 @@ class _$AuditEventObjectImpl extends _AuditEventObject {
     if (value == null) return null;
     if (_modifierExtension is EqualUnmodifiableListView)
       return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -9108,7 +8848,7 @@ class _$AuditEventObjectImpl extends _AuditEventObject {
 
   @override
   String toString() {
-    return 'AuditEventObject(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, reference: $reference, type: $type, role: $role, lifecycle: $lifecycle, securityLabel: $securityLabel, name: $name, description: $description, query: $query, queryElement: $queryElement, detail: $detail)';
+    return 'AuditEventObject(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, fhirComments: $fhirComments, identifier: $identifier, reference: $reference, type: $type, role: $role, lifecycle: $lifecycle, securityLabel: $securityLabel, name: $name, description: $description, query: $query, queryElement: $queryElement, detail: $detail)';
   }
 
   @override
@@ -9121,6 +8861,8 @@ class _$AuditEventObjectImpl extends _AuditEventObject {
                 .equals(other._extension_, _extension_) &&
             const DeepCollectionEquality()
                 .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.identifier, identifier) ||
                 other.identifier == identifier) &&
             (identical(other.reference, reference) ||
@@ -9147,6 +8889,7 @@ class _$AuditEventObjectImpl extends _AuditEventObject {
       id,
       const DeepCollectionEquality().hash(_extension_),
       const DeepCollectionEquality().hash(_modifierExtension),
+      const DeepCollectionEquality().hash(_fhirComments),
       identifier,
       reference,
       type,
@@ -9179,6 +8922,7 @@ abstract class _AuditEventObject extends AuditEventObject {
       {final FhirId? id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final Identifier? identifier,
       final Reference? reference,
       final Coding? type,
@@ -9202,6 +8946,9 @@ abstract class _AuditEventObject extends AuditEventObject {
   List<FhirExtension>? get extension_;
   @override
   List<FhirExtension>? get modifierExtension;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   Identifier? get identifier;
   @override
@@ -9243,6 +8990,8 @@ mixin _$AuditEventParticipantNetwork {
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   String? get address => throw _privateConstructorUsedError;
   @JsonKey(name: '_address')
   Element? get addressElement => throw _privateConstructorUsedError;
@@ -9268,13 +9017,11 @@ abstract class $AuditEventParticipantNetworkCopyWith<$Res> {
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       String? address,
       @JsonKey(name: '_address') Element? addressElement,
       FhirCode? type,
       @JsonKey(name: '_type') Element? typeElement});
-
-  $ElementCopyWith<$Res>? get addressElement;
-  $ElementCopyWith<$Res>? get typeElement;
 }
 
 /// @nodoc
@@ -9294,6 +9041,7 @@ class _$AuditEventParticipantNetworkCopyWithImpl<$Res,
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? address = freezed,
     Object? addressElement = freezed,
     Object? type = freezed,
@@ -9312,6 +9060,10 @@ class _$AuditEventParticipantNetworkCopyWithImpl<$Res,
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -9330,30 +9082,6 @@ class _$AuditEventParticipantNetworkCopyWithImpl<$Res,
               as Element?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get addressElement {
-    if (_value.addressElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.addressElement!, (value) {
-      return _then(_value.copyWith(addressElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get typeElement {
-    if (_value.typeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.typeElement!, (value) {
-      return _then(_value.copyWith(typeElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -9369,15 +9097,11 @@ abstract class _$$AuditEventParticipantNetworkImplCopyWith<$Res>
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       String? address,
       @JsonKey(name: '_address') Element? addressElement,
       FhirCode? type,
       @JsonKey(name: '_type') Element? typeElement});
-
-  @override
-  $ElementCopyWith<$Res>? get addressElement;
-  @override
-  $ElementCopyWith<$Res>? get typeElement;
 }
 
 /// @nodoc
@@ -9396,6 +9120,7 @@ class __$$AuditEventParticipantNetworkImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? address = freezed,
     Object? addressElement = freezed,
     Object? type = freezed,
@@ -9414,6 +9139,10 @@ class __$$AuditEventParticipantNetworkImplCopyWithImpl<$Res>
           ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -9441,12 +9170,14 @@ class _$AuditEventParticipantNetworkImpl extends _AuditEventParticipantNetwork {
       {this.id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.address,
       @JsonKey(name: '_address') this.addressElement,
       this.type,
       @JsonKey(name: '_type') this.typeElement})
       : _extension_ = extension_,
         _modifierExtension = modifierExtension,
+        _fhirComments = fhirComments,
         super._();
 
   factory _$AuditEventParticipantNetworkImpl.fromJson(
@@ -9477,6 +9208,17 @@ class _$AuditEventParticipantNetworkImpl extends _AuditEventParticipantNetwork {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final String? address;
   @override
@@ -9490,7 +9232,7 @@ class _$AuditEventParticipantNetworkImpl extends _AuditEventParticipantNetwork {
 
   @override
   String toString() {
-    return 'AuditEventParticipantNetwork(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, address: $address, addressElement: $addressElement, type: $type, typeElement: $typeElement)';
+    return 'AuditEventParticipantNetwork(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, fhirComments: $fhirComments, address: $address, addressElement: $addressElement, type: $type, typeElement: $typeElement)';
   }
 
   @override
@@ -9503,6 +9245,8 @@ class _$AuditEventParticipantNetworkImpl extends _AuditEventParticipantNetwork {
                 .equals(other._extension_, _extension_) &&
             const DeepCollectionEquality()
                 .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.addressElement, addressElement) ||
                 other.addressElement == addressElement) &&
@@ -9518,6 +9262,7 @@ class _$AuditEventParticipantNetworkImpl extends _AuditEventParticipantNetwork {
       id,
       const DeepCollectionEquality().hash(_extension_),
       const DeepCollectionEquality().hash(_modifierExtension),
+      const DeepCollectionEquality().hash(_fhirComments),
       address,
       addressElement,
       type,
@@ -9545,6 +9290,7 @@ abstract class _AuditEventParticipantNetwork
           {final FhirId? id,
           @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
           final List<FhirExtension>? modifierExtension,
+          @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
           final String? address,
           @JsonKey(name: '_address') final Element? addressElement,
           final FhirCode? type,
@@ -9562,6 +9308,9 @@ abstract class _AuditEventParticipantNetwork
   List<FhirExtension>? get extension_;
   @override
   List<FhirExtension>? get modifierExtension;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   String? get address;
   @override
@@ -9591,6 +9340,8 @@ mixin _$AuditEventObjectDetail {
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   @JsonKey(name: '_type')
   Element? get typeElement => throw _privateConstructorUsedError;
@@ -9612,11 +9363,10 @@ abstract class $AuditEventObjectDetailCopyWith<$Res> {
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       String type,
       @JsonKey(name: '_type') Element? typeElement,
       FhirBase64Binary? value});
-
-  $ElementCopyWith<$Res>? get typeElement;
 }
 
 /// @nodoc
@@ -9636,6 +9386,7 @@ class _$AuditEventObjectDetailCopyWithImpl<$Res,
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? type = null,
     Object? typeElement = freezed,
     Object? value = freezed,
@@ -9653,6 +9404,10 @@ class _$AuditEventObjectDetailCopyWithImpl<$Res,
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -9666,18 +9421,6 @@ class _$AuditEventObjectDetailCopyWithImpl<$Res,
           : value // ignore: cast_nullable_to_non_nullable
               as FhirBase64Binary?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get typeElement {
-    if (_value.typeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.typeElement!, (value) {
-      return _then(_value.copyWith(typeElement: value) as $Val);
-    });
   }
 }
 
@@ -9694,12 +9437,10 @@ abstract class _$$AuditEventObjectDetailImplCopyWith<$Res>
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       String type,
       @JsonKey(name: '_type') Element? typeElement,
       FhirBase64Binary? value});
-
-  @override
-  $ElementCopyWith<$Res>? get typeElement;
 }
 
 /// @nodoc
@@ -9718,6 +9459,7 @@ class __$$AuditEventObjectDetailImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? type = null,
     Object? typeElement = freezed,
     Object? value = freezed,
@@ -9735,6 +9477,10 @@ class __$$AuditEventObjectDetailImplCopyWithImpl<$Res>
           ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -9758,11 +9504,13 @@ class _$AuditEventObjectDetailImpl extends _AuditEventObjectDetail {
       {this.id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       required this.type,
       @JsonKey(name: '_type') this.typeElement,
       required this.value})
       : _extension_ = extension_,
         _modifierExtension = modifierExtension,
+        _fhirComments = fhirComments,
         super._();
 
   factory _$AuditEventObjectDetailImpl.fromJson(Map<String, dynamic> json) =>
@@ -9792,6 +9540,17 @@ class _$AuditEventObjectDetailImpl extends _AuditEventObjectDetail {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final String type;
   @override
@@ -9802,7 +9561,7 @@ class _$AuditEventObjectDetailImpl extends _AuditEventObjectDetail {
 
   @override
   String toString() {
-    return 'AuditEventObjectDetail(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, typeElement: $typeElement, value: $value)';
+    return 'AuditEventObjectDetail(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, fhirComments: $fhirComments, type: $type, typeElement: $typeElement, value: $value)';
   }
 
   @override
@@ -9815,6 +9574,8 @@ class _$AuditEventObjectDetailImpl extends _AuditEventObjectDetail {
                 .equals(other._extension_, _extension_) &&
             const DeepCollectionEquality()
                 .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.typeElement, typeElement) ||
                 other.typeElement == typeElement) &&
@@ -9828,6 +9589,7 @@ class _$AuditEventObjectDetailImpl extends _AuditEventObjectDetail {
       id,
       const DeepCollectionEquality().hash(_extension_),
       const DeepCollectionEquality().hash(_modifierExtension),
+      const DeepCollectionEquality().hash(_fhirComments),
       type,
       typeElement,
       value);
@@ -9852,6 +9614,7 @@ abstract class _AuditEventObjectDetail extends AuditEventObjectDetail {
       {final FhirId? id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       required final String type,
       @JsonKey(name: '_type') final Element? typeElement,
       required final FhirBase64Binary? value}) = _$AuditEventObjectDetailImpl;
@@ -9867,6 +9630,9 @@ abstract class _AuditEventObjectDetail extends AuditEventObjectDetail {
   List<FhirExtension>? get extension_;
   @override
   List<FhirExtension>? get modifierExtension;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   String get type;
   @override

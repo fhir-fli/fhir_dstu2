@@ -22,6 +22,7 @@ class ProcessRequest with Resource, _$ProcessRequest {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.ProcessRequest)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -49,6 +50,9 @@ class ProcessRequest with Resource, _$ProcessRequest {
     List<String>? exclude,
     Period? period,
   }) = _ProcessRequest;
+
+  @override
+  String get fhirType => 'ProcessRequest';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory ProcessRequest.fromYaml(dynamic yaml) => yaml is String
@@ -84,17 +88,18 @@ class ProcessRequest with Resource, _$ProcessRequest {
 }
 
 @freezed
-class ProcessRequestItem with _$ProcessRequestItem {
+class ProcessRequestItem with BackboneType, _$ProcessRequestItem {
   const ProcessRequestItem._();
   const factory ProcessRequestItem({
     FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     required FhirInteger sequenceLinkId,
   }) = _ProcessRequestItem;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'ProcessRequestItem';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory ProcessRequestItem.fromYaml(dynamic yaml) => yaml is String
@@ -122,10 +127,6 @@ class ProcessRequestItem with _$ProcessRequestItem {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -136,6 +137,7 @@ class ProcessResponse with Resource, _$ProcessResponse {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.ProcessResponse)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -159,6 +161,9 @@ class ProcessResponse with Resource, _$ProcessResponse {
     List<ProcessResponseNotes>? notes,
     List<Coding>? error,
   }) = _ProcessResponse;
+
+  @override
+  String get fhirType => 'ProcessResponse';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory ProcessResponse.fromYaml(dynamic yaml) => yaml is String
@@ -194,18 +199,19 @@ class ProcessResponse with Resource, _$ProcessResponse {
 }
 
 @freezed
-class ProcessResponseNotes with _$ProcessResponseNotes {
+class ProcessResponseNotes with BackboneType, _$ProcessResponseNotes {
   const ProcessResponseNotes._();
   const factory ProcessResponseNotes({
     FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     Coding? type,
     String? text,
   }) = _ProcessResponseNotes;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'ProcessResponseNotes';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory ProcessResponseNotes.fromYaml(dynamic yaml) => yaml is String
@@ -233,10 +239,6 @@ class ProcessResponseNotes with _$ProcessResponseNotes {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -247,6 +249,7 @@ class SupplyRequest with Resource, _$SupplyRequest {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.SupplyRequest)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -270,6 +273,9 @@ class SupplyRequest with Resource, _$SupplyRequest {
     Reference? reasonReference,
     SupplyRequestWhen? when,
   }) = _SupplyRequest;
+
+  @override
+  String get fhirType => 'SupplyRequest';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory SupplyRequest.fromYaml(dynamic yaml) => yaml is String
@@ -305,18 +311,19 @@ class SupplyRequest with Resource, _$SupplyRequest {
 }
 
 @freezed
-class SupplyRequestWhen with _$SupplyRequestWhen {
+class SupplyRequestWhen with BackboneType, _$SupplyRequestWhen {
   const SupplyRequestWhen._();
   const factory SupplyRequestWhen({
     FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     CodeableConcept? code,
     Timing? schedule,
   }) = _SupplyRequestWhen;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'SupplyRequestWhen';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory SupplyRequestWhen.fromYaml(dynamic yaml) => yaml is String
@@ -344,10 +351,6 @@ class SupplyRequestWhen with _$SupplyRequestWhen {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -358,6 +361,7 @@ class SupplyDelivery with Resource, _$SupplyDelivery {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.SupplyDelivery)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -381,6 +385,9 @@ class SupplyDelivery with Resource, _$SupplyDelivery {
     Reference? destination,
     List<Reference>? receiver,
   }) = _SupplyDelivery;
+
+  @override
+  String get fhirType => 'SupplyDelivery';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory SupplyDelivery.fromYaml(dynamic yaml) => yaml is String

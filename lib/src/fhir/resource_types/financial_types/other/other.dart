@@ -22,6 +22,7 @@ class ExplanationOfBenefit with Resource, _$ExplanationOfBenefit {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.ExplanationOfBenefit)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -46,6 +47,9 @@ class ExplanationOfBenefit with Resource, _$ExplanationOfBenefit {
     Reference? requestProvider,
     Reference? requestOrganization,
   }) = _ExplanationOfBenefit;
+
+  @override
+  String get fhirType => 'ExplanationOfBenefit';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory ExplanationOfBenefit.fromYaml(dynamic yaml) => yaml is String

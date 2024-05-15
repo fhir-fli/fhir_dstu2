@@ -13,6 +13,9 @@ _$ProcessRequestImpl _$$ProcessRequestImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.ProcessRequest) ??
           Dstu2ResourceType.ProcessRequest,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -97,6 +100,7 @@ Map<String, dynamic> _$$ProcessRequestImplToJson(
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -245,6 +249,9 @@ _$ProcessRequestItemImpl _$$ProcessRequestItemImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       sequenceLinkId: FhirInteger.fromJson(json['sequenceLinkId']),
     );
 
@@ -263,6 +270,7 @@ Map<String, dynamic> _$$ProcessRequestItemImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['sequenceLinkId'] = instance.sequenceLinkId.toJson();
   return val;
 }
@@ -275,6 +283,9 @@ _$ProcessResponseImpl _$$ProcessResponseImplFromJson(
               unknownValue: Dstu2ResourceType.ProcessResponse) ??
           Dstu2ResourceType.ProcessResponse,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -354,6 +365,7 @@ Map<String, dynamic> _$$ProcessResponseImplToJson(
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -393,6 +405,9 @@ _$ProcessResponseNotesImpl _$$ProcessResponseNotesImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       type: json['type'] == null
           ? null
           : Coding.fromJson(json['type'] as Map<String, dynamic>),
@@ -414,6 +429,7 @@ Map<String, dynamic> _$$ProcessResponseNotesImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('type', instance.type?.toJson());
   writeNotNull('text', instance.text);
   return val;
@@ -426,6 +442,9 @@ _$SupplyRequestImpl _$$SupplyRequestImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.SupplyRequest) ??
           Dstu2ResourceType.SupplyRequest,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -502,6 +521,7 @@ Map<String, dynamic> _$$SupplyRequestImplToJson(_$SupplyRequestImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -548,6 +568,9 @@ _$SupplyRequestWhenImpl _$$SupplyRequestWhenImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       code: json['code'] == null
           ? null
           : CodeableConcept.fromJson(json['code'] as Map<String, dynamic>),
@@ -571,6 +594,7 @@ Map<String, dynamic> _$$SupplyRequestWhenImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('code', instance.code?.toJson());
   writeNotNull('schedule', instance.schedule?.toJson());
   return val;
@@ -583,6 +607,9 @@ _$SupplyDeliveryImpl _$$SupplyDeliveryImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.SupplyDelivery) ??
           Dstu2ResourceType.SupplyDelivery,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -659,6 +686,7 @@ Map<String, dynamic> _$$SupplyDeliveryImplToJson(
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());

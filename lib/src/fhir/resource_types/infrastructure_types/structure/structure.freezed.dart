@@ -23,6 +23,8 @@ mixin _$Media {
   @JsonKey(unknownEnumValue: Dstu2ResourceType.Media)
   Dstu2ResourceType get resourceType => throw _privateConstructorUsedError;
   FhirId? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   FhirMeta? get meta => throw _privateConstructorUsedError;
   FhirUri? get implicitRules => throw _privateConstructorUsedError;
   @JsonKey(name: '_implicitRules')
@@ -75,6 +77,7 @@ abstract class $MediaCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Media)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -103,18 +106,11 @@ abstract class $MediaCopyWith<$Res> {
       Attachment content});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
   $CodeableConceptCopyWith<$Res>? get subtype;
   $ReferenceCopyWith<$Res>? get subject;
   $ReferenceCopyWith<$Res>? get operator_;
   $CodeableConceptCopyWith<$Res>? get view;
-  $ElementCopyWith<$Res>? get deviceNameElement;
-  $ElementCopyWith<$Res>? get heightElement;
-  $ElementCopyWith<$Res>? get widthElement;
-  $ElementCopyWith<$Res>? get framesElement;
-  $ElementCopyWith<$Res>? get durationElement;
   $AttachmentCopyWith<$Res> get content;
 }
 
@@ -133,6 +129,7 @@ class _$MediaCopyWithImpl<$Res, $Val extends Media>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -169,6 +166,10 @@ class _$MediaCopyWithImpl<$Res, $Val extends Media>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -290,30 +291,6 @@ class _$MediaCopyWithImpl<$Res, $Val extends Media>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -374,66 +351,6 @@ class _$MediaCopyWithImpl<$Res, $Val extends Media>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get deviceNameElement {
-    if (_value.deviceNameElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.deviceNameElement!, (value) {
-      return _then(_value.copyWith(deviceNameElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get heightElement {
-    if (_value.heightElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.heightElement!, (value) {
-      return _then(_value.copyWith(heightElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get widthElement {
-    if (_value.widthElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.widthElement!, (value) {
-      return _then(_value.copyWith(widthElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get framesElement {
-    if (_value.framesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.framesElement!, (value) {
-      return _then(_value.copyWith(framesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get durationElement {
-    if (_value.durationElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.durationElement!, (value) {
-      return _then(_value.copyWith(durationElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $AttachmentCopyWith<$Res> get content {
     return $AttachmentCopyWith<$Res>(_value.content, (value) {
       return _then(_value.copyWith(content: value) as $Val);
@@ -452,6 +369,7 @@ abstract class _$$MediaImplCopyWith<$Res> implements $MediaCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Media)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -482,10 +400,6 @@ abstract class _$$MediaImplCopyWith<$Res> implements $MediaCopyWith<$Res> {
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
   @override
   $CodeableConceptCopyWith<$Res>? get subtype;
@@ -495,16 +409,6 @@ abstract class _$$MediaImplCopyWith<$Res> implements $MediaCopyWith<$Res> {
   $ReferenceCopyWith<$Res>? get operator_;
   @override
   $CodeableConceptCopyWith<$Res>? get view;
-  @override
-  $ElementCopyWith<$Res>? get deviceNameElement;
-  @override
-  $ElementCopyWith<$Res>? get heightElement;
-  @override
-  $ElementCopyWith<$Res>? get widthElement;
-  @override
-  $ElementCopyWith<$Res>? get framesElement;
-  @override
-  $ElementCopyWith<$Res>? get durationElement;
   @override
   $AttachmentCopyWith<$Res> get content;
 }
@@ -522,6 +426,7 @@ class __$$MediaImplCopyWithImpl<$Res>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -558,6 +463,10 @@ class __$$MediaImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -673,6 +582,7 @@ class _$MediaImpl extends _Media {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Media)
       this.resourceType = Dstu2ResourceType.Media,
       this.id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.meta,
       this.implicitRules,
       @JsonKey(name: '_implicitRules') this.implicitRulesElement,
@@ -699,7 +609,8 @@ class _$MediaImpl extends _Media {
       this.duration,
       @JsonKey(name: '_duration') this.durationElement,
       required this.content})
-      : _contained = contained,
+      : _fhirComments = fhirComments,
+        _contained = contained,
         _extension_ = extension_,
         _modifierExtension = modifierExtension,
         _identifier = identifier,
@@ -713,6 +624,17 @@ class _$MediaImpl extends _Media {
   final Dstu2ResourceType resourceType;
   @override
   final FhirId? id;
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final FhirMeta? meta;
   @override
@@ -811,7 +733,7 @@ class _$MediaImpl extends _Media {
 
   @override
   String toString() {
-    return 'Media(resourceType: $resourceType, id: $id, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, subtype: $subtype, identifier: $identifier, subject: $subject, operator_: $operator_, view: $view, deviceName: $deviceName, deviceNameElement: $deviceNameElement, height: $height, heightElement: $heightElement, width: $width, widthElement: $widthElement, frames: $frames, framesElement: $framesElement, duration: $duration, durationElement: $durationElement, content: $content)';
+    return 'Media(resourceType: $resourceType, id: $id, fhirComments: $fhirComments, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, subtype: $subtype, identifier: $identifier, subject: $subject, operator_: $operator_, view: $view, deviceName: $deviceName, deviceNameElement: $deviceNameElement, height: $height, heightElement: $heightElement, width: $width, widthElement: $widthElement, frames: $frames, framesElement: $framesElement, duration: $duration, durationElement: $durationElement, content: $content)';
   }
 
   @override
@@ -822,6 +744,8 @@ class _$MediaImpl extends _Media {
             (identical(other.resourceType, resourceType) ||
                 other.resourceType == resourceType) &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.meta, meta) || other.meta == meta) &&
             (identical(other.implicitRules, implicitRules) ||
                 other.implicitRules == implicitRules) &&
@@ -872,6 +796,7 @@ class _$MediaImpl extends _Media {
         runtimeType,
         resourceType,
         id,
+        const DeepCollectionEquality().hash(_fhirComments),
         meta,
         implicitRules,
         implicitRulesElement,
@@ -919,6 +844,7 @@ abstract class _Media extends Media {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Media)
       final Dstu2ResourceType resourceType,
       final FhirId? id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final FhirMeta? meta,
       final FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') final Element? implicitRulesElement,
@@ -955,6 +881,9 @@ abstract class _Media extends Media {
   Dstu2ResourceType get resourceType;
   @override
   FhirId? get id;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   FhirMeta? get meta;
   @override
@@ -1032,6 +961,8 @@ mixin _$Binary {
   @JsonKey(unknownEnumValue: Dstu2ResourceType.Binary)
   Dstu2ResourceType get resourceType => throw _privateConstructorUsedError;
   FhirId? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   FhirMeta? get meta => throw _privateConstructorUsedError;
   FhirUri? get implicitRules => throw _privateConstructorUsedError;
   @JsonKey(name: '_implicitRules')
@@ -1064,6 +995,7 @@ abstract class $BinaryCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Binary)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -1078,10 +1010,7 @@ abstract class $BinaryCopyWith<$Res> {
       FhirBase64Binary? content});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
-  $ElementCopyWith<$Res>? get contentTypeElement;
 }
 
 /// @nodoc
@@ -1099,6 +1028,7 @@ class _$BinaryCopyWithImpl<$Res, $Val extends Binary>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -1121,6 +1051,10 @@ class _$BinaryCopyWithImpl<$Res, $Val extends Binary>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -1186,30 +1120,6 @@ class _$BinaryCopyWithImpl<$Res, $Val extends Binary>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -1217,18 +1127,6 @@ class _$BinaryCopyWithImpl<$Res, $Val extends Binary>
 
     return $NarrativeCopyWith<$Res>(_value.text!, (value) {
       return _then(_value.copyWith(text: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get contentTypeElement {
-    if (_value.contentTypeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.contentTypeElement!, (value) {
-      return _then(_value.copyWith(contentTypeElement: value) as $Val);
     });
   }
 }
@@ -1244,6 +1142,7 @@ abstract class _$$BinaryImplCopyWith<$Res> implements $BinaryCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Binary)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -1260,13 +1159,7 @@ abstract class _$$BinaryImplCopyWith<$Res> implements $BinaryCopyWith<$Res> {
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
-  @override
-  $ElementCopyWith<$Res>? get contentTypeElement;
 }
 
 /// @nodoc
@@ -1282,6 +1175,7 @@ class __$$BinaryImplCopyWithImpl<$Res>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -1304,6 +1198,10 @@ class __$$BinaryImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -1363,6 +1261,7 @@ class _$BinaryImpl extends _Binary {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Binary)
       this.resourceType = Dstu2ResourceType.Binary,
       this.id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.meta,
       this.implicitRules,
       @JsonKey(name: '_implicitRules') this.implicitRulesElement,
@@ -1375,7 +1274,8 @@ class _$BinaryImpl extends _Binary {
       this.contentType,
       @JsonKey(name: '_contentType') this.contentTypeElement,
       this.content})
-      : _contained = contained,
+      : _fhirComments = fhirComments,
+        _contained = contained,
         _extension_ = extension_,
         _modifierExtension = modifierExtension,
         super._();
@@ -1388,6 +1288,17 @@ class _$BinaryImpl extends _Binary {
   final Dstu2ResourceType resourceType;
   @override
   final FhirId? id;
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final FhirMeta? meta;
   @override
@@ -1444,7 +1355,7 @@ class _$BinaryImpl extends _Binary {
 
   @override
   String toString() {
-    return 'Binary(resourceType: $resourceType, id: $id, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, contentType: $contentType, contentTypeElement: $contentTypeElement, content: $content)';
+    return 'Binary(resourceType: $resourceType, id: $id, fhirComments: $fhirComments, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, contentType: $contentType, contentTypeElement: $contentTypeElement, content: $content)';
   }
 
   @override
@@ -1455,6 +1366,8 @@ class _$BinaryImpl extends _Binary {
             (identical(other.resourceType, resourceType) ||
                 other.resourceType == resourceType) &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.meta, meta) || other.meta == meta) &&
             (identical(other.implicitRules, implicitRules) ||
                 other.implicitRules == implicitRules) &&
@@ -1484,6 +1397,7 @@ class _$BinaryImpl extends _Binary {
       runtimeType,
       resourceType,
       id,
+      const DeepCollectionEquality().hash(_fhirComments),
       meta,
       implicitRules,
       implicitRulesElement,
@@ -1516,6 +1430,7 @@ abstract class _Binary extends Binary {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Binary)
       final Dstu2ResourceType resourceType,
       final FhirId? id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final FhirMeta? meta,
       final FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') final Element? implicitRulesElement,
@@ -1537,6 +1452,9 @@ abstract class _Binary extends Binary {
   Dstu2ResourceType get resourceType;
   @override
   FhirId? get id;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   FhirMeta? get meta;
   @override
@@ -1580,6 +1498,8 @@ mixin _$Bundle {
   @JsonKey(unknownEnumValue: Dstu2ResourceType.Bundle)
   Dstu2ResourceType get resourceType => throw _privateConstructorUsedError;
   FhirId? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   FhirMeta? get meta => throw _privateConstructorUsedError;
   FhirUri? get implicitRules => throw _privateConstructorUsedError;
   @JsonKey(name: '_implicitRules')
@@ -1618,6 +1538,7 @@ abstract class $BundleCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Bundle)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -1636,11 +1557,7 @@ abstract class $BundleCopyWith<$Res> {
       Signature? signature});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
-  $ElementCopyWith<$Res>? get typeElement;
-  $ElementCopyWith<$Res>? get totalElement;
   $SignatureCopyWith<$Res>? get signature;
 }
 
@@ -1659,6 +1576,7 @@ class _$BundleCopyWithImpl<$Res, $Val extends Bundle>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -1685,6 +1603,10 @@ class _$BundleCopyWithImpl<$Res, $Val extends Bundle>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -1766,30 +1688,6 @@ class _$BundleCopyWithImpl<$Res, $Val extends Bundle>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -1797,30 +1695,6 @@ class _$BundleCopyWithImpl<$Res, $Val extends Bundle>
 
     return $NarrativeCopyWith<$Res>(_value.text!, (value) {
       return _then(_value.copyWith(text: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get typeElement {
-    if (_value.typeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.typeElement!, (value) {
-      return _then(_value.copyWith(typeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get totalElement {
-    if (_value.totalElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.totalElement!, (value) {
-      return _then(_value.copyWith(totalElement: value) as $Val);
     });
   }
 
@@ -1848,6 +1722,7 @@ abstract class _$$BundleImplCopyWith<$Res> implements $BundleCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Bundle)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -1868,15 +1743,7 @@ abstract class _$$BundleImplCopyWith<$Res> implements $BundleCopyWith<$Res> {
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
-  @override
-  $ElementCopyWith<$Res>? get typeElement;
-  @override
-  $ElementCopyWith<$Res>? get totalElement;
   @override
   $SignatureCopyWith<$Res>? get signature;
 }
@@ -1894,6 +1761,7 @@ class __$$BundleImplCopyWithImpl<$Res>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -1920,6 +1788,10 @@ class __$$BundleImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -1995,6 +1867,7 @@ class _$BundleImpl extends _Bundle {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Bundle)
       this.resourceType = Dstu2ResourceType.Bundle,
       this.id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.meta,
       this.implicitRules,
       @JsonKey(name: '_implicitRules') this.implicitRulesElement,
@@ -2011,7 +1884,8 @@ class _$BundleImpl extends _Bundle {
       final List<BundleLink>? link,
       final List<BundleEntry>? entry,
       this.signature})
-      : _contained = contained,
+      : _fhirComments = fhirComments,
+        _contained = contained,
         _extension_ = extension_,
         _modifierExtension = modifierExtension,
         _link = link,
@@ -2026,6 +1900,17 @@ class _$BundleImpl extends _Bundle {
   final Dstu2ResourceType resourceType;
   @override
   final FhirId? id;
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final FhirMeta? meta;
   @override
@@ -2108,7 +1993,7 @@ class _$BundleImpl extends _Bundle {
 
   @override
   String toString() {
-    return 'Bundle(resourceType: $resourceType, id: $id, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, typeElement: $typeElement, total: $total, totalElement: $totalElement, link: $link, entry: $entry, signature: $signature)';
+    return 'Bundle(resourceType: $resourceType, id: $id, fhirComments: $fhirComments, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, typeElement: $typeElement, total: $total, totalElement: $totalElement, link: $link, entry: $entry, signature: $signature)';
   }
 
   @override
@@ -2119,6 +2004,8 @@ class _$BundleImpl extends _Bundle {
             (identical(other.resourceType, resourceType) ||
                 other.resourceType == resourceType) &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.meta, meta) || other.meta == meta) &&
             (identical(other.implicitRules, implicitRules) ||
                 other.implicitRules == implicitRules) &&
@@ -2149,26 +2036,28 @@ class _$BundleImpl extends _Bundle {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      resourceType,
-      id,
-      meta,
-      implicitRules,
-      implicitRulesElement,
-      language,
-      languageElement,
-      text,
-      const DeepCollectionEquality().hash(_contained),
-      const DeepCollectionEquality().hash(_extension_),
-      const DeepCollectionEquality().hash(_modifierExtension),
-      type,
-      typeElement,
-      total,
-      totalElement,
-      const DeepCollectionEquality().hash(_link),
-      const DeepCollectionEquality().hash(_entry),
-      signature);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        resourceType,
+        id,
+        const DeepCollectionEquality().hash(_fhirComments),
+        meta,
+        implicitRules,
+        implicitRulesElement,
+        language,
+        languageElement,
+        text,
+        const DeepCollectionEquality().hash(_contained),
+        const DeepCollectionEquality().hash(_extension_),
+        const DeepCollectionEquality().hash(_modifierExtension),
+        type,
+        typeElement,
+        total,
+        totalElement,
+        const DeepCollectionEquality().hash(_link),
+        const DeepCollectionEquality().hash(_entry),
+        signature
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -2189,6 +2078,7 @@ abstract class _Bundle extends Bundle {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Bundle)
       final Dstu2ResourceType resourceType,
       final FhirId? id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final FhirMeta? meta,
       final FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') final Element? implicitRulesElement,
@@ -2215,6 +2105,9 @@ abstract class _Bundle extends Bundle {
   Dstu2ResourceType get resourceType;
   @override
   FhirId? get id;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   FhirMeta? get meta;
   @override
@@ -2300,9 +2193,6 @@ abstract class $BundleLinkCopyWith<$Res> {
       @JsonKey(name: '_relation') Element? relationElement,
       FhirUri url,
       @JsonKey(name: '_url') Element? urlElement});
-
-  $ElementCopyWith<$Res>? get relationElement;
-  $ElementCopyWith<$Res>? get urlElement;
 }
 
 /// @nodoc
@@ -2362,30 +2252,6 @@ class _$BundleLinkCopyWithImpl<$Res, $Val extends BundleLink>
               as Element?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get relationElement {
-    if (_value.relationElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.relationElement!, (value) {
-      return _then(_value.copyWith(relationElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get urlElement {
-    if (_value.urlElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.urlElement!, (value) {
-      return _then(_value.copyWith(urlElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -2405,11 +2271,6 @@ abstract class _$$BundleLinkImplCopyWith<$Res>
       @JsonKey(name: '_relation') Element? relationElement,
       FhirUri url,
       @JsonKey(name: '_url') Element? urlElement});
-
-  @override
-  $ElementCopyWith<$Res>? get relationElement;
-  @override
-  $ElementCopyWith<$Res>? get urlElement;
 }
 
 /// @nodoc
@@ -2676,7 +2537,6 @@ abstract class $BundleEntryCopyWith<$Res> {
       BundleEntryRequest? request,
       BundleEntryResponse? response});
 
-  $ElementCopyWith<$Res>? get fullUrlElement;
   $BundleEntrySearchCopyWith<$Res>? get search;
   $BundleEntryRequestCopyWith<$Res>? get request;
   $BundleEntryResponseCopyWith<$Res>? get response;
@@ -2757,18 +2617,6 @@ class _$BundleEntryCopyWithImpl<$Res, $Val extends BundleEntry>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fullUrlElement {
-    if (_value.fullUrlElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fullUrlElement!, (value) {
-      return _then(_value.copyWith(fullUrlElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $BundleEntrySearchCopyWith<$Res>? get search {
     if (_value.search == null) {
       return null;
@@ -2825,8 +2673,6 @@ abstract class _$$BundleEntryImplCopyWith<$Res>
       BundleEntryRequest? request,
       BundleEntryResponse? response});
 
-  @override
-  $ElementCopyWith<$Res>? get fullUrlElement;
   @override
   $BundleEntrySearchCopyWith<$Res>? get search;
   @override
@@ -3140,9 +2986,6 @@ abstract class $BundleEntrySearchCopyWith<$Res> {
       @JsonKey(name: '_mode') Element? modeElement,
       FhirDecimal? score,
       @JsonKey(name: '_score') Element? scoreElement});
-
-  $ElementCopyWith<$Res>? get modeElement;
-  $ElementCopyWith<$Res>? get scoreElement;
 }
 
 /// @nodoc
@@ -3202,30 +3045,6 @@ class _$BundleEntrySearchCopyWithImpl<$Res, $Val extends BundleEntrySearch>
               as Element?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get modeElement {
-    if (_value.modeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.modeElement!, (value) {
-      return _then(_value.copyWith(modeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get scoreElement {
-    if (_value.scoreElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.scoreElement!, (value) {
-      return _then(_value.copyWith(scoreElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -3245,11 +3064,6 @@ abstract class _$$BundleEntrySearchImplCopyWith<$Res>
       @JsonKey(name: '_mode') Element? modeElement,
       FhirDecimal? score,
       @JsonKey(name: '_score') Element? scoreElement});
-
-  @override
-  $ElementCopyWith<$Res>? get modeElement;
-  @override
-  $ElementCopyWith<$Res>? get scoreElement;
 }
 
 /// @nodoc
@@ -3534,13 +3348,6 @@ abstract class $BundleEntryRequestCopyWith<$Res> {
       @JsonKey(name: '_ifMatch') Element? ifMatchElement,
       String? ifNoneExist,
       @JsonKey(name: '_ifNoneExist') Element? ifNoneExistElement});
-
-  $ElementCopyWith<$Res>? get methodElement;
-  $ElementCopyWith<$Res>? get urlElement;
-  $ElementCopyWith<$Res>? get ifNoneMatchElement;
-  $ElementCopyWith<$Res>? get ifModifiedSinceElement;
-  $ElementCopyWith<$Res>? get ifMatchElement;
-  $ElementCopyWith<$Res>? get ifNoneExistElement;
 }
 
 /// @nodoc
@@ -3640,78 +3447,6 @@ class _$BundleEntryRequestCopyWithImpl<$Res, $Val extends BundleEntryRequest>
               as Element?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get methodElement {
-    if (_value.methodElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.methodElement!, (value) {
-      return _then(_value.copyWith(methodElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get urlElement {
-    if (_value.urlElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.urlElement!, (value) {
-      return _then(_value.copyWith(urlElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get ifNoneMatchElement {
-    if (_value.ifNoneMatchElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.ifNoneMatchElement!, (value) {
-      return _then(_value.copyWith(ifNoneMatchElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get ifModifiedSinceElement {
-    if (_value.ifModifiedSinceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.ifModifiedSinceElement!, (value) {
-      return _then(_value.copyWith(ifModifiedSinceElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get ifMatchElement {
-    if (_value.ifMatchElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.ifMatchElement!, (value) {
-      return _then(_value.copyWith(ifMatchElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get ifNoneExistElement {
-    if (_value.ifNoneExistElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.ifNoneExistElement!, (value) {
-      return _then(_value.copyWith(ifNoneExistElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -3739,19 +3474,6 @@ abstract class _$$BundleEntryRequestImplCopyWith<$Res>
       @JsonKey(name: '_ifMatch') Element? ifMatchElement,
       String? ifNoneExist,
       @JsonKey(name: '_ifNoneExist') Element? ifNoneExistElement});
-
-  @override
-  $ElementCopyWith<$Res>? get methodElement;
-  @override
-  $ElementCopyWith<$Res>? get urlElement;
-  @override
-  $ElementCopyWith<$Res>? get ifNoneMatchElement;
-  @override
-  $ElementCopyWith<$Res>? get ifModifiedSinceElement;
-  @override
-  $ElementCopyWith<$Res>? get ifMatchElement;
-  @override
-  $ElementCopyWith<$Res>? get ifNoneExistElement;
 }
 
 /// @nodoc
@@ -4145,11 +3867,6 @@ abstract class $BundleEntryResponseCopyWith<$Res> {
       @JsonKey(name: '_etag') Element? etagElement,
       FhirInstant? lastModified,
       @JsonKey(name: '_lastModified') Element? lastModifiedElement});
-
-  $ElementCopyWith<$Res>? get statusElement;
-  $ElementCopyWith<$Res>? get locationElement;
-  $ElementCopyWith<$Res>? get etagElement;
-  $ElementCopyWith<$Res>? get lastModifiedElement;
 }
 
 /// @nodoc
@@ -4229,54 +3946,6 @@ class _$BundleEntryResponseCopyWithImpl<$Res, $Val extends BundleEntryResponse>
               as Element?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get locationElement {
-    if (_value.locationElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.locationElement!, (value) {
-      return _then(_value.copyWith(locationElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get etagElement {
-    if (_value.etagElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.etagElement!, (value) {
-      return _then(_value.copyWith(etagElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get lastModifiedElement {
-    if (_value.lastModifiedElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.lastModifiedElement!, (value) {
-      return _then(_value.copyWith(lastModifiedElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -4300,15 +3969,6 @@ abstract class _$$BundleEntryResponseImplCopyWith<$Res>
       @JsonKey(name: '_etag') Element? etagElement,
       FhirInstant? lastModified,
       @JsonKey(name: '_lastModified') Element? lastModifiedElement});
-
-  @override
-  $ElementCopyWith<$Res>? get statusElement;
-  @override
-  $ElementCopyWith<$Res>? get locationElement;
-  @override
-  $ElementCopyWith<$Res>? get etagElement;
-  @override
-  $ElementCopyWith<$Res>? get lastModifiedElement;
 }
 
 /// @nodoc
@@ -4598,6 +4258,8 @@ mixin _$Basic {
   @JsonKey(unknownEnumValue: Dstu2ResourceType.Basic)
   Dstu2ResourceType get resourceType => throw _privateConstructorUsedError;
   FhirId? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   FhirMeta? get meta => throw _privateConstructorUsedError;
   FhirUri? get implicitRules => throw _privateConstructorUsedError;
   @JsonKey(name: '_implicitRules')
@@ -4633,6 +4295,7 @@ abstract class $BasicCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Basic)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -4650,13 +4313,10 @@ abstract class $BasicCopyWith<$Res> {
       @JsonKey(name: '_created') Element? createdElement});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
   $CodeableConceptCopyWith<$Res> get code;
   $ReferenceCopyWith<$Res>? get subject;
   $ReferenceCopyWith<$Res>? get author;
-  $ElementCopyWith<$Res>? get createdElement;
 }
 
 /// @nodoc
@@ -4674,6 +4334,7 @@ class _$BasicCopyWithImpl<$Res, $Val extends Basic>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -4699,6 +4360,10 @@ class _$BasicCopyWithImpl<$Res, $Val extends Basic>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -4776,30 +4441,6 @@ class _$BasicCopyWithImpl<$Res, $Val extends Basic>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -4841,18 +4482,6 @@ class _$BasicCopyWithImpl<$Res, $Val extends Basic>
       return _then(_value.copyWith(author: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get createdElement {
-    if (_value.createdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.createdElement!, (value) {
-      return _then(_value.copyWith(createdElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -4866,6 +4495,7 @@ abstract class _$$BasicImplCopyWith<$Res> implements $BasicCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Basic)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -4885,10 +4515,6 @@ abstract class _$$BasicImplCopyWith<$Res> implements $BasicCopyWith<$Res> {
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
   @override
   $CodeableConceptCopyWith<$Res> get code;
@@ -4896,8 +4522,6 @@ abstract class _$$BasicImplCopyWith<$Res> implements $BasicCopyWith<$Res> {
   $ReferenceCopyWith<$Res>? get subject;
   @override
   $ReferenceCopyWith<$Res>? get author;
-  @override
-  $ElementCopyWith<$Res>? get createdElement;
 }
 
 /// @nodoc
@@ -4913,6 +4537,7 @@ class __$$BasicImplCopyWithImpl<$Res>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -4938,6 +4563,10 @@ class __$$BasicImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -5009,6 +4638,7 @@ class _$BasicImpl extends _Basic {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Basic)
       this.resourceType = Dstu2ResourceType.Basic,
       this.id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.meta,
       this.implicitRules,
       @JsonKey(name: '_implicitRules') this.implicitRulesElement,
@@ -5024,7 +4654,8 @@ class _$BasicImpl extends _Basic {
       this.author,
       this.created,
       @JsonKey(name: '_created') this.createdElement})
-      : _contained = contained,
+      : _fhirComments = fhirComments,
+        _contained = contained,
         _extension_ = extension_,
         _modifierExtension = modifierExtension,
         _identifier = identifier,
@@ -5038,6 +4669,17 @@ class _$BasicImpl extends _Basic {
   final Dstu2ResourceType resourceType;
   @override
   final FhirId? id;
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final FhirMeta? meta;
   @override
@@ -5108,7 +4750,7 @@ class _$BasicImpl extends _Basic {
 
   @override
   String toString() {
-    return 'Basic(resourceType: $resourceType, id: $id, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, code: $code, subject: $subject, author: $author, created: $created, createdElement: $createdElement)';
+    return 'Basic(resourceType: $resourceType, id: $id, fhirComments: $fhirComments, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, code: $code, subject: $subject, author: $author, created: $created, createdElement: $createdElement)';
   }
 
   @override
@@ -5119,6 +4761,8 @@ class _$BasicImpl extends _Basic {
             (identical(other.resourceType, resourceType) ||
                 other.resourceType == resourceType) &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.meta, meta) || other.meta == meta) &&
             (identical(other.implicitRules, implicitRules) ||
                 other.implicitRules == implicitRules) &&
@@ -5151,6 +4795,7 @@ class _$BasicImpl extends _Basic {
       runtimeType,
       resourceType,
       id,
+      const DeepCollectionEquality().hash(_fhirComments),
       meta,
       implicitRules,
       implicitRulesElement,
@@ -5186,6 +4831,7 @@ abstract class _Basic extends Basic {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Basic)
       final Dstu2ResourceType resourceType,
       final FhirId? id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final FhirMeta? meta,
       final FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') final Element? implicitRulesElement,
@@ -5210,6 +4856,9 @@ abstract class _Basic extends Basic {
   Dstu2ResourceType get resourceType;
   @override
   FhirId? get id;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   FhirMeta? get meta;
   @override
