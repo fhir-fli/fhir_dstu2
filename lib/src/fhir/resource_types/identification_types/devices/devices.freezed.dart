@@ -23,6 +23,8 @@ mixin _$Device {
   @JsonKey(unknownEnumValue: Dstu2ResourceType.Device)
   Dstu2ResourceType get resourceType => throw _privateConstructorUsedError;
   FhirId? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   FhirMeta? get meta => throw _privateConstructorUsedError;
   FhirUri? get implicitRules => throw _privateConstructorUsedError;
   @JsonKey(name: '_implicitRules')
@@ -80,6 +82,7 @@ abstract class $DeviceCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Device)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -113,19 +116,11 @@ abstract class $DeviceCopyWith<$Res> {
       @JsonKey(name: '_url') Element? urlElement});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
   $CodeableConceptCopyWith<$Res> get type;
-  $ElementCopyWith<$Res>? get statusElement;
-  $ElementCopyWith<$Res>? get manufacturerElement;
-  $ElementCopyWith<$Res>? get manufactureDateElement;
-  $ElementCopyWith<$Res>? get udiElement;
-  $ElementCopyWith<$Res>? get lotNumberElement;
   $ReferenceCopyWith<$Res>? get owner;
   $ReferenceCopyWith<$Res>? get location;
   $ReferenceCopyWith<$Res>? get patient;
-  $ElementCopyWith<$Res>? get urlElement;
 }
 
 /// @nodoc
@@ -143,6 +138,7 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -184,6 +180,10 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -325,30 +325,6 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -364,66 +340,6 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
   $CodeableConceptCopyWith<$Res> get type {
     return $CodeableConceptCopyWith<$Res>(_value.type, (value) {
       return _then(_value.copyWith(type: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get manufacturerElement {
-    if (_value.manufacturerElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.manufacturerElement!, (value) {
-      return _then(_value.copyWith(manufacturerElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get manufactureDateElement {
-    if (_value.manufactureDateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.manufactureDateElement!, (value) {
-      return _then(_value.copyWith(manufactureDateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get udiElement {
-    if (_value.udiElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.udiElement!, (value) {
-      return _then(_value.copyWith(udiElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get lotNumberElement {
-    if (_value.lotNumberElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.lotNumberElement!, (value) {
-      return _then(_value.copyWith(lotNumberElement: value) as $Val);
     });
   }
 
@@ -462,18 +378,6 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
       return _then(_value.copyWith(patient: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get urlElement {
-    if (_value.urlElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.urlElement!, (value) {
-      return _then(_value.copyWith(urlElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -487,6 +391,7 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Device)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -522,31 +427,15 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
   @override
   $CodeableConceptCopyWith<$Res> get type;
-  @override
-  $ElementCopyWith<$Res>? get statusElement;
-  @override
-  $ElementCopyWith<$Res>? get manufacturerElement;
-  @override
-  $ElementCopyWith<$Res>? get manufactureDateElement;
-  @override
-  $ElementCopyWith<$Res>? get udiElement;
-  @override
-  $ElementCopyWith<$Res>? get lotNumberElement;
   @override
   $ReferenceCopyWith<$Res>? get owner;
   @override
   $ReferenceCopyWith<$Res>? get location;
   @override
   $ReferenceCopyWith<$Res>? get patient;
-  @override
-  $ElementCopyWith<$Res>? get urlElement;
 }
 
 /// @nodoc
@@ -562,6 +451,7 @@ class __$$DeviceImplCopyWithImpl<$Res>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -603,6 +493,10 @@ class __$$DeviceImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -738,6 +632,7 @@ class _$DeviceImpl extends _Device {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Device)
       this.resourceType = Dstu2ResourceType.Device,
       this.id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.meta,
       this.implicitRules,
       @JsonKey(name: '_implicitRules') this.implicitRulesElement,
@@ -769,7 +664,8 @@ class _$DeviceImpl extends _Device {
       final List<ContactPoint>? contact,
       this.url,
       @JsonKey(name: '_url') this.urlElement})
-      : _contained = contained,
+      : _fhirComments = fhirComments,
+        _contained = contained,
         _extension_ = extension_,
         _modifierExtension = modifierExtension,
         _identifier = identifier,
@@ -785,6 +681,17 @@ class _$DeviceImpl extends _Device {
   final Dstu2ResourceType resourceType;
   @override
   final FhirId? id;
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final FhirMeta? meta;
   @override
@@ -909,7 +816,7 @@ class _$DeviceImpl extends _Device {
 
   @override
   String toString() {
-    return 'Device(resourceType: $resourceType, id: $id, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, type: $type, note: $note, status: $status, statusElement: $statusElement, manufacturer: $manufacturer, manufacturerElement: $manufacturerElement, model: $model, version: $version, manufactureDate: $manufactureDate, manufactureDateElement: $manufactureDateElement, expiry: $expiry, udi: $udi, udiElement: $udiElement, lotNumber: $lotNumber, lotNumberElement: $lotNumberElement, owner: $owner, location: $location, patient: $patient, contact: $contact, url: $url, urlElement: $urlElement)';
+    return 'Device(resourceType: $resourceType, id: $id, fhirComments: $fhirComments, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, type: $type, note: $note, status: $status, statusElement: $statusElement, manufacturer: $manufacturer, manufacturerElement: $manufacturerElement, model: $model, version: $version, manufactureDate: $manufactureDate, manufactureDateElement: $manufactureDateElement, expiry: $expiry, udi: $udi, udiElement: $udiElement, lotNumber: $lotNumber, lotNumberElement: $lotNumberElement, owner: $owner, location: $location, patient: $patient, contact: $contact, url: $url, urlElement: $urlElement)';
   }
 
   @override
@@ -920,6 +827,8 @@ class _$DeviceImpl extends _Device {
             (identical(other.resourceType, resourceType) ||
                 other.resourceType == resourceType) &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.meta, meta) || other.meta == meta) &&
             (identical(other.implicitRules, implicitRules) ||
                 other.implicitRules == implicitRules) &&
@@ -977,6 +886,7 @@ class _$DeviceImpl extends _Device {
         runtimeType,
         resourceType,
         id,
+        const DeepCollectionEquality().hash(_fhirComments),
         meta,
         implicitRules,
         implicitRulesElement,
@@ -1029,6 +939,7 @@ abstract class _Device extends Device {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Device)
       final Dstu2ResourceType resourceType,
       final FhirId? id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final FhirMeta? meta,
       final FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') final Element? implicitRulesElement,
@@ -1070,6 +981,9 @@ abstract class _Device extends Device {
   Dstu2ResourceType get resourceType;
   @override
   FhirId? get id;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   FhirMeta? get meta;
   @override
@@ -1157,6 +1071,8 @@ mixin _$DeviceComponent {
   @JsonKey(unknownEnumValue: Dstu2ResourceType.DeviceComponent)
   Dstu2ResourceType get resourceType => throw _privateConstructorUsedError;
   FhirId? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   FhirMeta? get meta => throw _privateConstructorUsedError;
   FhirUri? get implicitRules => throw _privateConstructorUsedError;
   @JsonKey(name: '_implicitRules')
@@ -1201,6 +1117,7 @@ abstract class $DeviceComponentCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.DeviceComponent)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -1223,8 +1140,6 @@ abstract class $DeviceComponentCopyWith<$Res> {
       CodeableConcept? languageCode});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
   $CodeableConceptCopyWith<$Res> get type;
   $IdentifierCopyWith<$Res> get identifier;
@@ -1249,6 +1164,7 @@ class _$DeviceComponentCopyWithImpl<$Res, $Val extends DeviceComponent>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -1278,6 +1194,10 @@ class _$DeviceComponentCopyWithImpl<$Res, $Val extends DeviceComponent>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -1371,30 +1291,6 @@ class _$DeviceComponentCopyWithImpl<$Res, $Val extends DeviceComponent>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -1482,6 +1378,7 @@ abstract class _$$DeviceComponentImplCopyWith<$Res>
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.DeviceComponent)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -1505,10 +1402,6 @@ abstract class _$$DeviceComponentImplCopyWith<$Res>
 
   @override
   $FhirMetaCopyWith<$Res>? get meta;
-  @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
   @override
   $NarrativeCopyWith<$Res>? get text;
   @override
@@ -1538,6 +1431,7 @@ class __$$DeviceComponentImplCopyWithImpl<$Res>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -1567,6 +1461,10 @@ class __$$DeviceComponentImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -1654,6 +1552,7 @@ class _$DeviceComponentImpl extends _DeviceComponent {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.DeviceComponent)
       this.resourceType = Dstu2ResourceType.DeviceComponent,
       this.id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.meta,
       this.implicitRules,
       @JsonKey(name: '_implicitRules') this.implicitRulesElement,
@@ -1675,7 +1574,8 @@ class _$DeviceComponentImpl extends _DeviceComponent {
       final List<DeviceComponentProductionSpecification>?
           productionSpecification,
       this.languageCode})
-      : _contained = contained,
+      : _fhirComments = fhirComments,
+        _contained = contained,
         _extension_ = extension_,
         _modifierExtension = modifierExtension,
         _operationalStatus = operationalStatus,
@@ -1690,6 +1590,17 @@ class _$DeviceComponentImpl extends _DeviceComponent {
   final Dstu2ResourceType resourceType;
   @override
   final FhirId? id;
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final FhirMeta? meta;
   @override
@@ -1778,7 +1689,7 @@ class _$DeviceComponentImpl extends _DeviceComponent {
 
   @override
   String toString() {
-    return 'DeviceComponent(resourceType: $resourceType, id: $id, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, identifier: $identifier, lastSystemChange: $lastSystemChange, source: $source, parent: $parent, operationalStatus: $operationalStatus, parameterGroup: $parameterGroup, measurementPrinciple: $measurementPrinciple, productionSpecification: $productionSpecification, languageCode: $languageCode)';
+    return 'DeviceComponent(resourceType: $resourceType, id: $id, fhirComments: $fhirComments, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, identifier: $identifier, lastSystemChange: $lastSystemChange, source: $source, parent: $parent, operationalStatus: $operationalStatus, parameterGroup: $parameterGroup, measurementPrinciple: $measurementPrinciple, productionSpecification: $productionSpecification, languageCode: $languageCode)';
   }
 
   @override
@@ -1789,6 +1700,8 @@ class _$DeviceComponentImpl extends _DeviceComponent {
             (identical(other.resourceType, resourceType) ||
                 other.resourceType == resourceType) &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.meta, meta) || other.meta == meta) &&
             (identical(other.implicitRules, implicitRules) ||
                 other.implicitRules == implicitRules) &&
@@ -1830,6 +1743,7 @@ class _$DeviceComponentImpl extends _DeviceComponent {
         runtimeType,
         resourceType,
         id,
+        const DeepCollectionEquality().hash(_fhirComments),
         meta,
         implicitRules,
         implicitRulesElement,
@@ -1871,6 +1785,7 @@ abstract class _DeviceComponent extends DeviceComponent {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.DeviceComponent)
       final Dstu2ResourceType resourceType,
       final FhirId? id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final FhirMeta? meta,
       final FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') final Element? implicitRulesElement,
@@ -1902,6 +1817,9 @@ abstract class _DeviceComponent extends DeviceComponent {
   Dstu2ResourceType get resourceType;
   @override
   FhirId? get id;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   FhirMeta? get meta;
   @override
@@ -1963,6 +1881,8 @@ mixin _$DeviceComponentProductionSpecification {
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   CodeableConcept? get specType => throw _privateConstructorUsedError;
   Identifier? get componentId => throw _privateConstructorUsedError;
   String? get productionSpec => throw _privateConstructorUsedError;
@@ -1986,6 +1906,7 @@ abstract class $DeviceComponentProductionSpecificationCopyWith<$Res> {
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       CodeableConcept? specType,
       Identifier? componentId,
       String? productionSpec});
@@ -2011,6 +1932,7 @@ class _$DeviceComponentProductionSpecificationCopyWithImpl<$Res,
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? specType = freezed,
     Object? componentId = freezed,
     Object? productionSpec = freezed,
@@ -2028,6 +1950,10 @@ class _$DeviceComponentProductionSpecificationCopyWithImpl<$Res,
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       specType: freezed == specType
           ? _value.specType
           : specType // ignore: cast_nullable_to_non_nullable
@@ -2081,6 +2007,7 @@ abstract class _$$DeviceComponentProductionSpecificationImplCopyWith<$Res>
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       CodeableConcept? specType,
       Identifier? componentId,
       String? productionSpec});
@@ -2107,6 +2034,7 @@ class __$$DeviceComponentProductionSpecificationImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? specType = freezed,
     Object? componentId = freezed,
     Object? productionSpec = freezed,
@@ -2124,6 +2052,10 @@ class __$$DeviceComponentProductionSpecificationImplCopyWithImpl<$Res>
           ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       specType: freezed == specType
           ? _value.specType
           : specType // ignore: cast_nullable_to_non_nullable
@@ -2148,11 +2080,13 @@ class _$DeviceComponentProductionSpecificationImpl
       {this.id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.specType,
       this.componentId,
       this.productionSpec})
       : _extension_ = extension_,
         _modifierExtension = modifierExtension,
+        _fhirComments = fhirComments,
         super._();
 
   factory _$DeviceComponentProductionSpecificationImpl.fromJson(
@@ -2183,6 +2117,17 @@ class _$DeviceComponentProductionSpecificationImpl
     return EqualUnmodifiableListView(value);
   }
 
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final CodeableConcept? specType;
   @override
@@ -2192,7 +2137,7 @@ class _$DeviceComponentProductionSpecificationImpl
 
   @override
   String toString() {
-    return 'DeviceComponentProductionSpecification(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, specType: $specType, componentId: $componentId, productionSpec: $productionSpec)';
+    return 'DeviceComponentProductionSpecification(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, fhirComments: $fhirComments, specType: $specType, componentId: $componentId, productionSpec: $productionSpec)';
   }
 
   @override
@@ -2205,6 +2150,8 @@ class _$DeviceComponentProductionSpecificationImpl
                 .equals(other._extension_, _extension_) &&
             const DeepCollectionEquality()
                 .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.specType, specType) ||
                 other.specType == specType) &&
             (identical(other.componentId, componentId) ||
@@ -2220,6 +2167,7 @@ class _$DeviceComponentProductionSpecificationImpl
       id,
       const DeepCollectionEquality().hash(_extension_),
       const DeepCollectionEquality().hash(_modifierExtension),
+      const DeepCollectionEquality().hash(_fhirComments),
       specType,
       componentId,
       productionSpec);
@@ -2247,6 +2195,7 @@ abstract class _DeviceComponentProductionSpecification
           {final FhirId? id,
           @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
           final List<FhirExtension>? modifierExtension,
+          @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
           final CodeableConcept? specType,
           final Identifier? componentId,
           final String? productionSpec}) =
@@ -2264,6 +2213,9 @@ abstract class _DeviceComponentProductionSpecification
   List<FhirExtension>? get extension_;
   @override
   List<FhirExtension>? get modifierExtension;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   CodeableConcept? get specType;
   @override
@@ -2286,6 +2238,8 @@ mixin _$DeviceMetric {
   @JsonKey(unknownEnumValue: Dstu2ResourceType.DeviceMetric)
   Dstu2ResourceType get resourceType => throw _privateConstructorUsedError;
   FhirId? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   FhirMeta? get meta => throw _privateConstructorUsedError;
   FhirUri? get implicitRules => throw _privateConstructorUsedError;
   @JsonKey(name: '_implicitRules')
@@ -2337,6 +2291,7 @@ abstract class $DeviceMetricCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.DeviceMetric)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -2364,17 +2319,12 @@ abstract class $DeviceMetricCopyWith<$Res> {
       List<DeviceMetricCalibration>? calibration});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
   $CodeableConceptCopyWith<$Res> get type;
   $IdentifierCopyWith<$Res> get identifier;
   $CodeableConceptCopyWith<$Res>? get unit;
   $ReferenceCopyWith<$Res>? get source;
   $ReferenceCopyWith<$Res>? get parent;
-  $ElementCopyWith<$Res>? get operationalStatusElement;
-  $ElementCopyWith<$Res>? get colorElement;
-  $ElementCopyWith<$Res>? get categoryElement;
   $TimingCopyWith<$Res>? get measurementPeriod;
 }
 
@@ -2393,6 +2343,7 @@ class _$DeviceMetricCopyWithImpl<$Res, $Val extends DeviceMetric>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -2425,6 +2376,10 @@ class _$DeviceMetricCopyWithImpl<$Res, $Val extends DeviceMetric>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -2530,30 +2485,6 @@ class _$DeviceMetricCopyWithImpl<$Res, $Val extends DeviceMetric>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -2618,42 +2549,6 @@ class _$DeviceMetricCopyWithImpl<$Res, $Val extends DeviceMetric>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get operationalStatusElement {
-    if (_value.operationalStatusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.operationalStatusElement!, (value) {
-      return _then(_value.copyWith(operationalStatusElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get colorElement {
-    if (_value.colorElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.colorElement!, (value) {
-      return _then(_value.copyWith(colorElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get categoryElement {
-    if (_value.categoryElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.categoryElement!, (value) {
-      return _then(_value.copyWith(categoryElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $TimingCopyWith<$Res>? get measurementPeriod {
     if (_value.measurementPeriod == null) {
       return null;
@@ -2677,6 +2572,7 @@ abstract class _$$DeviceMetricImplCopyWith<$Res>
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.DeviceMetric)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -2706,10 +2602,6 @@ abstract class _$$DeviceMetricImplCopyWith<$Res>
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
   @override
   $CodeableConceptCopyWith<$Res> get type;
@@ -2721,12 +2613,6 @@ abstract class _$$DeviceMetricImplCopyWith<$Res>
   $ReferenceCopyWith<$Res>? get source;
   @override
   $ReferenceCopyWith<$Res>? get parent;
-  @override
-  $ElementCopyWith<$Res>? get operationalStatusElement;
-  @override
-  $ElementCopyWith<$Res>? get colorElement;
-  @override
-  $ElementCopyWith<$Res>? get categoryElement;
   @override
   $TimingCopyWith<$Res>? get measurementPeriod;
 }
@@ -2744,6 +2630,7 @@ class __$$DeviceMetricImplCopyWithImpl<$Res>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -2776,6 +2663,10 @@ class __$$DeviceMetricImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -2875,6 +2766,7 @@ class _$DeviceMetricImpl extends _DeviceMetric {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.DeviceMetric)
       this.resourceType = Dstu2ResourceType.DeviceMetric,
       this.id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.meta,
       this.implicitRules,
       @JsonKey(name: '_implicitRules') this.implicitRulesElement,
@@ -2899,7 +2791,8 @@ class _$DeviceMetricImpl extends _DeviceMetric {
       @JsonKey(name: '_category') this.categoryElement,
       this.measurementPeriod,
       final List<DeviceMetricCalibration>? calibration})
-      : _contained = contained,
+      : _fhirComments = fhirComments,
+        _contained = contained,
         _extension_ = extension_,
         _modifierExtension = modifierExtension,
         _calibration = calibration,
@@ -2913,6 +2806,17 @@ class _$DeviceMetricImpl extends _DeviceMetric {
   final Dstu2ResourceType resourceType;
   @override
   final FhirId? id;
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final FhirMeta? meta;
   @override
@@ -3001,7 +2905,7 @@ class _$DeviceMetricImpl extends _DeviceMetric {
 
   @override
   String toString() {
-    return 'DeviceMetric(resourceType: $resourceType, id: $id, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, identifier: $identifier, unit: $unit, source: $source, parent: $parent, operationalStatus: $operationalStatus, operationalStatusElement: $operationalStatusElement, color: $color, colorElement: $colorElement, category: $category, categoryElement: $categoryElement, measurementPeriod: $measurementPeriod, calibration: $calibration)';
+    return 'DeviceMetric(resourceType: $resourceType, id: $id, fhirComments: $fhirComments, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, identifier: $identifier, unit: $unit, source: $source, parent: $parent, operationalStatus: $operationalStatus, operationalStatusElement: $operationalStatusElement, color: $color, colorElement: $colorElement, category: $category, categoryElement: $categoryElement, measurementPeriod: $measurementPeriod, calibration: $calibration)';
   }
 
   @override
@@ -3012,6 +2916,8 @@ class _$DeviceMetricImpl extends _DeviceMetric {
             (identical(other.resourceType, resourceType) ||
                 other.resourceType == resourceType) &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.meta, meta) || other.meta == meta) &&
             (identical(other.implicitRules, implicitRules) ||
                 other.implicitRules == implicitRules) &&
@@ -3058,6 +2964,7 @@ class _$DeviceMetricImpl extends _DeviceMetric {
         runtimeType,
         resourceType,
         id,
+        const DeepCollectionEquality().hash(_fhirComments),
         meta,
         implicitRules,
         implicitRulesElement,
@@ -3101,6 +3008,7 @@ abstract class _DeviceMetric extends DeviceMetric {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.DeviceMetric)
       final Dstu2ResourceType resourceType,
       final FhirId? id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final FhirMeta? meta,
       final FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') final Element? implicitRulesElement,
@@ -3137,6 +3045,9 @@ abstract class _DeviceMetric extends DeviceMetric {
   Dstu2ResourceType get resourceType;
   @override
   FhirId? get id;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   FhirMeta? get meta;
   @override
@@ -3208,6 +3119,8 @@ mixin _$DeviceMetricCalibration {
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   @JsonKey(unknownEnumValue: CalibrationType.unknown)
   CalibrationType? get type => throw _privateConstructorUsedError;
   @JsonKey(name: '_type')
@@ -3236,6 +3149,7 @@ abstract class $DeviceMetricCalibrationCopyWith<$Res> {
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       @JsonKey(unknownEnumValue: CalibrationType.unknown) CalibrationType? type,
       @JsonKey(name: '_type') Element? typeElement,
       @JsonKey(unknownEnumValue: CalibrationState.unknown)
@@ -3243,10 +3157,6 @@ abstract class $DeviceMetricCalibrationCopyWith<$Res> {
       @JsonKey(name: '_state') Element? stateElement,
       FhirInstant? time,
       @JsonKey(name: '_time') Element? timeElement});
-
-  $ElementCopyWith<$Res>? get typeElement;
-  $ElementCopyWith<$Res>? get stateElement;
-  $ElementCopyWith<$Res>? get timeElement;
 }
 
 /// @nodoc
@@ -3266,6 +3176,7 @@ class _$DeviceMetricCalibrationCopyWithImpl<$Res,
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? type = freezed,
     Object? typeElement = freezed,
     Object? state = freezed,
@@ -3286,6 +3197,10 @@ class _$DeviceMetricCalibrationCopyWithImpl<$Res,
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -3312,42 +3227,6 @@ class _$DeviceMetricCalibrationCopyWithImpl<$Res,
               as Element?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get typeElement {
-    if (_value.typeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.typeElement!, (value) {
-      return _then(_value.copyWith(typeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get stateElement {
-    if (_value.stateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.stateElement!, (value) {
-      return _then(_value.copyWith(stateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get timeElement {
-    if (_value.timeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.timeElement!, (value) {
-      return _then(_value.copyWith(timeElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -3363,6 +3242,7 @@ abstract class _$$DeviceMetricCalibrationImplCopyWith<$Res>
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       @JsonKey(unknownEnumValue: CalibrationType.unknown) CalibrationType? type,
       @JsonKey(name: '_type') Element? typeElement,
       @JsonKey(unknownEnumValue: CalibrationState.unknown)
@@ -3370,13 +3250,6 @@ abstract class _$$DeviceMetricCalibrationImplCopyWith<$Res>
       @JsonKey(name: '_state') Element? stateElement,
       FhirInstant? time,
       @JsonKey(name: '_time') Element? timeElement});
-
-  @override
-  $ElementCopyWith<$Res>? get typeElement;
-  @override
-  $ElementCopyWith<$Res>? get stateElement;
-  @override
-  $ElementCopyWith<$Res>? get timeElement;
 }
 
 /// @nodoc
@@ -3395,6 +3268,7 @@ class __$$DeviceMetricCalibrationImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? type = freezed,
     Object? typeElement = freezed,
     Object? state = freezed,
@@ -3415,6 +3289,10 @@ class __$$DeviceMetricCalibrationImplCopyWithImpl<$Res>
           ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -3450,6 +3328,7 @@ class _$DeviceMetricCalibrationImpl extends _DeviceMetricCalibration {
       {this.id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       @JsonKey(unknownEnumValue: CalibrationType.unknown) this.type,
       @JsonKey(name: '_type') this.typeElement,
       @JsonKey(unknownEnumValue: CalibrationState.unknown) this.state,
@@ -3458,6 +3337,7 @@ class _$DeviceMetricCalibrationImpl extends _DeviceMetricCalibration {
       @JsonKey(name: '_time') this.timeElement})
       : _extension_ = extension_,
         _modifierExtension = modifierExtension,
+        _fhirComments = fhirComments,
         super._();
 
   factory _$DeviceMetricCalibrationImpl.fromJson(Map<String, dynamic> json) =>
@@ -3487,6 +3367,17 @@ class _$DeviceMetricCalibrationImpl extends _DeviceMetricCalibration {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(unknownEnumValue: CalibrationType.unknown)
   final CalibrationType? type;
@@ -3507,7 +3398,7 @@ class _$DeviceMetricCalibrationImpl extends _DeviceMetricCalibration {
 
   @override
   String toString() {
-    return 'DeviceMetricCalibration(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, typeElement: $typeElement, state: $state, stateElement: $stateElement, time: $time, timeElement: $timeElement)';
+    return 'DeviceMetricCalibration(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, fhirComments: $fhirComments, type: $type, typeElement: $typeElement, state: $state, stateElement: $stateElement, time: $time, timeElement: $timeElement)';
   }
 
   @override
@@ -3520,6 +3411,8 @@ class _$DeviceMetricCalibrationImpl extends _DeviceMetricCalibration {
                 .equals(other._extension_, _extension_) &&
             const DeepCollectionEquality()
                 .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.typeElement, typeElement) ||
                 other.typeElement == typeElement) &&
@@ -3538,6 +3431,7 @@ class _$DeviceMetricCalibrationImpl extends _DeviceMetricCalibration {
       id,
       const DeepCollectionEquality().hash(_extension_),
       const DeepCollectionEquality().hash(_modifierExtension),
+      const DeepCollectionEquality().hash(_fhirComments),
       type,
       typeElement,
       state,
@@ -3565,6 +3459,7 @@ abstract class _DeviceMetricCalibration extends DeviceMetricCalibration {
           {final FhirId? id,
           @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
           final List<FhirExtension>? modifierExtension,
+          @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
           @JsonKey(unknownEnumValue: CalibrationType.unknown)
           final CalibrationType? type,
           @JsonKey(name: '_type') final Element? typeElement,
@@ -3586,6 +3481,9 @@ abstract class _DeviceMetricCalibration extends DeviceMetricCalibration {
   List<FhirExtension>? get extension_;
   @override
   List<FhirExtension>? get modifierExtension;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   @JsonKey(unknownEnumValue: CalibrationType.unknown)
   CalibrationType? get type;

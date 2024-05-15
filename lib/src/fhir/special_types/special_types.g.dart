@@ -105,6 +105,9 @@ _$ElementDefinitionImpl _$$ElementDefinitionImplFromJson(
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       path: json['path'] as String,
       representation: (json['representation'] as List<dynamic>?)
           ?.map(FhirCode.fromJson)
@@ -1166,6 +1169,7 @@ Map<String, dynamic> _$$ElementDefinitionImplToJson(
   writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['path'] = instance.path;
   writeNotNull('representation',
       instance.representation?.map((e) => e.toJson()).toList());
@@ -1595,6 +1599,9 @@ _$ElementDefinitionSlicingImpl _$$ElementDefinitionSlicingImplFromJson(
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       discriminator: (json['discriminator'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -1628,6 +1635,7 @@ Map<String, dynamic> _$$ElementDefinitionSlicingImplToJson(
   writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('discriminator', instance.discriminator);
   writeNotNull('description', instance.description);
   writeNotNull('_description', instance.descriptionElement?.toJson());
@@ -1651,6 +1659,9 @@ _$ElementDefinitionBaseImpl _$$ElementDefinitionBaseImplFromJson(
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
       path: json['path'] as String,
       pathElement: json['_path'] == null
@@ -1679,6 +1690,7 @@ Map<String, dynamic> _$$ElementDefinitionBaseImplToJson(
   writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['path'] = instance.path;
   writeNotNull('_path', instance.pathElement?.toJson());
   val['min'] = instance.min.toJson();
@@ -1695,6 +1707,9 @@ _$ElementDefinitionTypeImpl _$$ElementDefinitionTypeImplFromJson(
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       code: json['code'] == null ? null : FhirCode.fromJson(json['code']),
       codeExtension: json['_code'] == null
           ? null
@@ -1707,9 +1722,6 @@ _$ElementDefinitionTypeImpl _$$ElementDefinitionTypeImplFromJson(
       aggregationElement: json['_aggregation'] == null
           ? null
           : Element.fromJson(json['_aggregation'] as Map<String, dynamic>),
-      fhirElement: (json['fhir_comments'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
     );
 
 Map<String, dynamic> _$$ElementDefinitionTypeImplToJson(
@@ -1725,13 +1737,13 @@ Map<String, dynamic> _$$ElementDefinitionTypeImplToJson(
   writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('code', instance.code?.toJson());
   writeNotNull('_code', instance.codeExtension?.toJson());
   writeNotNull('profile', instance.profile?.map((e) => e.toJson()).toList());
   writeNotNull('aggregation',
       instance.aggregation?.map((e) => _$TypeAggregationEnumMap[e]!).toList());
   writeNotNull('_aggregation', instance.aggregationElement?.toJson());
-  writeNotNull('fhir_comments', instance.fhirElement);
   return val;
 }
 
@@ -1745,8 +1757,12 @@ const _$TypeAggregationEnumMap = {
 _$TypeCodeExtensionImpl _$$TypeCodeExtensionImplFromJson(
         Map<String, dynamic> json) =>
     _$TypeCodeExtensionImpl(
+      id: json['id'] == null ? null : FhirId.fromJson(json['id']),
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
     );
 
@@ -1760,8 +1776,10 @@ Map<String, dynamic> _$$TypeCodeExtensionImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   return val;
 }
 
@@ -1771,6 +1789,9 @@ _$ElementDefinitionConstraintImpl _$$ElementDefinitionConstraintImplFromJson(
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
       key: FhirId.fromJson(json['key']),
       keyElement: json['_key'] == null
@@ -1808,6 +1829,7 @@ Map<String, dynamic> _$$ElementDefinitionConstraintImplToJson(
   writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['key'] = instance.key.toJson();
   writeNotNull('_key', instance.keyElement?.toJson());
   writeNotNull('requirements', instance.requirements);
@@ -1837,6 +1859,9 @@ _$ElementDefinitionBindingImpl _$$ElementDefinitionBindingImplFromJson(
     id: json['id'] == null ? null : FhirId.fromJson(json['id']),
     extension_: (json['extension'] as List<dynamic>?)
         ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    fhirComments: (json['fhir_comments'] as List<dynamic>?)
+        ?.map((e) => e as String)
         .toList(),
     strength: $enumDecode(
         _$ElementDefinitionBindingStrengthEnumMap, json['strength'],
@@ -1870,6 +1895,7 @@ Map<String, dynamic> _$$ElementDefinitionBindingImplToJson(
   writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['strength'] =
       _$ElementDefinitionBindingStrengthEnumMap[instance.strength]!;
   writeNotNull('_strength', instance.strengthElement?.toJson());

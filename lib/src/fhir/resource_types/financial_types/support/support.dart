@@ -22,6 +22,7 @@ class Coverage with Resource, _$Coverage {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.Coverage)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -49,6 +50,9 @@ class Coverage with Resource, _$Coverage {
     @JsonKey(name: '_network') Element? networkElement,
     List<Reference>? contract,
   }) = _Coverage;
+
+  @override
+  String get fhirType => 'Coverage';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory Coverage.fromYaml(dynamic yaml) => yaml is String
@@ -91,6 +95,7 @@ class EligibilityRequest with Resource, _$EligibilityRequest {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.EligibilityRequest)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -109,6 +114,9 @@ class EligibilityRequest with Resource, _$EligibilityRequest {
     Reference? provider,
     Reference? organization,
   }) = _EligibilityRequest;
+
+  @override
+  String get fhirType => 'EligibilityRequest';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory EligibilityRequest.fromYaml(dynamic yaml) => yaml is String
@@ -151,6 +159,7 @@ class EligibilityResponse with Resource, _$EligibilityResponse {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.EligibilityResponse)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -175,6 +184,9 @@ class EligibilityResponse with Resource, _$EligibilityResponse {
     Reference? requestProvider,
     Reference? requestOrganization,
   }) = _EligibilityResponse;
+
+  @override
+  String get fhirType => 'EligibilityResponse';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory EligibilityResponse.fromYaml(dynamic yaml) => yaml is String
@@ -217,6 +229,7 @@ class EnrollmentRequest with Resource, _$EnrollmentRequest {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.EnrollmentRequest)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -238,6 +251,9 @@ class EnrollmentRequest with Resource, _$EnrollmentRequest {
     required Reference coverage,
     required Coding relationship,
   }) = _EnrollmentRequest;
+
+  @override
+  String get fhirType => 'EnrollmentRequest';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory EnrollmentRequest.fromYaml(dynamic yaml) => yaml is String
@@ -280,6 +296,7 @@ class EnrollmentResponse with Resource, _$EnrollmentResponse {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.EnrollmentResponse)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -304,6 +321,9 @@ class EnrollmentResponse with Resource, _$EnrollmentResponse {
     Reference? requestProvider,
     Reference? requestOrganization,
   }) = _EnrollmentResponse;
+
+  @override
+  String get fhirType => 'EnrollmentResponse';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory EnrollmentResponse.fromYaml(dynamic yaml) => yaml is String

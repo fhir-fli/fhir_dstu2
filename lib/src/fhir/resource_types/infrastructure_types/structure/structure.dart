@@ -22,6 +22,7 @@ class Media with Resource, _$Media {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.Media)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -49,6 +50,9 @@ class Media with Resource, _$Media {
     @JsonKey(name: '_duration') Element? durationElement,
     required Attachment content,
   }) = _Media;
+
+  @override
+  String get fhirType => 'Media';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory Media.fromYaml(dynamic yaml) => yaml is String
@@ -89,6 +93,7 @@ class Binary with Resource, _$Binary {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.Binary)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -102,6 +107,9 @@ class Binary with Resource, _$Binary {
     @JsonKey(name: '_contentType') Element? contentTypeElement,
     FhirBase64Binary? content,
   }) = _Binary;
+
+  @override
+  String get fhirType => 'Binary';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory Binary.fromYaml(dynamic yaml) => yaml is String
@@ -143,6 +151,7 @@ class Bundle with Resource, _$Bundle {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.Bundle)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -160,6 +169,9 @@ class Bundle with Resource, _$Bundle {
     List<BundleEntry>? entry,
     Signature? signature,
   }) = _Bundle;
+
+  @override
+  String get fhirType => 'Bundle';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory Bundle.fromYaml(dynamic yaml) => yaml is String
@@ -194,7 +206,7 @@ class Bundle with Resource, _$Bundle {
 }
 
 @freezed
-class BundleLink with _$BundleLink {
+class BundleLink with BackboneType, _$BundleLink {
   const BundleLink._();
   const factory BundleLink({
     FhirId? id,
@@ -207,8 +219,8 @@ class BundleLink with _$BundleLink {
     @JsonKey(name: '_url') Element? urlElement,
   }) = _BundleLink;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'BundleLink';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory BundleLink.fromYaml(dynamic yaml) => yaml is String
@@ -236,14 +248,10 @@ class BundleLink with _$BundleLink {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class BundleEntry with _$BundleEntry {
+class BundleEntry with BackboneType, _$BundleEntry {
   const BundleEntry._();
   const factory BundleEntry({
     FhirId? id,
@@ -258,6 +266,9 @@ class BundleEntry with _$BundleEntry {
     BundleEntryRequest? request,
     BundleEntryResponse? response,
   }) = _BundleEntry;
+
+  @override
+  String get fhirType => 'BundleEntry';
 
   factory BundleEntry.get(String resourcePath, [FhirUri? canonicalBaseUrl]) =>
       BundleEntry(
@@ -302,9 +313,6 @@ class BundleEntry with _$BundleEntry {
             url: FhirUri(resourcePath),
           ));
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
-
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory BundleEntry.fromYaml(dynamic yaml) => yaml is String
       ? BundleEntry.fromJson(
@@ -331,14 +339,10 @@ class BundleEntry with _$BundleEntry {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class BundleEntrySearch with _$BundleEntrySearch {
+class BundleEntrySearch with BackboneType, _$BundleEntrySearch {
   const BundleEntrySearch._();
   const factory BundleEntrySearch({
     FhirId? id,
@@ -351,8 +355,8 @@ class BundleEntrySearch with _$BundleEntrySearch {
     @JsonKey(name: '_score') Element? scoreElement,
   }) = _BundleEntrySearch;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'BundleEntrySearch';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory BundleEntrySearch.fromYaml(dynamic yaml) => yaml is String
@@ -380,14 +384,10 @@ class BundleEntrySearch with _$BundleEntrySearch {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class BundleEntryRequest with _$BundleEntryRequest {
+class BundleEntryRequest with BackboneType, _$BundleEntryRequest {
   const BundleEntryRequest._();
   const factory BundleEntryRequest({
     FhirId? id,
@@ -409,8 +409,8 @@ class BundleEntryRequest with _$BundleEntryRequest {
     @JsonKey(name: '_ifNoneExist') Element? ifNoneExistElement,
   }) = _BundleEntryRequest;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'BundleEntryRequest';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory BundleEntryRequest.fromYaml(dynamic yaml) => yaml is String
@@ -438,14 +438,10 @@ class BundleEntryRequest with _$BundleEntryRequest {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class BundleEntryResponse with _$BundleEntryResponse {
+class BundleEntryResponse with BackboneType, _$BundleEntryResponse {
   const BundleEntryResponse._();
   const factory BundleEntryResponse({
     FhirId? id,
@@ -462,8 +458,8 @@ class BundleEntryResponse with _$BundleEntryResponse {
     @JsonKey(name: '_lastModified') Element? lastModifiedElement,
   }) = _BundleEntryResponse;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'BundleEntryResponse';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory BundleEntryResponse.fromYaml(dynamic yaml) => yaml is String
@@ -491,10 +487,6 @@ class BundleEntryResponse with _$BundleEntryResponse {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -505,6 +497,7 @@ class Basic with Resource, _$Basic {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.Basic)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -521,6 +514,9 @@ class Basic with Resource, _$Basic {
     FhirDate? created,
     @JsonKey(name: '_created') Element? createdElement,
   }) = _Basic;
+
+  @override
+  String get fhirType => 'Basic';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory Basic.fromYaml(dynamic yaml) => yaml is String

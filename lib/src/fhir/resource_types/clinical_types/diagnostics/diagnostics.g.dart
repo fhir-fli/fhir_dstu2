@@ -13,6 +13,9 @@ _$ObservationImpl _$$ObservationImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.Observation) ??
           Dstu2ResourceType.Observation,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       idElement: json['_id'] == null
           ? null
           : Element.fromJson(json['_id'] as Map<String, dynamic>),
@@ -164,6 +167,7 @@ Map<String, dynamic> _$$ObservationImplToJson(_$ObservationImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('_id', instance.idElement?.toJson());
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
@@ -542,6 +546,9 @@ _$DiagnosticReportImpl _$$DiagnosticReportImplFromJson(
               unknownValue: Dstu2ResourceType.DiagnosticReport) ??
           Dstu2ResourceType.DiagnosticReport,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -640,6 +647,7 @@ Map<String, dynamic> _$$DiagnosticReportImplToJson(
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -703,6 +711,9 @@ _$DiagnosticReportImageImpl _$$DiagnosticReportImageImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       comment: json['comment'] as String?,
       commentElement: json['_comment'] == null
           ? null
@@ -725,6 +736,7 @@ Map<String, dynamic> _$$DiagnosticReportImageImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('comment', instance.comment);
   writeNotNull('_comment', instance.commentElement?.toJson());
   val['link'] = instance.link.toJson();
@@ -739,6 +751,9 @@ _$DiagnosticOrderImpl _$$DiagnosticOrderImplFromJson(
               unknownValue: Dstu2ResourceType.DiagnosticOrder) ??
           Dstu2ResourceType.DiagnosticOrder,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -814,6 +829,7 @@ Map<String, dynamic> _$$DiagnosticOrderImplToJson(
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -878,6 +894,9 @@ _$DiagnosticOrderEventImpl _$$DiagnosticOrderEventImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       status: $enumDecode(_$EventStatusEnumMap, json['status'],
           unknownValue: EventStatus.unknown),
       description: json['description'] == null
@@ -905,6 +924,7 @@ Map<String, dynamic> _$$DiagnosticOrderEventImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['status'] = _$EventStatusEnumMap[instance.status]!;
   writeNotNull('description', instance.description?.toJson());
   val['dateTime'] = instance.dateTime.toJson();
@@ -939,6 +959,9 @@ _$DiagnosticOrderItemImpl _$$DiagnosticOrderItemImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       code: CodeableConcept.fromJson(json['code'] as Map<String, dynamic>),
       specimen: (json['specimen'] as List<dynamic>?)
           ?.map((e) => Reference.fromJson(e as Map<String, dynamic>))
@@ -968,6 +991,7 @@ Map<String, dynamic> _$$DiagnosticOrderItemImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['code'] = instance.code.toJson();
   writeNotNull('specimen', instance.specimen?.map((e) => e.toJson()).toList());
   writeNotNull('bodySite', instance.bodySite?.toJson());
@@ -1000,6 +1024,9 @@ _$SpecimenImpl _$$SpecimenImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.Specimen) ??
           Dstu2ResourceType.Specimen,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -1075,6 +1102,7 @@ Map<String, dynamic> _$$SpecimenImplToJson(_$SpecimenImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -1190,6 +1218,9 @@ _$SpecimenTreatmentImpl _$$SpecimenTreatmentImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       description: json['description'] as String?,
       procedure: json['procedure'] == null
           ? null
@@ -1214,6 +1245,7 @@ Map<String, dynamic> _$$SpecimenTreatmentImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('description', instance.description);
   writeNotNull('procedure', instance.procedure?.toJson());
   writeNotNull('additive', instance.additive?.map((e) => e.toJson()).toList());
@@ -1229,6 +1261,9 @@ _$SpecimenContainerImpl _$$SpecimenContainerImplFromJson(
           .toList(),
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
       identifier: (json['identifier'] as List<dynamic>?)
           ?.map((e) => Identifier.fromJson(e as Map<String, dynamic>))
@@ -1271,6 +1306,7 @@ Map<String, dynamic> _$$SpecimenContainerImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull(
       'identifier', instance.identifier?.map((e) => e.toJson()).toList());
   writeNotNull('description', instance.description);
@@ -1291,6 +1327,9 @@ _$BodySiteImpl _$$BodySiteImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.BodySite) ??
           Dstu2ResourceType.BodySite,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -1345,6 +1384,7 @@ Map<String, dynamic> _$$BodySiteImplToJson(_$BodySiteImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -1374,6 +1414,9 @@ _$ImagingStudyImpl _$$ImagingStudyImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.ImagingStudy) ??
           Dstu2ResourceType.ImagingStudy,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -1463,6 +1506,7 @@ Map<String, dynamic> _$$ImagingStudyImplToJson(_$ImagingStudyImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -1521,6 +1565,9 @@ _$ImagingStudySeriesImpl _$$ImagingStudySeriesImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       number: json['number'] == null
           ? null
           : FhirUnsignedInt.fromJson(json['number']),
@@ -1578,6 +1625,7 @@ Map<String, dynamic> _$$ImagingStudySeriesImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('number', instance.number?.toJson());
   writeNotNull('_number', instance.numberElement?.toJson());
   val['modality'] = instance.modality.toJson();
@@ -1617,6 +1665,9 @@ _$ImagingStudySeriesInstanceImpl _$$ImagingStudySeriesInstanceImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       number: json['number'] == null
           ? null
           : FhirUnsignedInt.fromJson(json['number']),
@@ -1653,6 +1704,7 @@ Map<String, dynamic> _$$ImagingStudySeriesInstanceImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('number', instance.number?.toJson());
   writeNotNull('_number', instance.numberElement?.toJson());
   val['uid'] = instance.uid.toJson();
@@ -1673,6 +1725,9 @@ _$ImagingObjectSelectionImpl _$$ImagingObjectSelectionImplFromJson(
               unknownValue: Dstu2ResourceType.ImagingObjectSelection) ??
           Dstu2ResourceType.ImagingObjectSelection,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -1728,6 +1783,7 @@ Map<String, dynamic> _$$ImagingObjectSelectionImplToJson(
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -1764,6 +1820,9 @@ _$ImagingObjectSelectionStudyImpl _$$ImagingObjectSelectionStudyImplFromJson(
     modifierExtension: (json['modifierExtension'] as List<dynamic>?)
         ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
         .toList(),
+    fhirComments: (json['fhir_comments'] as List<dynamic>?)
+        ?.map((e) => e as String)
+        .toList(),
     uid: FhirOid.fromJson(json['uid']),
     url: json['url'] == null ? null : FhirUri.fromJson(json['url']),
     imagingStudy: json['imagingStudy'] == null
@@ -1791,6 +1850,7 @@ Map<String, dynamic> _$$ImagingObjectSelectionStudyImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['uid'] = instance.uid.toJson();
   writeNotNull('url', instance.url?.toJson());
   writeNotNull('imagingStudy', instance.imagingStudy?.toJson());
@@ -1812,6 +1872,9 @@ _$ImagingObjectSelectionStudySeriesImpl
         .toList(),
     modifierExtension: (json['modifierExtension'] as List<dynamic>?)
         ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    fhirComments: (json['fhir_comments'] as List<dynamic>?)
+        ?.map((e) => e as String)
         .toList(),
     uid: json['uid'] == null ? null : FhirOid.fromJson(json['uid']),
     url: json['url'] == null ? null : FhirUri.fromJson(json['url']),
@@ -1837,6 +1900,7 @@ Map<String, dynamic> _$$ImagingObjectSelectionStudySeriesImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('uid', instance.uid?.toJson());
   writeNotNull('url', instance.url?.toJson());
   val['instance'] = instance.instance.map((e) => e.toJson()).toList();
@@ -1853,6 +1917,9 @@ _$ImagingObjectSelectionSeriesInstanceImpl
               .toList(),
           modifierExtension: (json['modifierExtension'] as List<dynamic>?)
               ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          fhirComments: (json['fhir_comments'] as List<dynamic>?)
+              ?.map((e) => e as String)
               .toList(),
           sopClass: FhirOid.fromJson(json['sopClass']),
           uid: FhirOid.fromJson(json['uid']),
@@ -1878,6 +1945,7 @@ Map<String, dynamic> _$$ImagingObjectSelectionSeriesInstanceImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['sopClass'] = instance.sopClass.toJson();
   val['uid'] = instance.uid.toJson();
   val['url'] = instance.url.toJson();
@@ -1893,10 +1961,12 @@ _$ImagingObjectSelectionInstanceFramesImpl
           extension_: (json['extension'] as List<dynamic>?)
               ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
               .toList(),
-          modifierExte: json['modifierExte'] == null
-              ? null
-              : FhirExtension.fromJson(
-                  json['modifierExte'] as Map<String, dynamic>),
+          modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          fhirComments: (json['fhir_comments'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList(),
           frameNumbers: (json['frameNumbers'] as List<dynamic>)
               .map(FhirUnsignedInt.fromJson)
               .toList(),
@@ -1916,7 +1986,9 @@ Map<String, dynamic> _$$ImagingObjectSelectionInstanceFramesImplToJson(
   writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
-  writeNotNull('modifierExte', instance.modifierExte?.toJson());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['frameNumbers'] = instance.frameNumbers.map((e) => e.toJson()).toList();
   val['url'] = instance.url.toJson();
   return val;

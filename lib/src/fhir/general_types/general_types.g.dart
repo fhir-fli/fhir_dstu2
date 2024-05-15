@@ -111,6 +111,9 @@ _$RangeImpl _$$RangeImplFromJson(Map<String, dynamic> json) => _$RangeImpl(
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       low: json['low'] == null
           ? null
           : Quantity.fromJson(json['low'] as Map<String, dynamic>),
@@ -131,6 +134,7 @@ Map<String, dynamic> _$$RangeImplToJson(_$RangeImpl instance) {
   writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('low', instance.low?.toJson());
   writeNotNull('high', instance.high?.toJson());
   return val;
@@ -291,6 +295,9 @@ _$RatioImpl _$$RatioImplFromJson(Map<String, dynamic> json) => _$RatioImpl(
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       numerator: json['numerator'] == null
           ? null
           : Quantity.fromJson(json['numerator'] as Map<String, dynamic>),
@@ -311,6 +318,7 @@ Map<String, dynamic> _$$RatioImplToJson(_$RatioImpl instance) {
   writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('numerator', instance.numerator?.toJson());
   writeNotNull('denominator', instance.denominator?.toJson());
   return val;
@@ -373,6 +381,9 @@ _$SampledDataImpl _$$SampledDataImplFromJson(Map<String, dynamic> json) =>
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       origin: Quantity.fromJson(json['origin'] as Map<String, dynamic>),
       period: FhirDecimal.fromJson(json['period']),
       periodElement: json['_period'] == null
@@ -417,6 +428,7 @@ Map<String, dynamic> _$$SampledDataImplToJson(_$SampledDataImpl instance) {
   writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['origin'] = instance.origin.toJson();
   val['period'] = instance.period.toJson();
   writeNotNull('_period', instance.periodElement?.toJson());
@@ -544,6 +556,9 @@ _$SignatureImpl _$$SignatureImplFromJson(Map<String, dynamic> json) =>
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       type: (json['type'] as List<dynamic>)
           .map((e) => Coding.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -584,6 +599,7 @@ Map<String, dynamic> _$$SignatureImplToJson(_$SignatureImpl instance) {
   writeNotNull('id', instance.id?.toJson());
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['type'] = instance.type.map((e) => e.toJson()).toList();
   val['when'] = instance.when.toJson();
   writeNotNull('_when', instance.whenElement?.toJson());

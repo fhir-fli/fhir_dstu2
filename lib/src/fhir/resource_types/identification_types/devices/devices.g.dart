@@ -12,6 +12,9 @@ _$DeviceImpl _$$DeviceImplFromJson(Map<String, dynamic> json) => _$DeviceImpl(
               unknownValue: Dstu2ResourceType.Device) ??
           Dstu2ResourceType.Device,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -103,6 +106,7 @@ Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -254,6 +258,9 @@ _$DeviceComponentImpl _$$DeviceComponentImplFromJson(
               unknownValue: Dstu2ResourceType.DeviceComponent) ??
           Dstu2ResourceType.DeviceComponent,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -326,6 +333,7 @@ Map<String, dynamic> _$$DeviceComponentImplToJson(
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -382,6 +390,9 @@ _$DeviceComponentProductionSpecificationImpl
           modifierExtension: (json['modifierExtension'] as List<dynamic>?)
               ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
               .toList(),
+          fhirComments: (json['fhir_comments'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList(),
           specType: json['specType'] == null
               ? null
               : CodeableConcept.fromJson(
@@ -408,6 +419,7 @@ Map<String, dynamic> _$$DeviceComponentProductionSpecificationImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('specType', instance.specType?.toJson());
   writeNotNull('componentId', instance.componentId?.toJson());
   writeNotNull('productionSpec', instance.productionSpec);
@@ -421,6 +433,9 @@ _$DeviceMetricImpl _$$DeviceMetricImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.DeviceMetric) ??
           Dstu2ResourceType.DeviceMetric,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -497,6 +512,7 @@ Map<String, dynamic> _$$DeviceMetricImplToJson(_$DeviceMetricImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -565,6 +581,9 @@ _$DeviceMetricCalibrationImpl _$$DeviceMetricCalibrationImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       type: $enumDecodeNullable(_$CalibrationTypeEnumMap, json['type'],
           unknownValue: CalibrationType.unknown),
       typeElement: json['_type'] == null
@@ -598,6 +617,7 @@ Map<String, dynamic> _$$DeviceMetricCalibrationImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('type', _$CalibrationTypeEnumMap[instance.type]);
   writeNotNull('_type', instance.typeElement?.toJson());
   writeNotNull('state', _$CalibrationStateEnumMap[instance.state]);

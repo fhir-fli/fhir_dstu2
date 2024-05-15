@@ -13,6 +13,9 @@ _$CoverageImpl _$$CoverageImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.Coverage) ??
           Dstu2ResourceType.Coverage,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -98,6 +101,7 @@ Map<String, dynamic> _$$CoverageImplToJson(_$CoverageImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -237,6 +241,9 @@ _$EligibilityRequestImpl _$$EligibilityRequestImplFromJson(
               unknownValue: Dstu2ResourceType.EligibilityRequest) ??
           Dstu2ResourceType.EligibilityRequest,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -302,6 +309,7 @@ Map<String, dynamic> _$$EligibilityRequestImplToJson(
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -334,6 +342,9 @@ _$EligibilityResponseImpl _$$EligibilityResponseImplFromJson(
               unknownValue: Dstu2ResourceType.EligibilityResponse) ??
           Dstu2ResourceType.EligibilityResponse,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -413,6 +424,7 @@ Map<String, dynamic> _$$EligibilityResponseImplToJson(
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -457,6 +469,9 @@ _$EnrollmentRequestImpl _$$EnrollmentRequestImplFromJson(
               unknownValue: Dstu2ResourceType.EnrollmentRequest) ??
           Dstu2ResourceType.EnrollmentRequest,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -526,6 +541,7 @@ Map<String, dynamic> _$$EnrollmentRequestImplToJson(
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -561,6 +577,9 @@ _$EnrollmentResponseImpl _$$EnrollmentResponseImplFromJson(
               unknownValue: Dstu2ResourceType.EnrollmentResponse) ??
           Dstu2ResourceType.EnrollmentResponse,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -640,6 +659,7 @@ Map<String, dynamic> _$$EnrollmentResponseImplToJson(
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());

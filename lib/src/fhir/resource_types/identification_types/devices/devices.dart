@@ -22,6 +22,7 @@ class Device with Resource, _$Device {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.Device)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -54,6 +55,9 @@ class Device with Resource, _$Device {
     FhirUri? url,
     @JsonKey(name: '_url') Element? urlElement,
   }) = _Device;
+
+  @override
+  String get fhirType => 'Device';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory Device.fromYaml(dynamic yaml) => yaml is String
@@ -170,6 +174,7 @@ class DeviceComponent with Resource, _$DeviceComponent {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.DeviceComponent)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -191,6 +196,9 @@ class DeviceComponent with Resource, _$DeviceComponent {
     List<DeviceComponentProductionSpecification>? productionSpecification,
     CodeableConcept? languageCode,
   }) = _DeviceComponent;
+
+  @override
+  String get fhirType => 'DeviceComponent';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DeviceComponent.fromYaml(dynamic yaml) => yaml is String
@@ -227,19 +235,20 @@ class DeviceComponent with Resource, _$DeviceComponent {
 
 @freezed
 class DeviceComponentProductionSpecification
-    with _$DeviceComponentProductionSpecification {
+    with BackboneType, _$DeviceComponentProductionSpecification {
   const DeviceComponentProductionSpecification._();
   const factory DeviceComponentProductionSpecification({
     FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     CodeableConcept? specType,
     Identifier? componentId,
     String? productionSpec,
   }) = _DeviceComponentProductionSpecification;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'DeviceComponentProductionSpecification';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DeviceComponentProductionSpecification.fromYaml(dynamic yaml) => yaml
@@ -266,6 +275,7 @@ class DeviceMetric with Resource, _$DeviceMetric {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.DeviceMetric)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -292,6 +302,9 @@ class DeviceMetric with Resource, _$DeviceMetric {
     Timing? measurementPeriod,
     List<DeviceMetricCalibration>? calibration,
   }) = _DeviceMetric;
+
+  @override
+  String get fhirType => 'DeviceMetric';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DeviceMetric.fromYaml(dynamic yaml) => yaml is String
@@ -327,12 +340,13 @@ class DeviceMetric with Resource, _$DeviceMetric {
 }
 
 @freezed
-class DeviceMetricCalibration with _$DeviceMetricCalibration {
+class DeviceMetricCalibration with BackboneType, _$DeviceMetricCalibration {
   const DeviceMetricCalibration._();
   const factory DeviceMetricCalibration({
     FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     @JsonKey(unknownEnumValue: CalibrationType.unknown) CalibrationType? type,
     @JsonKey(name: '_type') Element? typeElement,
     @JsonKey(unknownEnumValue: CalibrationState.unknown)
@@ -342,8 +356,8 @@ class DeviceMetricCalibration with _$DeviceMetricCalibration {
     @JsonKey(name: '_time') Element? timeElement,
   }) = _DeviceMetricCalibration;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'DeviceMetricCalibration';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DeviceMetricCalibration.fromYaml(dynamic yaml) => yaml is String
@@ -371,8 +385,4 @@ class DeviceMetricCalibration with _$DeviceMetricCalibration {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }

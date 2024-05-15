@@ -23,6 +23,8 @@ mixin _$Patient {
   @JsonKey(unknownEnumValue: Dstu2ResourceType.Patient)
   Dstu2ResourceType get resourceType => throw _privateConstructorUsedError;
   FhirId? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   @JsonKey(name: '_id')
   Element? get idElement => throw _privateConstructorUsedError;
   FhirMeta? get meta => throw _privateConstructorUsedError;
@@ -90,6 +92,7 @@ abstract class $PatientCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Patient)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       @JsonKey(name: '_id') Element? idElement,
       FhirMeta? meta,
       FhirUri? implicitRules,
@@ -129,19 +132,9 @@ abstract class $PatientCopyWith<$Res> {
       Reference? managingOrganization,
       List<PatientLink>? link});
 
-  $ElementCopyWith<$Res>? get idElement;
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
-  $ElementCopyWith<$Res>? get activeElement;
-  $ElementCopyWith<$Res>? get genderElement;
-  $ElementCopyWith<$Res>? get birthDateElement;
-  $ElementCopyWith<$Res>? get deceasedBooleanElement;
-  $ElementCopyWith<$Res>? get deceasedDateTimeElement;
   $CodeableConceptCopyWith<$Res>? get maritalStatus;
-  $ElementCopyWith<$Res>? get multipleBirthBooleanElement;
-  $ElementCopyWith<$Res>? get multipleBirthIntegerElement;
   $PatientAnimalCopyWith<$Res>? get animal;
   $ReferenceCopyWith<$Res>? get managingOrganization;
 }
@@ -161,6 +154,7 @@ class _$PatientCopyWithImpl<$Res, $Val extends Patient>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? idElement = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
@@ -207,6 +201,10 @@ class _$PatientCopyWithImpl<$Res, $Val extends Patient>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       idElement: freezed == idElement
           ? _value.idElement
           : idElement // ignore: cast_nullable_to_non_nullable
@@ -356,18 +354,6 @@ class _$PatientCopyWithImpl<$Res, $Val extends Patient>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get idElement {
-    if (_value.idElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.idElement!, (value) {
-      return _then(_value.copyWith(idElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $FhirMetaCopyWith<$Res>? get meta {
     if (_value.meta == null) {
       return null;
@@ -375,30 +361,6 @@ class _$PatientCopyWithImpl<$Res, $Val extends Patient>
 
     return $FhirMetaCopyWith<$Res>(_value.meta!, (value) {
       return _then(_value.copyWith(meta: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
     });
   }
 
@@ -416,66 +378,6 @@ class _$PatientCopyWithImpl<$Res, $Val extends Patient>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get activeElement {
-    if (_value.activeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.activeElement!, (value) {
-      return _then(_value.copyWith(activeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get genderElement {
-    if (_value.genderElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.genderElement!, (value) {
-      return _then(_value.copyWith(genderElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get birthDateElement {
-    if (_value.birthDateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.birthDateElement!, (value) {
-      return _then(_value.copyWith(birthDateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get deceasedBooleanElement {
-    if (_value.deceasedBooleanElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.deceasedBooleanElement!, (value) {
-      return _then(_value.copyWith(deceasedBooleanElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get deceasedDateTimeElement {
-    if (_value.deceasedDateTimeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.deceasedDateTimeElement!, (value) {
-      return _then(_value.copyWith(deceasedDateTimeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get maritalStatus {
     if (_value.maritalStatus == null) {
       return null;
@@ -483,30 +385,6 @@ class _$PatientCopyWithImpl<$Res, $Val extends Patient>
 
     return $CodeableConceptCopyWith<$Res>(_value.maritalStatus!, (value) {
       return _then(_value.copyWith(maritalStatus: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get multipleBirthBooleanElement {
-    if (_value.multipleBirthBooleanElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.multipleBirthBooleanElement!, (value) {
-      return _then(_value.copyWith(multipleBirthBooleanElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get multipleBirthIntegerElement {
-    if (_value.multipleBirthIntegerElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.multipleBirthIntegerElement!, (value) {
-      return _then(_value.copyWith(multipleBirthIntegerElement: value) as $Val);
     });
   }
 
@@ -546,6 +424,7 @@ abstract class _$$PatientImplCopyWith<$Res> implements $PatientCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Patient)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       @JsonKey(name: '_id') Element? idElement,
       FhirMeta? meta,
       FhirUri? implicitRules,
@@ -586,31 +465,11 @@ abstract class _$$PatientImplCopyWith<$Res> implements $PatientCopyWith<$Res> {
       List<PatientLink>? link});
 
   @override
-  $ElementCopyWith<$Res>? get idElement;
-  @override
   $FhirMetaCopyWith<$Res>? get meta;
-  @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
   @override
   $NarrativeCopyWith<$Res>? get text;
   @override
-  $ElementCopyWith<$Res>? get activeElement;
-  @override
-  $ElementCopyWith<$Res>? get genderElement;
-  @override
-  $ElementCopyWith<$Res>? get birthDateElement;
-  @override
-  $ElementCopyWith<$Res>? get deceasedBooleanElement;
-  @override
-  $ElementCopyWith<$Res>? get deceasedDateTimeElement;
-  @override
   $CodeableConceptCopyWith<$Res>? get maritalStatus;
-  @override
-  $ElementCopyWith<$Res>? get multipleBirthBooleanElement;
-  @override
-  $ElementCopyWith<$Res>? get multipleBirthIntegerElement;
   @override
   $PatientAnimalCopyWith<$Res>? get animal;
   @override
@@ -630,6 +489,7 @@ class __$$PatientImplCopyWithImpl<$Res>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? idElement = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
@@ -676,6 +536,10 @@ class __$$PatientImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       idElement: freezed == idElement
           ? _value.idElement
           : idElement // ignore: cast_nullable_to_non_nullable
@@ -831,6 +695,7 @@ class _$PatientImpl extends _Patient {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Patient)
       this.resourceType = Dstu2ResourceType.Patient,
       this.id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       @JsonKey(name: '_id') this.idElement,
       this.meta,
       this.implicitRules,
@@ -867,7 +732,8 @@ class _$PatientImpl extends _Patient {
       final List<Reference>? careProvider,
       this.managingOrganization,
       final List<PatientLink>? link})
-      : _contained = contained,
+      : _fhirComments = fhirComments,
+        _contained = contained,
         _extension_ = extension_,
         _modifierExtension = modifierExtension,
         _identifier = identifier,
@@ -889,6 +755,17 @@ class _$PatientImpl extends _Patient {
   final Dstu2ResourceType resourceType;
   @override
   final FhirId? id;
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: '_id')
   final Element? idElement;
@@ -1072,7 +949,7 @@ class _$PatientImpl extends _Patient {
 
   @override
   String toString() {
-    return 'Patient(resourceType: $resourceType, id: $id, idElement: $idElement, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, active: $active, activeElement: $activeElement, name: $name, telecom: $telecom, gender: $gender, genderElement: $genderElement, birthDate: $birthDate, birthDateElement: $birthDateElement, deceasedBoolean: $deceasedBoolean, deceasedBooleanElement: $deceasedBooleanElement, deceasedDateTime: $deceasedDateTime, deceasedDateTimeElement: $deceasedDateTimeElement, address: $address, maritalStatus: $maritalStatus, multipleBirthBoolean: $multipleBirthBoolean, multipleBirthBooleanElement: $multipleBirthBooleanElement, multipleBirthInteger: $multipleBirthInteger, multipleBirthIntegerElement: $multipleBirthIntegerElement, photo: $photo, contact: $contact, animal: $animal, communication: $communication, careProvider: $careProvider, managingOrganization: $managingOrganization, link: $link)';
+    return 'Patient(resourceType: $resourceType, id: $id, fhirComments: $fhirComments, idElement: $idElement, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, active: $active, activeElement: $activeElement, name: $name, telecom: $telecom, gender: $gender, genderElement: $genderElement, birthDate: $birthDate, birthDateElement: $birthDateElement, deceasedBoolean: $deceasedBoolean, deceasedBooleanElement: $deceasedBooleanElement, deceasedDateTime: $deceasedDateTime, deceasedDateTimeElement: $deceasedDateTimeElement, address: $address, maritalStatus: $maritalStatus, multipleBirthBoolean: $multipleBirthBoolean, multipleBirthBooleanElement: $multipleBirthBooleanElement, multipleBirthInteger: $multipleBirthInteger, multipleBirthIntegerElement: $multipleBirthIntegerElement, photo: $photo, contact: $contact, animal: $animal, communication: $communication, careProvider: $careProvider, managingOrganization: $managingOrganization, link: $link)';
   }
 
   @override
@@ -1083,6 +960,8 @@ class _$PatientImpl extends _Patient {
             (identical(other.resourceType, resourceType) ||
                 other.resourceType == resourceType) &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.idElement, idElement) ||
                 other.idElement == idElement) &&
             (identical(other.meta, meta) || other.meta == meta) &&
@@ -1157,6 +1036,7 @@ class _$PatientImpl extends _Patient {
         runtimeType,
         resourceType,
         id,
+        const DeepCollectionEquality().hash(_fhirComments),
         idElement,
         meta,
         implicitRules,
@@ -1214,6 +1094,7 @@ abstract class _Patient extends Patient {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Patient)
       final Dstu2ResourceType resourceType,
       final FhirId? id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       @JsonKey(name: '_id') final Element? idElement,
       final FhirMeta? meta,
       final FhirUri? implicitRules,
@@ -1263,6 +1144,9 @@ abstract class _Patient extends Patient {
   Dstu2ResourceType get resourceType;
   @override
   FhirId? get id;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   @JsonKey(name: '_id')
   Element? get idElement;
@@ -1364,6 +1248,8 @@ mixin _$PatientContact {
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   List<CodeableConcept>? get relationship => throw _privateConstructorUsedError;
   HumanName? get name => throw _privateConstructorUsedError;
   List<ContactPoint>? get telecom => throw _privateConstructorUsedError;
@@ -1391,6 +1277,7 @@ abstract class $PatientContactCopyWith<$Res> {
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       List<CodeableConcept>? relationship,
       HumanName? name,
       List<ContactPoint>? telecom,
@@ -1402,7 +1289,6 @@ abstract class $PatientContactCopyWith<$Res> {
 
   $HumanNameCopyWith<$Res>? get name;
   $AddressCopyWith<$Res>? get address;
-  $ElementCopyWith<$Res>? get genderElement;
   $ReferenceCopyWith<$Res>? get organization;
   $PeriodCopyWith<$Res>? get period;
 }
@@ -1423,6 +1309,7 @@ class _$PatientContactCopyWithImpl<$Res, $Val extends PatientContact>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? relationship = freezed,
     Object? name = freezed,
     Object? telecom = freezed,
@@ -1445,6 +1332,10 @@ class _$PatientContactCopyWithImpl<$Res, $Val extends PatientContact>
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       relationship: freezed == relationship
           ? _value.relationship
           : relationship // ignore: cast_nullable_to_non_nullable
@@ -1506,18 +1397,6 @@ class _$PatientContactCopyWithImpl<$Res, $Val extends PatientContact>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get genderElement {
-    if (_value.genderElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.genderElement!, (value) {
-      return _then(_value.copyWith(genderElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get organization {
     if (_value.organization == null) {
       return null;
@@ -1553,6 +1432,7 @@ abstract class _$$PatientContactImplCopyWith<$Res>
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       List<CodeableConcept>? relationship,
       HumanName? name,
       List<ContactPoint>? telecom,
@@ -1566,8 +1446,6 @@ abstract class _$$PatientContactImplCopyWith<$Res>
   $HumanNameCopyWith<$Res>? get name;
   @override
   $AddressCopyWith<$Res>? get address;
-  @override
-  $ElementCopyWith<$Res>? get genderElement;
   @override
   $ReferenceCopyWith<$Res>? get organization;
   @override
@@ -1588,6 +1466,7 @@ class __$$PatientContactImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? relationship = freezed,
     Object? name = freezed,
     Object? telecom = freezed,
@@ -1610,6 +1489,10 @@ class __$$PatientContactImplCopyWithImpl<$Res>
           ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       relationship: freezed == relationship
           ? _value._relationship
           : relationship // ignore: cast_nullable_to_non_nullable
@@ -1653,6 +1536,7 @@ class _$PatientContactImpl extends _PatientContact {
       {this.id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final List<CodeableConcept>? relationship,
       this.name,
       final List<ContactPoint>? telecom,
@@ -1663,6 +1547,7 @@ class _$PatientContactImpl extends _PatientContact {
       this.period})
       : _extension_ = extension_,
         _modifierExtension = modifierExtension,
+        _fhirComments = fhirComments,
         _relationship = relationship,
         _telecom = telecom,
         super._();
@@ -1690,6 +1575,17 @@ class _$PatientContactImpl extends _PatientContact {
     if (value == null) return null;
     if (_modifierExtension is EqualUnmodifiableListView)
       return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -1731,7 +1627,7 @@ class _$PatientContactImpl extends _PatientContact {
 
   @override
   String toString() {
-    return 'PatientContact(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, relationship: $relationship, name: $name, telecom: $telecom, address: $address, gender: $gender, genderElement: $genderElement, organization: $organization, period: $period)';
+    return 'PatientContact(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, fhirComments: $fhirComments, relationship: $relationship, name: $name, telecom: $telecom, address: $address, gender: $gender, genderElement: $genderElement, organization: $organization, period: $period)';
   }
 
   @override
@@ -1744,6 +1640,8 @@ class _$PatientContactImpl extends _PatientContact {
                 .equals(other._extension_, _extension_) &&
             const DeepCollectionEquality()
                 .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             const DeepCollectionEquality()
                 .equals(other._relationship, _relationship) &&
             (identical(other.name, name) || other.name == name) &&
@@ -1764,6 +1662,7 @@ class _$PatientContactImpl extends _PatientContact {
       id,
       const DeepCollectionEquality().hash(_extension_),
       const DeepCollectionEquality().hash(_modifierExtension),
+      const DeepCollectionEquality().hash(_fhirComments),
       const DeepCollectionEquality().hash(_relationship),
       name,
       const DeepCollectionEquality().hash(_telecom),
@@ -1793,6 +1692,7 @@ abstract class _PatientContact extends PatientContact {
       {final FhirId? id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final List<CodeableConcept>? relationship,
       final HumanName? name,
       final List<ContactPoint>? telecom,
@@ -1814,6 +1714,9 @@ abstract class _PatientContact extends PatientContact {
   List<FhirExtension>? get extension_;
   @override
   List<FhirExtension>? get modifierExtension;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   List<CodeableConcept>? get relationship;
   @override
@@ -1849,6 +1752,8 @@ mixin _$PatientAnimal {
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   CodeableConcept get species => throw _privateConstructorUsedError;
   CodeableConcept? get breed => throw _privateConstructorUsedError;
   CodeableConcept? get genderStatus => throw _privateConstructorUsedError;
@@ -1869,6 +1774,7 @@ abstract class $PatientAnimalCopyWith<$Res> {
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       CodeableConcept species,
       CodeableConcept? breed,
       CodeableConcept? genderStatus});
@@ -1894,6 +1800,7 @@ class _$PatientAnimalCopyWithImpl<$Res, $Val extends PatientAnimal>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? species = null,
     Object? breed = freezed,
     Object? genderStatus = freezed,
@@ -1911,6 +1818,10 @@ class _$PatientAnimalCopyWithImpl<$Res, $Val extends PatientAnimal>
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       species: null == species
           ? _value.species
           : species // ignore: cast_nullable_to_non_nullable
@@ -1971,6 +1882,7 @@ abstract class _$$PatientAnimalImplCopyWith<$Res>
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       CodeableConcept species,
       CodeableConcept? breed,
       CodeableConcept? genderStatus});
@@ -1997,6 +1909,7 @@ class __$$PatientAnimalImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? species = null,
     Object? breed = freezed,
     Object? genderStatus = freezed,
@@ -2014,6 +1927,10 @@ class __$$PatientAnimalImplCopyWithImpl<$Res>
           ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       species: null == species
           ? _value.species
           : species // ignore: cast_nullable_to_non_nullable
@@ -2037,11 +1954,13 @@ class _$PatientAnimalImpl extends _PatientAnimal {
       {this.id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       required this.species,
       this.breed,
       this.genderStatus})
       : _extension_ = extension_,
         _modifierExtension = modifierExtension,
+        _fhirComments = fhirComments,
         super._();
 
   factory _$PatientAnimalImpl.fromJson(Map<String, dynamic> json) =>
@@ -2071,6 +1990,17 @@ class _$PatientAnimalImpl extends _PatientAnimal {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final CodeableConcept species;
   @override
@@ -2080,7 +2010,7 @@ class _$PatientAnimalImpl extends _PatientAnimal {
 
   @override
   String toString() {
-    return 'PatientAnimal(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, species: $species, breed: $breed, genderStatus: $genderStatus)';
+    return 'PatientAnimal(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, fhirComments: $fhirComments, species: $species, breed: $breed, genderStatus: $genderStatus)';
   }
 
   @override
@@ -2093,6 +2023,8 @@ class _$PatientAnimalImpl extends _PatientAnimal {
                 .equals(other._extension_, _extension_) &&
             const DeepCollectionEquality()
                 .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.species, species) || other.species == species) &&
             (identical(other.breed, breed) || other.breed == breed) &&
             (identical(other.genderStatus, genderStatus) ||
@@ -2106,6 +2038,7 @@ class _$PatientAnimalImpl extends _PatientAnimal {
       id,
       const DeepCollectionEquality().hash(_extension_),
       const DeepCollectionEquality().hash(_modifierExtension),
+      const DeepCollectionEquality().hash(_fhirComments),
       species,
       breed,
       genderStatus);
@@ -2129,6 +2062,7 @@ abstract class _PatientAnimal extends PatientAnimal {
       {final FhirId? id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       required final CodeableConcept species,
       final CodeableConcept? breed,
       final CodeableConcept? genderStatus}) = _$PatientAnimalImpl;
@@ -2144,6 +2078,9 @@ abstract class _PatientAnimal extends PatientAnimal {
   List<FhirExtension>? get extension_;
   @override
   List<FhirExtension>? get modifierExtension;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   CodeableConcept get species;
   @override
@@ -2167,6 +2104,8 @@ mixin _$PatientCommunication {
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   CodeableConcept get language => throw _privateConstructorUsedError;
   FhirBoolean? get preferred => throw _privateConstructorUsedError;
   @JsonKey(name: '_preferred')
@@ -2188,12 +2127,12 @@ abstract class $PatientCommunicationCopyWith<$Res> {
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       CodeableConcept language,
       FhirBoolean? preferred,
       @JsonKey(name: '_preferred') Element? preferredElement});
 
   $CodeableConceptCopyWith<$Res> get language;
-  $ElementCopyWith<$Res>? get preferredElement;
 }
 
 /// @nodoc
@@ -2213,6 +2152,7 @@ class _$PatientCommunicationCopyWithImpl<$Res,
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? language = null,
     Object? preferred = freezed,
     Object? preferredElement = freezed,
@@ -2230,6 +2170,10 @@ class _$PatientCommunicationCopyWithImpl<$Res,
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
@@ -2252,18 +2196,6 @@ class _$PatientCommunicationCopyWithImpl<$Res,
       return _then(_value.copyWith(language: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get preferredElement {
-    if (_value.preferredElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.preferredElement!, (value) {
-      return _then(_value.copyWith(preferredElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -2278,14 +2210,13 @@ abstract class _$$PatientCommunicationImplCopyWith<$Res>
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       CodeableConcept language,
       FhirBoolean? preferred,
       @JsonKey(name: '_preferred') Element? preferredElement});
 
   @override
   $CodeableConceptCopyWith<$Res> get language;
-  @override
-  $ElementCopyWith<$Res>? get preferredElement;
 }
 
 /// @nodoc
@@ -2302,6 +2233,7 @@ class __$$PatientCommunicationImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? language = null,
     Object? preferred = freezed,
     Object? preferredElement = freezed,
@@ -2319,6 +2251,10 @@ class __$$PatientCommunicationImplCopyWithImpl<$Res>
           ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
@@ -2342,11 +2278,13 @@ class _$PatientCommunicationImpl extends _PatientCommunication {
       {this.id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       required this.language,
       this.preferred,
       @JsonKey(name: '_preferred') this.preferredElement})
       : _extension_ = extension_,
         _modifierExtension = modifierExtension,
+        _fhirComments = fhirComments,
         super._();
 
   factory _$PatientCommunicationImpl.fromJson(Map<String, dynamic> json) =>
@@ -2376,6 +2314,17 @@ class _$PatientCommunicationImpl extends _PatientCommunication {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final CodeableConcept language;
   @override
@@ -2386,7 +2335,7 @@ class _$PatientCommunicationImpl extends _PatientCommunication {
 
   @override
   String toString() {
-    return 'PatientCommunication(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, language: $language, preferred: $preferred, preferredElement: $preferredElement)';
+    return 'PatientCommunication(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, fhirComments: $fhirComments, language: $language, preferred: $preferred, preferredElement: $preferredElement)';
   }
 
   @override
@@ -2399,6 +2348,8 @@ class _$PatientCommunicationImpl extends _PatientCommunication {
                 .equals(other._extension_, _extension_) &&
             const DeepCollectionEquality()
                 .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.language, language) ||
                 other.language == language) &&
             (identical(other.preferred, preferred) ||
@@ -2414,6 +2365,7 @@ class _$PatientCommunicationImpl extends _PatientCommunication {
       id,
       const DeepCollectionEquality().hash(_extension_),
       const DeepCollectionEquality().hash(_modifierExtension),
+      const DeepCollectionEquality().hash(_fhirComments),
       language,
       preferred,
       preferredElement);
@@ -2439,6 +2391,7 @@ abstract class _PatientCommunication extends PatientCommunication {
           {final FhirId? id,
           @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
           final List<FhirExtension>? modifierExtension,
+          @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
           required final CodeableConcept language,
           final FhirBoolean? preferred,
           @JsonKey(name: '_preferred') final Element? preferredElement}) =
@@ -2455,6 +2408,9 @@ abstract class _PatientCommunication extends PatientCommunication {
   List<FhirExtension>? get extension_;
   @override
   List<FhirExtension>? get modifierExtension;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   CodeableConcept get language;
   @override
@@ -2479,6 +2435,8 @@ mixin _$PatientLink {
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   Reference get other => throw _privateConstructorUsedError;
   @JsonKey(unknownEnumValue: LinkType.unknown)
   LinkType get type => throw _privateConstructorUsedError;
@@ -2501,12 +2459,12 @@ abstract class $PatientLinkCopyWith<$Res> {
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       Reference other,
       @JsonKey(unknownEnumValue: LinkType.unknown) LinkType type,
       @JsonKey(name: '_type') Element? typeElement});
 
   $ReferenceCopyWith<$Res> get other;
-  $ElementCopyWith<$Res>? get typeElement;
 }
 
 /// @nodoc
@@ -2525,6 +2483,7 @@ class _$PatientLinkCopyWithImpl<$Res, $Val extends PatientLink>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? other = null,
     Object? type = null,
     Object? typeElement = freezed,
@@ -2542,6 +2501,10 @@ class _$PatientLinkCopyWithImpl<$Res, $Val extends PatientLink>
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       other: null == other
           ? _value.other
           : other // ignore: cast_nullable_to_non_nullable
@@ -2564,18 +2527,6 @@ class _$PatientLinkCopyWithImpl<$Res, $Val extends PatientLink>
       return _then(_value.copyWith(other: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get typeElement {
-    if (_value.typeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.typeElement!, (value) {
-      return _then(_value.copyWith(typeElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -2590,14 +2541,13 @@ abstract class _$$PatientLinkImplCopyWith<$Res>
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       Reference other,
       @JsonKey(unknownEnumValue: LinkType.unknown) LinkType type,
       @JsonKey(name: '_type') Element? typeElement});
 
   @override
   $ReferenceCopyWith<$Res> get other;
-  @override
-  $ElementCopyWith<$Res>? get typeElement;
 }
 
 /// @nodoc
@@ -2614,6 +2564,7 @@ class __$$PatientLinkImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? other = null,
     Object? type = null,
     Object? typeElement = freezed,
@@ -2631,6 +2582,10 @@ class __$$PatientLinkImplCopyWithImpl<$Res>
           ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       other: null == other
           ? _value.other
           : other // ignore: cast_nullable_to_non_nullable
@@ -2654,11 +2609,13 @@ class _$PatientLinkImpl extends _PatientLink {
       {this.id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       required this.other,
       @JsonKey(unknownEnumValue: LinkType.unknown) required this.type,
       @JsonKey(name: '_type') this.typeElement})
       : _extension_ = extension_,
         _modifierExtension = modifierExtension,
+        _fhirComments = fhirComments,
         super._();
 
   factory _$PatientLinkImpl.fromJson(Map<String, dynamic> json) =>
@@ -2688,6 +2645,17 @@ class _$PatientLinkImpl extends _PatientLink {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final Reference other;
   @override
@@ -2699,7 +2667,7 @@ class _$PatientLinkImpl extends _PatientLink {
 
   @override
   String toString() {
-    return 'PatientLink(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, other: $other, type: $type, typeElement: $typeElement)';
+    return 'PatientLink(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, fhirComments: $fhirComments, other: $other, type: $type, typeElement: $typeElement)';
   }
 
   @override
@@ -2712,6 +2680,8 @@ class _$PatientLinkImpl extends _PatientLink {
                 .equals(other._extension_, _extension_) &&
             const DeepCollectionEquality()
                 .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.other, this.other) || other.other == this.other) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.typeElement, typeElement) ||
@@ -2725,6 +2695,7 @@ class _$PatientLinkImpl extends _PatientLink {
       id,
       const DeepCollectionEquality().hash(_extension_),
       const DeepCollectionEquality().hash(_modifierExtension),
+      const DeepCollectionEquality().hash(_fhirComments),
       other,
       type,
       typeElement);
@@ -2748,6 +2719,7 @@ abstract class _PatientLink extends PatientLink {
       {final FhirId? id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       required final Reference other,
       @JsonKey(unknownEnumValue: LinkType.unknown) required final LinkType type,
       @JsonKey(name: '_type') final Element? typeElement}) = _$PatientLinkImpl;
@@ -2763,6 +2735,9 @@ abstract class _PatientLink extends PatientLink {
   List<FhirExtension>? get extension_;
   @override
   List<FhirExtension>? get modifierExtension;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   Reference get other;
   @override
@@ -2786,6 +2761,8 @@ mixin _$Practitioner {
   @JsonKey(unknownEnumValue: Dstu2ResourceType.Practitioner)
   Dstu2ResourceType get resourceType => throw _privateConstructorUsedError;
   FhirId? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   FhirMeta? get meta => throw _privateConstructorUsedError;
   FhirUri? get implicitRules => throw _privateConstructorUsedError;
   @JsonKey(name: '_implicitRules')
@@ -2837,6 +2814,7 @@ abstract class $PractitionerCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Practitioner)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -2863,13 +2841,8 @@ abstract class $PractitionerCopyWith<$Res> {
       List<CodeableConcept>? communication});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
-  $ElementCopyWith<$Res>? get activeElement;
   $HumanNameCopyWith<$Res>? get name;
-  $ElementCopyWith<$Res>? get genderElement;
-  $ElementCopyWith<$Res>? get birthDateElement;
 }
 
 /// @nodoc
@@ -2887,6 +2860,7 @@ class _$PractitionerCopyWithImpl<$Res, $Val extends Practitioner>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -2920,6 +2894,10 @@ class _$PractitionerCopyWithImpl<$Res, $Val extends Practitioner>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -3029,30 +3007,6 @@ class _$PractitionerCopyWithImpl<$Res, $Val extends Practitioner>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -3065,18 +3019,6 @@ class _$PractitionerCopyWithImpl<$Res, $Val extends Practitioner>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get activeElement {
-    if (_value.activeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.activeElement!, (value) {
-      return _then(_value.copyWith(activeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $HumanNameCopyWith<$Res>? get name {
     if (_value.name == null) {
       return null;
@@ -3084,30 +3026,6 @@ class _$PractitionerCopyWithImpl<$Res, $Val extends Practitioner>
 
     return $HumanNameCopyWith<$Res>(_value.name!, (value) {
       return _then(_value.copyWith(name: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get genderElement {
-    if (_value.genderElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.genderElement!, (value) {
-      return _then(_value.copyWith(genderElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get birthDateElement {
-    if (_value.birthDateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.birthDateElement!, (value) {
-      return _then(_value.copyWith(birthDateElement: value) as $Val);
     });
   }
 }
@@ -3124,6 +3042,7 @@ abstract class _$$PractitionerImplCopyWith<$Res>
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Practitioner)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -3152,19 +3071,9 @@ abstract class _$$PractitionerImplCopyWith<$Res>
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
   @override
-  $ElementCopyWith<$Res>? get activeElement;
-  @override
   $HumanNameCopyWith<$Res>? get name;
-  @override
-  $ElementCopyWith<$Res>? get genderElement;
-  @override
-  $ElementCopyWith<$Res>? get birthDateElement;
 }
 
 /// @nodoc
@@ -3180,6 +3089,7 @@ class __$$PractitionerImplCopyWithImpl<$Res>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -3213,6 +3123,10 @@ class __$$PractitionerImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -3316,6 +3230,7 @@ class _$PractitionerImpl extends _Practitioner {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Practitioner)
       this.resourceType = Dstu2ResourceType.Practitioner,
       this.id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.meta,
       this.implicitRules,
       @JsonKey(name: '_implicitRules') this.implicitRulesElement,
@@ -3339,7 +3254,8 @@ class _$PractitionerImpl extends _Practitioner {
       final List<PractitionerPractitionerRole>? practitionerRole,
       final List<PractitionerQualification>? qualification,
       final List<CodeableConcept>? communication})
-      : _contained = contained,
+      : _fhirComments = fhirComments,
+        _contained = contained,
         _extension_ = extension_,
         _modifierExtension = modifierExtension,
         _identifier = identifier,
@@ -3359,6 +3275,17 @@ class _$PractitionerImpl extends _Practitioner {
   final Dstu2ResourceType resourceType;
   @override
   final FhirId? id;
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final FhirMeta? meta;
   @override
@@ -3496,7 +3423,7 @@ class _$PractitionerImpl extends _Practitioner {
 
   @override
   String toString() {
-    return 'Practitioner(resourceType: $resourceType, id: $id, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, active: $active, activeElement: $activeElement, name: $name, telecom: $telecom, address: $address, gender: $gender, genderElement: $genderElement, birthDate: $birthDate, birthDateElement: $birthDateElement, photo: $photo, practitionerRole: $practitionerRole, qualification: $qualification, communication: $communication)';
+    return 'Practitioner(resourceType: $resourceType, id: $id, fhirComments: $fhirComments, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, active: $active, activeElement: $activeElement, name: $name, telecom: $telecom, address: $address, gender: $gender, genderElement: $genderElement, birthDate: $birthDate, birthDateElement: $birthDateElement, photo: $photo, practitionerRole: $practitionerRole, qualification: $qualification, communication: $communication)';
   }
 
   @override
@@ -3507,6 +3434,8 @@ class _$PractitionerImpl extends _Practitioner {
             (identical(other.resourceType, resourceType) ||
                 other.resourceType == resourceType) &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.meta, meta) || other.meta == meta) &&
             (identical(other.implicitRules, implicitRules) ||
                 other.implicitRules == implicitRules) &&
@@ -3553,6 +3482,7 @@ class _$PractitionerImpl extends _Practitioner {
         runtimeType,
         resourceType,
         id,
+        const DeepCollectionEquality().hash(_fhirComments),
         meta,
         implicitRules,
         implicitRulesElement,
@@ -3597,6 +3527,7 @@ abstract class _Practitioner extends Practitioner {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.Practitioner)
       final Dstu2ResourceType resourceType,
       final FhirId? id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final FhirMeta? meta,
       final FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') final Element? implicitRulesElement,
@@ -3631,6 +3562,9 @@ abstract class _Practitioner extends Practitioner {
   Dstu2ResourceType get resourceType;
   @override
   FhirId? get id;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   FhirMeta? get meta;
   @override
@@ -4163,6 +4097,8 @@ mixin _$PractitionerQualification {
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   List<Identifier>? get identifier => throw _privateConstructorUsedError;
   CodeableConcept get code => throw _privateConstructorUsedError;
   Period? get period => throw _privateConstructorUsedError;
@@ -4184,6 +4120,7 @@ abstract class $PractitionerQualificationCopyWith<$Res> {
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       List<Identifier>? identifier,
       CodeableConcept code,
       Period? period,
@@ -4211,6 +4148,7 @@ class _$PractitionerQualificationCopyWithImpl<$Res,
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? identifier = freezed,
     Object? code = null,
     Object? period = freezed,
@@ -4229,6 +4167,10 @@ class _$PractitionerQualificationCopyWithImpl<$Res,
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       identifier: freezed == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
@@ -4294,6 +4236,7 @@ abstract class _$$PractitionerQualificationImplCopyWith<$Res>
       {FhirId? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       List<Identifier>? identifier,
       CodeableConcept code,
       Period? period,
@@ -4323,6 +4266,7 @@ class __$$PractitionerQualificationImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? extension_ = freezed,
     Object? modifierExtension = freezed,
+    Object? fhirComments = freezed,
     Object? identifier = freezed,
     Object? code = null,
     Object? period = freezed,
@@ -4341,6 +4285,10 @@ class __$$PractitionerQualificationImplCopyWithImpl<$Res>
           ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       identifier: freezed == identifier
           ? _value._identifier
           : identifier // ignore: cast_nullable_to_non_nullable
@@ -4368,12 +4316,14 @@ class _$PractitionerQualificationImpl extends _PractitionerQualification {
       {this.id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final List<Identifier>? identifier,
       required this.code,
       this.period,
       this.issuer})
       : _extension_ = extension_,
         _modifierExtension = modifierExtension,
+        _fhirComments = fhirComments,
         _identifier = identifier,
         super._();
 
@@ -4404,6 +4354,17 @@ class _$PractitionerQualificationImpl extends _PractitionerQualification {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final List<Identifier>? _identifier;
   @override
   List<Identifier>? get identifier {
@@ -4423,7 +4384,7 @@ class _$PractitionerQualificationImpl extends _PractitionerQualification {
 
   @override
   String toString() {
-    return 'PractitionerQualification(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, code: $code, period: $period, issuer: $issuer)';
+    return 'PractitionerQualification(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, fhirComments: $fhirComments, identifier: $identifier, code: $code, period: $period, issuer: $issuer)';
   }
 
   @override
@@ -4436,6 +4397,8 @@ class _$PractitionerQualificationImpl extends _PractitionerQualification {
                 .equals(other._extension_, _extension_) &&
             const DeepCollectionEquality()
                 .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             const DeepCollectionEquality()
                 .equals(other._identifier, _identifier) &&
             (identical(other.code, code) || other.code == code) &&
@@ -4450,6 +4413,7 @@ class _$PractitionerQualificationImpl extends _PractitionerQualification {
       id,
       const DeepCollectionEquality().hash(_extension_),
       const DeepCollectionEquality().hash(_modifierExtension),
+      const DeepCollectionEquality().hash(_fhirComments),
       const DeepCollectionEquality().hash(_identifier),
       code,
       period,
@@ -4475,6 +4439,7 @@ abstract class _PractitionerQualification extends PractitionerQualification {
       {final FhirId? id,
       @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final List<FhirExtension>? modifierExtension,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final List<Identifier>? identifier,
       required final CodeableConcept code,
       final Period? period,
@@ -4491,6 +4456,9 @@ abstract class _PractitionerQualification extends PractitionerQualification {
   List<FhirExtension>? get extension_;
   @override
   List<FhirExtension>? get modifierExtension;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   List<Identifier>? get identifier;
   @override
@@ -4514,6 +4482,8 @@ mixin _$RelatedPerson {
   @JsonKey(unknownEnumValue: Dstu2ResourceType.RelatedPerson)
   Dstu2ResourceType get resourceType => throw _privateConstructorUsedError;
   FhirId? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments => throw _privateConstructorUsedError;
   FhirMeta? get meta => throw _privateConstructorUsedError;
   FhirUri? get implicitRules => throw _privateConstructorUsedError;
   @JsonKey(name: '_implicitRules')
@@ -4559,6 +4529,7 @@ abstract class $RelatedPersonCopyWith<$Res> {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.RelatedPerson)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -4583,14 +4554,10 @@ abstract class $RelatedPersonCopyWith<$Res> {
       Period? period});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
   $ReferenceCopyWith<$Res> get patient;
   $CodeableConceptCopyWith<$Res>? get relationship;
   $HumanNameCopyWith<$Res>? get name;
-  $ElementCopyWith<$Res>? get genderElement;
-  $ElementCopyWith<$Res>? get birthDateElement;
   $PeriodCopyWith<$Res>? get period;
 }
 
@@ -4609,6 +4576,7 @@ class _$RelatedPersonCopyWithImpl<$Res, $Val extends RelatedPerson>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -4640,6 +4608,10 @@ class _$RelatedPersonCopyWithImpl<$Res, $Val extends RelatedPerson>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value.fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -4741,30 +4713,6 @@ class _$RelatedPersonCopyWithImpl<$Res, $Val extends RelatedPerson>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -4809,30 +4757,6 @@ class _$RelatedPersonCopyWithImpl<$Res, $Val extends RelatedPerson>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get genderElement {
-    if (_value.genderElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.genderElement!, (value) {
-      return _then(_value.copyWith(genderElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get birthDateElement {
-    if (_value.birthDateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.birthDateElement!, (value) {
-      return _then(_value.copyWith(birthDateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $PeriodCopyWith<$Res>? get period {
     if (_value.period == null) {
       return null;
@@ -4856,6 +4780,7 @@ abstract class _$$RelatedPersonImplCopyWith<$Res>
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.RelatedPerson)
       Dstu2ResourceType resourceType,
       FhirId? id,
+      @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
       FhirMeta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -4882,10 +4807,6 @@ abstract class _$$RelatedPersonImplCopyWith<$Res>
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
   @override
   $ReferenceCopyWith<$Res> get patient;
@@ -4893,10 +4814,6 @@ abstract class _$$RelatedPersonImplCopyWith<$Res>
   $CodeableConceptCopyWith<$Res>? get relationship;
   @override
   $HumanNameCopyWith<$Res>? get name;
-  @override
-  $ElementCopyWith<$Res>? get genderElement;
-  @override
-  $ElementCopyWith<$Res>? get birthDateElement;
   @override
   $PeriodCopyWith<$Res>? get period;
 }
@@ -4914,6 +4831,7 @@ class __$$RelatedPersonImplCopyWithImpl<$Res>
   $Res call({
     Object? resourceType = null,
     Object? id = freezed,
+    Object? fhirComments = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
     Object? implicitRulesElement = freezed,
@@ -4945,6 +4863,10 @@ class __$$RelatedPersonImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as FhirId?,
+      fhirComments: freezed == fhirComments
+          ? _value._fhirComments
+          : fhirComments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -5040,6 +4962,7 @@ class _$RelatedPersonImpl extends _RelatedPerson {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.RelatedPerson)
       this.resourceType = Dstu2ResourceType.RelatedPerson,
       this.id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       this.meta,
       this.implicitRules,
       @JsonKey(name: '_implicitRules') this.implicitRulesElement,
@@ -5061,7 +4984,8 @@ class _$RelatedPersonImpl extends _RelatedPerson {
       final List<Address>? address,
       final List<Attachment>? photo,
       this.period})
-      : _contained = contained,
+      : _fhirComments = fhirComments,
+        _contained = contained,
         _extension_ = extension_,
         _modifierExtension = modifierExtension,
         _identifier = identifier,
@@ -5078,6 +5002,17 @@ class _$RelatedPersonImpl extends _RelatedPerson {
   final Dstu2ResourceType resourceType;
   @override
   final FhirId? id;
+  final List<String>? _fhirComments;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments {
+    final value = _fhirComments;
+    if (value == null) return null;
+    if (_fhirComments is EqualUnmodifiableListView) return _fhirComments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final FhirMeta? meta;
   @override
@@ -5186,7 +5121,7 @@ class _$RelatedPersonImpl extends _RelatedPerson {
 
   @override
   String toString() {
-    return 'RelatedPerson(resourceType: $resourceType, id: $id, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, patient: $patient, relationship: $relationship, name: $name, telecom: $telecom, gender: $gender, genderElement: $genderElement, birthDate: $birthDate, birthDateElement: $birthDateElement, address: $address, photo: $photo, period: $period)';
+    return 'RelatedPerson(resourceType: $resourceType, id: $id, fhirComments: $fhirComments, meta: $meta, implicitRules: $implicitRules, implicitRulesElement: $implicitRulesElement, language: $language, languageElement: $languageElement, text: $text, contained: $contained, extension_: $extension_, modifierExtension: $modifierExtension, identifier: $identifier, patient: $patient, relationship: $relationship, name: $name, telecom: $telecom, gender: $gender, genderElement: $genderElement, birthDate: $birthDate, birthDateElement: $birthDateElement, address: $address, photo: $photo, period: $period)';
   }
 
   @override
@@ -5197,6 +5132,8 @@ class _$RelatedPersonImpl extends _RelatedPerson {
             (identical(other.resourceType, resourceType) ||
                 other.resourceType == resourceType) &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._fhirComments, _fhirComments) &&
             (identical(other.meta, meta) || other.meta == meta) &&
             (identical(other.implicitRules, implicitRules) ||
                 other.implicitRules == implicitRules) &&
@@ -5238,6 +5175,7 @@ class _$RelatedPersonImpl extends _RelatedPerson {
         runtimeType,
         resourceType,
         id,
+        const DeepCollectionEquality().hash(_fhirComments),
         meta,
         implicitRules,
         implicitRulesElement,
@@ -5280,6 +5218,7 @@ abstract class _RelatedPerson extends RelatedPerson {
       {@JsonKey(unknownEnumValue: Dstu2ResourceType.RelatedPerson)
       final Dstu2ResourceType resourceType,
       final FhirId? id,
+      @JsonKey(name: 'fhir_comments') final List<String>? fhirComments,
       final FhirMeta? meta,
       final FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules') final Element? implicitRulesElement,
@@ -5312,6 +5251,9 @@ abstract class _RelatedPerson extends RelatedPerson {
   Dstu2ResourceType get resourceType;
   @override
   FhirId? get id;
+  @override
+  @JsonKey(name: 'fhir_comments')
+  List<String>? get fhirComments;
   @override
   FhirMeta? get meta;
   @override

@@ -13,6 +13,9 @@ _$OrganizationImpl _$$OrganizationImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.Organization) ??
           Dstu2ResourceType.Organization,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -80,6 +83,7 @@ Map<String, dynamic> _$$OrganizationImplToJson(_$OrganizationImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -262,6 +266,9 @@ _$HealthcareServiceImpl _$$HealthcareServiceImplFromJson(
               unknownValue: Dstu2ResourceType.HealthcareService) ??
           Dstu2ResourceType.HealthcareService,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -374,6 +381,7 @@ Map<String, dynamic> _$$HealthcareServiceImplToJson(
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -435,6 +443,9 @@ _$HealthcareServiceServiceTypeImpl _$$HealthcareServiceServiceTypeImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       type: CodeableConcept.fromJson(json['type'] as Map<String, dynamic>),
       specialty: (json['specialty'] as List<dynamic>?)
           ?.map((e) => CodeableConcept.fromJson(e as Map<String, dynamic>))
@@ -456,6 +467,7 @@ Map<String, dynamic> _$$HealthcareServiceServiceTypeImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['type'] = instance.type.toJson();
   writeNotNull(
       'specialty', instance.specialty?.map((e) => e.toJson()).toList());
@@ -471,6 +483,9 @@ _$HealthcareServiceAvailableTimeImpl
               .toList(),
           modifierExtension: (json['modifierExtension'] as List<dynamic>?)
               ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          fhirComments: (json['fhir_comments'] as List<dynamic>?)
+              ?.map((e) => e as String)
               .toList(),
           daysOfWeek: (json['daysOfWeek'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$AvailableTimeDaysOfWeekEnumMap, e))
@@ -515,6 +530,7 @@ Map<String, dynamic> _$$HealthcareServiceAvailableTimeImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull(
       'daysOfWeek',
       instance.daysOfWeek
@@ -552,6 +568,9 @@ _$HealthcareServiceNotAvailableImpl
           modifierExtension: (json['modifierExtension'] as List<dynamic>?)
               ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
               .toList(),
+          fhirComments: (json['fhir_comments'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList(),
           description: json['description'] as String,
           descriptionElement: json['_description'] == null
               ? null
@@ -576,6 +595,7 @@ Map<String, dynamic> _$$HealthcareServiceNotAvailableImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['description'] = instance.description;
   writeNotNull('_description', instance.descriptionElement?.toJson());
   writeNotNull('during', instance.during?.toJson());
@@ -589,6 +609,9 @@ _$FhirGroupImpl _$$FhirGroupImplFromJson(Map<String, dynamic> json) =>
               unknownValue: Dstu2ResourceType.Group) ??
           Dstu2ResourceType.Group,
       id: json['id'] == null ? null : FhirId.fromJson(json['id']),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       meta: json['meta'] == null
           ? null
           : FhirMeta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -660,6 +683,7 @@ Map<String, dynamic> _$$FhirGroupImplToJson(_$FhirGroupImpl instance) {
   }
 
   writeNotNull('id', instance.id?.toJson());
+  writeNotNull('fhir_comments', instance.fhirComments);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -709,6 +733,9 @@ _$GroupCharacteristicImpl _$$GroupCharacteristicImplFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       code: CodeableConcept.fromJson(json['code'] as Map<String, dynamic>),
       valueCodeableConcept: json['valueCodeableConcept'] == null
           ? null
@@ -747,6 +774,7 @@ Map<String, dynamic> _$$GroupCharacteristicImplToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['code'] = instance.code.toJson();
   writeNotNull('valueCodeableConcept', instance.valueCodeableConcept?.toJson());
   writeNotNull('valueBoolean', instance.valueBoolean?.toJson());
@@ -766,6 +794,9 @@ _$GroupMemberImpl _$$GroupMemberImplFromJson(Map<String, dynamic> json) =>
           .toList(),
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      fhirComments: (json['fhir_comments'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
       entity: Reference.fromJson(json['entity'] as Map<String, dynamic>),
       period: json['period'] == null
@@ -793,6 +824,7 @@ Map<String, dynamic> _$$GroupMemberImplToJson(_$GroupMemberImpl instance) {
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
+  writeNotNull('fhir_comments', instance.fhirComments);
   val['entity'] = instance.entity.toJson();
   writeNotNull('period', instance.period?.toJson());
   writeNotNull('inactive', instance.inactive?.toJson());

@@ -22,6 +22,7 @@ class Appointment with Resource, _$Appointment {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.Appointment)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -52,6 +53,9 @@ class Appointment with Resource, _$Appointment {
     @JsonKey(name: '_comment') Element? commentElement,
     required List<AppointmentParticipant> participant,
   }) = _Appointment;
+
+  @override
+  String get fhirType => 'Appointment';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory Appointment.fromYaml(dynamic yaml) => yaml is String
@@ -87,12 +91,13 @@ class Appointment with Resource, _$Appointment {
 }
 
 @freezed
-class AppointmentParticipant with _$AppointmentParticipant {
+class AppointmentParticipant with BackboneType, _$AppointmentParticipant {
   const AppointmentParticipant._();
   const factory AppointmentParticipant({
     FhirId? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     List<CodeableConcept>? type,
     Reference? actor,
     @JsonKey(unknownEnumValue: ParticipantRequired.unknown, name: 'required')
@@ -103,8 +108,8 @@ class AppointmentParticipant with _$AppointmentParticipant {
     @JsonKey(name: '_status') Element? statusElement,
   }) = _AppointmentParticipant;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'AppointmentParticipant';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory AppointmentParticipant.fromYaml(dynamic yaml) => yaml is String
@@ -132,10 +137,6 @@ class AppointmentParticipant with _$AppointmentParticipant {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -146,6 +147,7 @@ class AppointmentResponse with Resource, _$AppointmentResponse {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.AppointmentResponse)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -171,6 +173,9 @@ class AppointmentResponse with Resource, _$AppointmentResponse {
     String? comment,
     @JsonKey(name: '_comment') Element? commentElement,
   }) = _AppointmentResponse;
+
+  @override
+  String get fhirType => 'AppointmentResponse';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory AppointmentResponse.fromYaml(dynamic yaml) => yaml is String
@@ -213,6 +218,7 @@ class Schedule with Resource, _$Schedule {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.Schedule)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -229,6 +235,9 @@ class Schedule with Resource, _$Schedule {
     String? comment,
     @JsonKey(name: '_comment') Element? commentElement,
   }) = _Schedule;
+
+  @override
+  String get fhirType => 'Schedule';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory Schedule.fromYaml(dynamic yaml) => yaml is String
@@ -271,6 +280,7 @@ class Slot with Resource, _$Slot {
     @JsonKey(unknownEnumValue: Dstu2ResourceType.Slot)
     Dstu2ResourceType resourceType,
     FhirId? id,
+    @JsonKey(name: 'fhir_comments') List<String>? fhirComments,
     FhirMeta? meta,
     FhirUri? implicitRules,
     @JsonKey(name: '_implicitRules') Element? implicitRulesElement,
@@ -294,6 +304,9 @@ class Slot with Resource, _$Slot {
     String? comment,
     @JsonKey(name: '_comment') Element? commentElement,
   }) = _Slot;
+
+  @override
+  String get fhirType => 'Slot';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory Slot.fromYaml(dynamic yaml) => yaml is String
